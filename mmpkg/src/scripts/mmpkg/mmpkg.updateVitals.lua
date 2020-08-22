@@ -1,4 +1,4 @@
-function updateVitals()
+function mmpkg.updateVitals()
     if not mmpkg.mymaxhp then mmpkg.mymaxhp = 4000 end
     if not mmpkg.mymaxsp then mmpkg.mymaxsp = 4000 end
     if not mmpkg.mymaxst then mmpkg.mymaxst = 4000 end

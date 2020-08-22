@@ -70,6 +70,11 @@
         "keys": "keypad+*"
     },
     {
+        "name": "mmpkg.numpad.",
+        "command": "score",
+        "keys": "keypad+."
+    },
+    {
         "name": "mmpkg.ctrl+numpad1",
         "command": "look southwest",
         "keys": "ctrl+keypad+1"
@@ -80,7 +85,7 @@
         "keys": "ctrl+keypad+2"
     },
     {
-        "name": "mmpkg.ctrl+numpad3.",
+        "name": "mmpkg.ctrl+numpad3",
         "command": "look southeast",
         "keys": "ctrl+keypad+3"
     },
