@@ -1,0 +1,34 @@
+[
+    {
+        "name":     "runeqm",
+        "regex":    "^runeqm$"
+    }
+    {
+        "name":     "nrqm",
+        "regex":    "^nrqm$"
+    }
+    {
+        "name":     "repos",
+        "regex":    "^repos (n|s|e|w|nw|ne|sw|se|u|d)$"
+    }
+    {
+        "name":     "xavqm",
+        "regex":    "^xavqm$"
+    }
+    {
+        "name":     "temqm",
+        "regex":    "^temqm$"
+    }
+    {
+        "name":     "mapper",
+        "regex":    "^mapper (\w+)( .*)?$$"
+    }
+    {
+        "name":     "tellqm",
+        "regex":    "^tellqm$"
+    }
+    {
+        "name":     "sigqm",
+        "regex":    "^sigqm$"
+    }
+]
