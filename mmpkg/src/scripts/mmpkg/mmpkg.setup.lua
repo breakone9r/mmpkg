@@ -18,6 +18,10 @@ mmpkg.social = getMudletHomeDir() .. "/mmpkg/resources/social.png"
 mmpkg.arrowimg = getMudletHomeDir() .. "/mmpkg/resources/arrow.png"
 mmpkg.outsideZones = {"Alyria","Faerie Plane Wilderness","Lasler Valley","Great Alyrian Underground"}
 mmpkg.roadSymbols = {"#","=",":"}
+mmpkg.imapx = 1400
+mmpkg.startx = 0
+mmpkg.imapy = 1400
+mmpkg.starty = 0
 
 -- Initialize Events system
 mmpkg.events = mmpkg.events or {}

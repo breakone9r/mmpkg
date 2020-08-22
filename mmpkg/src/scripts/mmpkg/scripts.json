@@ -24,7 +24,6 @@
         "name": "mmpkg.setup",
         "isActive": "yes",
         "eventHandlerList": [
-          "sysInstallPackage"
         ]
       },
       {
@@ -62,5 +61,13 @@
         "eventHandlerList":[
             "gmcp.char.status"
         ]
+      },
+      {
+        "name": "mmpkg.Installed",
+        "isActive": "yes",
+        "eventHandlerList": [
+          "sysInstallPackage"
       }
+        ]
+
   ]
