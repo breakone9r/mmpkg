@@ -22,7 +22,7 @@
   },
   {
     "name": "mmpkg.setup",
-    "isActive": "yes",
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.functions",
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "name": "mmpkg.Installed",
+    "name": "mmpkg_Installed",
     "isActive": "yes",
     "eventHandlerList": [
       "sysInstallPackage"

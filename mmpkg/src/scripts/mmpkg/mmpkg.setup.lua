@@ -18,10 +18,10 @@ mmpkg.social = getMudletHomeDir() .. "/mmpkg/resources/social.png"
 mmpkg.arrowimg = getMudletHomeDir() .. "/mmpkg/resources/arrow.png"
 mmpkg.outsideZones = {"Alyria","Faerie Plane Wilderness","Lasler Valley","Great Alyrian Underground"}
 mmpkg.roadSymbols = {"#","=",":"}
-mmpkg.imapx = 1400
-mmpkg.startx = 0
-mmpkg.imapy = 1400
-mmpkg.starty = 0
+mmpkg.imapx = mmpkg.imapx or 1400
+mmpkg.startx = mmpkg.startx or 0
+mmpkg.imapy = mmpkg.impay or 1400
+mmpkg.starty = mmpkg.starty or 0
 
 -- Initialize Events system
 mmpkg.events = mmpkg.events or {}
@@ -131,14 +131,6 @@ GUI.Right = Geyser.Label:new({
   height = "100%",
 })
 GUI.Right:setStyleSheet(GUI.BackgroundCSS:getCSS())
-
---GUI.Top = Geyser.Label:new({
---  name = "GUI.Top",
---  x = "25%", y = 0,
---  width = "50%",
---  height = "10%",
---})
---GUI.Top:setStyleSheet(GUI.BackgroundCSS:getCSS())
 
 GUI.Bottom = Geyser.Label:new({
   name = "GUI.Bottom",
@@ -310,8 +302,8 @@ GUI.myarrow =
     Geyser.Label:new(
       {
         name = "GUI.myarrow",
-        x = ((mmpkg.imapx * gmcp.room.info.coord.x) + mmpkg.startx),
-        y = ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty),
+        x = ((mmpkg.imapx * 1) + mmpkg.startx),
+        y = ((mmpkg.imapy * 1) + mmpkg.starty),
         width = 15,
         height = 15,
       },

@@ -1,4 +1,27 @@
-function mmpkg.Installed(_, name)
+function mmpkg_Installed(_, name)
+  mmpkg = mmpkg or {}
+  mmpkg.previousRoom = mmpkg.previousRoom or {}
+  mmpkg.currentRoom = mmpkg.currentRoom or {}
+  mmpkg.previousRoom.ID = mmpkg.previousRoom.ID or {}
+  mmpkg.previousRoom.Area = mmpkg.previousRoom.Area or {}
+  mmpkg.previousRoom.exits = mmpkg.previousRoom.exits or {}
+  mmpkg.currentRoom.ID = mmpkg.currentRoom.ID or {}
+  mmpkg.currentRoom.Area = mmpkg.currentRoom.Area or {}
+  mmpkg.currentRoom.exits = mmpkg.currentRoom.exits or {}
+  mmpkg.mapimg = getMudletHomeDir() .. "/mmpkg/resources/alyria.png"
+  mmpkg.ugimp = getMudletHomeDir() .. "/mmpkg/resources/ug.png"
+  mmpkg.fpimg = getMudletHomeDir() .. "/mmpkg/resources/fp.png"
+  mmpkg.sugimg = getMudletHomeDir() .. "/mmpkg/resources/sug.png"
+  mmpkg.laslerimg = getMudletHomeDir() .. "/mmpkg/resources/lasler.png"
+  mmpkg.verityimg = getMudletHomeDir() .. "/mmpkg/resources/verity.png"
+  mmpkg.social = getMudletHomeDir() .. "/mmpkg/resources/social.png"
+  mmpkg.arrowimg = getMudletHomeDir() .. "/mmpkg/resources/arrow.png"
+  mmpkg.outsideZones = {"Alyria","Faerie Plane Wilderness","Lasler Valley","Great Alyrian Underground"}
+  mmpkg.roadSymbols = {"#","=",":"}
+  mmpkg.imapx = mmpkg.imapx or 1400
+  mmpkg.startx = mmpkg.startx or 0
+  mmpkg.imapy = mmpkg.impay or 1400
+  mmpkg.starty = mmpkg.starty or 0
   if name ~= "mmpkg-0.7.7" then
     return
   end
