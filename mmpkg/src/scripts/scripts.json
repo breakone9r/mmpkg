@@ -1,0 +1,63 @@
+[
+    {
+      "name": "mapping",
+      "isActive": "yes",
+      "eventHandlerList": [
+        "gmcp.room.info"
+      ]
+    },
+    {
+        "name": "mmpkg.isNewZone",
+        "isActive": "yes",
+        "eventHandlerList": [
+          "mmpkg.onNewZone"
+        ]
+      },
+      {
+        "name": "mmpkg.isNewRoom",
+        "isActive": "yes",
+        "eventHandlerList": [
+          "mmpkg.onNewRoom"
+        ]
+      },
+      {
+        "name": "mmpkg.setup",
+        "isActive": "yes"
+      },
+      {
+        "name": "mmpkg.functions",
+        "isActive": "yes"
+      },
+      {
+        "name": "mmpkg.updates",
+        "isActive": "yes"
+      },
+      {
+        "name": "mmpkg.isDead",
+        "isActive": "yes",
+        "eventHandlerList":[
+            "mmpkg.onDeath"
+        ]
+      },
+      {
+        "name": "mmpkg.updateVitals",
+        "isActive": "yes",
+        "eventHandlerList":[
+            "gmcp.char.vitals"
+        ]
+      },
+      {
+        "name": "mmpkg.updateMaxStats",
+        "isActive": "yes",
+        "eventHandlerList":[
+            "mmpkg.onDeath"
+        ]
+      },
+      {
+        "name": "mmpkg.updateXP",
+        "isActive": "yes",
+        "eventHandlerList":[
+            "gmcp.char.status"
+        ]
+      }
+  ]
