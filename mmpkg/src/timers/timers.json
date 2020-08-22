@@ -1,0 +1,10 @@
+[
+    {
+      "name": "mapSaver",
+      "hours": "0",
+      "minutes": "5",
+      "seconds": "0",
+      "milliseconds": "0",
+      "script": "saveMap(getMudletHomeDir()..\"/map/mm_map.dat\")"
+    }
+  ]
