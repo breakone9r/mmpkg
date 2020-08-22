@@ -23,7 +23,6 @@
   {
     "name": "mmpkg.setup",
     "isActive": "yes",
-    "eventHandlerList": []
   },
   {
     "name": "mmpkg.functions",
@@ -51,7 +50,7 @@
     "name": "mmpkg.updateMaxStats",
     "isActive": "yes",
     "eventHandlerList": [
-      "mmpkg.onDeath"
+      "gmcp.char.maxstats"
     ]
   },
   {

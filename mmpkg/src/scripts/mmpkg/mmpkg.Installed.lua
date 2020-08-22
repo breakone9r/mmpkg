@@ -1,5 +1,5 @@
 function mmpkg.Installed(_, name)
-  if name ~= "mmpkg" then
+  if name ~= "mmpkg-0.7.7" then
     return
   end
   cecho(

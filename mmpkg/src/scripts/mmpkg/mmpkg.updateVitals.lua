@@ -9,7 +9,7 @@ function mmpkg.updateVitals()
     -- This kludge is necessary due to gmcp max stats not updating if you die and get max hp/sp/st while dead.
     if (mmpkg.mymaxhp < mmpkg.myhp) then mmpkg.mymaxhp = mmpkg.myhp end
     if (mmpkg.mymaxsp < mmpkg.mysp) then mmpkg.mymaxsp = mmpkg.mysp end
-    if (mymaxst < myst) then mymaxst = myst end
+    if (mmpkg.mymaxst < mmpkg.myst) then mmpkg.mymaxst = mmpkg.myst end
     GUI.Health:setValue(mmpkg.myhp,mmpkg.mymaxhp)
     GUI.Spellpower:setValue(mmpkg.mysp,mmpkg.mymaxsp)
     GUI.Stamina:setValue(mmpkg.myst,mmpkg.mymaxst)
