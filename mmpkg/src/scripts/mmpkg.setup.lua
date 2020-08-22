@@ -32,8 +32,8 @@ mmpkg.events.imalive = registerAnonymousEventHandler("mmpkg.OnAlive","mmpkg.onAl
 
 -- Present welcome message to users.
 
-function mm_packageInstalled(_, name)
-  if name ~= "mm_package" then
+function mmpkgInstalled(_, name)
+  if name ~= "mmpkg" then
     return
   end
   cecho(
