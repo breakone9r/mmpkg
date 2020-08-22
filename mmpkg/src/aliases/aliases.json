@@ -1,11 +1,13 @@
 [
     {
         "name": "runeqm",
-        "regex": "^runeqm$"
+        "regex": "^runeqm$",
+        "script":"mmpkg.gotoID(31323)"
     },
     {
         "name": "nrqm",
-        "regex": "^nrqm$"
+        "regex": "^nrqm$",
+        "script":"mmpkg.gotoID(62566)"
     },
     {
         "name": "repos",
@@ -13,22 +15,26 @@
     },
     {
         "name": "xavqm",
-        "regex": "^xavqm$"
+        "regex": "^xavqm$",
+        "script":"mmpkg.gotoID(73968)"
     },
     {
         "name": "temqm",
-        "regex": "^temqm$"
+        "regex": "^temqm$",
+        "script":"mmpkg.gotoID(47421)"
     },
     {
         "name": "mapper",
-        "regex":    "^mapper (\w+)( .*)?$"
+        "regex":    "^mapper (\\w+)( .*)?$"
     },
     {
         "name": "tellqm",
-        "regex": "^tellqm$"
+        "regex": "^tellqm$",
+        "script":"mmpkg.gotoID(41852)"
     },
     {
         "name": "sigqm",
-        "regex": "^sigqm$"
+        "regex": "^sigqm$",
+        "script":"mmpkg.gotoID(28450)"
     }
 ]

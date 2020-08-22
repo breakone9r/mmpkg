@@ -1,0 +1,603 @@
+[
+    {
+        "name": "My Affects",
+        "children": [
+            {
+                "name": "Armor",
+                "children": [
+                    {
+                        "name": "armor.off",
+                        "patterns": [
+                            {
+                                "pattern": "^The hardened air around you dissipates.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"armor\",\"off\")"
+                    },
+                    {
+                        "name": "armor.on",
+                        "patterns": [
+                            {
+                                "pattern": "^There is a faint sound, a very high pitched shriek as the air is hardened around you.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"combat blink\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Combat Blink",
+                "children": [
+                    {
+                        "name": "combat.blink.off",
+                        "patterns": [
+                            {
+                                "pattern": "^The bluish field at the edge of your vision dissipates.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"combat blink\",\"off\")"
+                    },
+                    {
+                        "name": "combat.blink.on",
+                        "patterns": [
+                            {
+                                "pattern": "^The world becomes blue-tinted for a moment, then fades back to normal.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"combat blink\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Underwater Breathing",
+                "children": [
+                    {
+                        "name": "uwbreathing.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel the magic enabling you to breathe underwater diminish.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"uwbreathing\",\"off\")"
+                    },
+                    {
+                        "name": "uwbreathing.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You choke as your lungs adjust to underwater breathing.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"uwbreathing\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Shadow Armor",
+                "children": [
+                    {
+                        "name": "shadow.armor.off",
+                        "patterns": [
+                            {
+                                "pattern": "^The shadows protecting you seem to subside.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"shadow armor\",\"off\")"
+                    },
+                    {
+                        "name": "shadow.armor.on",
+                        "patterns": [
+                            {
+                                "pattern": "^A dark, shadowy mist gathers itself around your form.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"shadow armor\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Detect Invisibility",
+                "children": [
+                    {
+                        "name": "detect.invisibility.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel a sharp prickling on the back of your neck as your senses are heightened.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect invisibility\",\"on\")"
+                    },
+                    {
+                        "name": "detect.invisibility.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel different as your senses become less heightened.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect invisibility\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Haste",
+                "children": [
+                    {
+                        "name": "haste.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel your movements slow to normal.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"haste\",\"off\")"
+                    },
+                    {
+                        "name": "haste.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You begin moving much faster, almost seeming to blur.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"haste\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Levitation",
+                "children": [
+                    {
+                        "name": "levitation.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You slowly settle back to the ground.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"levitation\",\"off\")"
+                    },
+                    {
+                        "name": "levitation.on",
+                        "patterns": [
+                            {
+                                "pattern": "^Your feet rise a few inches above the surface.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"levitation\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Stone Skin",
+                "children": [
+                    {
+                        "name": "stone.skin.off",
+                        "patterns": [
+                            {
+                                "pattern": "^Your skin feels soft and pliable again.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"stone skin\",\"off\")"
+                    },
+                    {
+                        "name": "stone.skin.on",
+                        "patterns": [
+                            {
+                                "pattern": "^There is a faint sound, a very high pitched shriek as your skin hardens.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"stone skin\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Protection from Good",
+                "children": [
+                    {
+                        "name": "protection.from.good.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel vulnerable to good forces again.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"protection from good\",\"off\")"
+                    },
+                    {
+                        "name": "protection.from.good.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel safer, as if there were forces watching over you.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"protection from good\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Bless",
+                "children": [
+                    {
+                        "name": "bless.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You no longer feel blessed by the Powers.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"bless\",\"off\")"
+                    },
+                    {
+                        "name": "bless.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You glow briefly with a brilliant silver aura, which slowly sparkles and fades.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"bless\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Sanctuary",
+                "children": [
+                    {
+                        "name": "sanctuary.off",
+                        "patterns": [
+                            {
+                                "pattern": "^The white aura surrounding you fades away.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"sanctuary\",\"off\")"
+                    },
+                    {
+                        "name": "sanctuary.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You begin glowing with a bright light\\!$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"sanctuary\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Sense Life",
+                "children": [
+                    {
+                        "name": "sense.life.off",
+                        "patterns": [
+                            {
+                                "pattern": "^Lost-Sense-Life.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"sense life\",\"on\")"
+                    },
+                    {
+                        "name": "sense.life.on",
+                        "patterns": [
+                            {
+                                "pattern": "^There is a faint sound, a very high pitched shriek as the air is hardened around you.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"sense life\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Infravision",
+                "children": [
+                    {
+                        "name": "infravision.off",
+                        "patterns": [
+                            {
+                                "pattern": "^Lost Infravision$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"infravision\",\"on\")"
+                    },
+                    {
+                        "name": "infravision.on",
+                        "patterns": [
+                            {
+                                "pattern": "^(\\w+)'s eyes glow red.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"infravision\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Pentacle",
+                "children": [
+                    {
+                        "name": "Pentacle.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel the protection of the pentacle subsiding.$$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"pentacle\",\"off\")"
+                    },
+                    {
+                        "name": "pentacle.on",
+                        "patterns": [
+                            {
+                                "pattern": "^A pentacle of reddish light shines briefly upon your chest before fading.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"pentacle\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "affects.list",
+                "pattern": "^You are affected by the following:$",
+                "type": "regex",
+                "script": [
+                    "mmpkg.myAffects = {}",
+                    "mmpkg.myAffects.affects = {}",
+                    "mmpkg.myAffects.resists = {}",
+                    "mmpkg.myAffects.racials = {}",
+                    "mmpkg.myAffects.vulnerabilities = {}"
+                ],
+                "children": [
+                    {
+                        "name": "resists",
+                        "pattern": "^\\* You are resistant to: (.*).$",
+                        "type": "regex",
+                        "script": "mmpkg.myAffects.resists = string.split(string.trim(matches[2]),\" \")"
+                    },
+                    {
+                        "name": "vulnerabilities",
+                        "pattern": "^\\* You are vulnerable to: (.*).$",
+                        "type": "regex",
+                        "script": "mmpkg.myAffects.vulerabilities = string.split(string.trim(matches[2]),\" \")"
+                    },
+                    {
+                        "name": "racials",
+                        "pattern": "^Racial: (.*).$",
+                        "type": "regex",
+                        "script": "mmpkg.myAffects.racials = string.split(string.trim(matches[2]),\" \")"
+                    },
+                    {
+                        "name": "affects",
+                        "pattern": "^Spell:(.*)- Level(\\s+)(\\d+), modifies",
+                        "type": "regex",
+                        "script": "doAffect(string.trim(matches[2],\"on\""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "msp",
+        "children": [
+            {
+                "name": "sounds",
+                "pattern": "\\!\\!SOUND\\((.*) V=(\\d+) L=(\\d+) P=(\\d+) T=(\\w+)\\)",
+                "type": "regex",
+                "script": [
+                    "receiveMSP(matches[2])",
+                    "deleteLine()"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "mapper",
+        "children": [
+            {
+                "name": "whereiswalk",
+                "pattern": "^You sense that (.*) may be located (.*).$",
+                "type": "regex",
+                "script": "speedwalk(matches[3])"
+            },
+            {
+                "name": "fake-sextant",
+                "pattern": "^\\((-+)\\)",
+                "type": "regex"
+            },
+            {
+                "name": "fake-sextant(forest)",
+                "pattern": "^\\((-+\\*Forested\\*---)\\) ",
+                "type": "regex"
+            }
+        ]
+    },
+    {
+        "name": "Captures",
+        "children": [
+            {
+                "name": "Caps",
+                "patterns": [
+                    {
+                        "pattern": "^\\[CLAN\\] (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^\\[TALK (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\w+)\\@\\#(.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^\\[(.*)\\] clan members heard you say, (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^You tell (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "(.*) tells the formation (.*)",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^You tell the formation (.*)",
+                        "type": "regex"
+                    }
+                ],
+                "script": [
+                    "selectCurrentLine()",
+                    "copy()",
+                    "mmpkg.Captures:appendBuffer()"
+                ]
+            },
+            {
+                "name": "Novice Clan",
+                "highlight": "yes",
+                "highlightFG": "#d5d56a",
+                "patterns": [
+                    {
+                        "pattern": "^\\[CLAN Novice Adventurers\\] (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\[.*\\] Novice clan members heard you say, .*)$",
+                        "type": "regex"
+                    }
+                ],
+                "script": [
+                    "selectCurrentLine()",
+                    "copy()",
+                    "mmpkg.Captures:appendBuffer()"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quest Tools",
+        "children": [
+            {
+                "name": "Quest Timers",
+                "children": [
+                    {
+                        "name": "timer",
+                        "patterns": [
+                            {
+                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request a new quest.$",
+                                "type": "regex"
+                            },
+                            {
+                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request another quest.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": [
+                            "local time = (((tonumber(matches[2]) / 4) * 60)+4)",
+                            "if mmpkg.questtimer then",
+                            "  killTimer(mmpkg.questtimer)",
+                            "end",
+                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+                        ]
+                    },
+                    {
+                        "name": "Checkwait",
+                        "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
+                        "script": [
+                            "local time = (((20 / 4) * 60)+4)",
+                            "if mmpkg.questtimer then",
+                            "  killTimer(mmpkg.questtimer)",
+                            "end",
+                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "QLookTrigger",
+                "pattern": "^This quest \\[(\\d+)\\] is called '(.*)',$",
+                "type": "regex"
+            },
+            {
+                "name": "AutoStatus",
+                "pattern": "^You have completed a part of quest \\#(\\d+), '.*'\\!",
+                "type": "regex",
+                "script": "send(\"quest status \" .. matches[2],false)"
+            }
+        ]
+    },
+    {
+        "name": "Miscellaneous",
+        "children": [
+            {
+                "name": "setCharName",
+                "pattern": "^(\\w+)'s registered email address is",
+                "type": "regex",
+                "script": [
+                    "mmpkg.CharName = matches[2]",
+                    "cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
+                ]
+            },
+            {
+                "name": "onLogin",
+                "patterns": [
+                    {
+                        "pattern": "Materia Magica is brought to you",
+                        "type": "startOfLine"
+                    },
+                    {
+                        "pattern": "Welcome back to Materia Magica",
+                        "type": "exactMatch"
+                    }
+                ],
+                "script": [
+                    "send(\"protocol gmcp sendchar\",false)",
+                    "send(\"time\",false)",
+                    "send(\"affects\",false)"
+                ]
+            },
+            {
+                "name": "YouDied",
+                "pattern": "^Your disembodied soul rises from your ravaged corpse.$",
+                "type": "regex",
+                "script": [
+                    "mmpkg.dead = true",
+                    "raiseEvent(\"mmpkg.onDeath\")"
+                ]
+            },
+            {
+                "name": "YouLive",
+                "pattern": "^The Powers take pity on you and restore your soul to your body.$",
+                "type": "regex",
+                "script": [
+                    "mmpkg.dead = false",
+                    "raiseEvent(\"mmpkg.onAlive\")"
+                ]
+            }
+        ]
+    }
+]
