@@ -630,7 +630,7 @@
                         "type": "startOfLine"
                     },
                     {
-                        "pattern": "Welcome back to Materia Magica",
+                        "pattern": "Welcome back to Materia Magica.",
                         "type": "exactMatch"
                     }
                 ],
