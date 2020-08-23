@@ -1,6 +1,6 @@
 -- Initialize variables/tables
 mmpkg = mmpkg or {}
-mmpkg.version = "0.8.4"
+mmpkg.version = "0.8.5"
 mmpkg.resources = getMudletHomeDir() .. "/mmpkg-" .. mmpkg.version
 mmpkg.previousRoom = mmpkg.previousRoom or {}
 mmpkg.currentRoom = mmpkg.currentRoom or {}

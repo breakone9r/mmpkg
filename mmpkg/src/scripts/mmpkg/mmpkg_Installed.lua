@@ -21,5 +21,8 @@ function mmpkg_Installed(_, name)
     cecho(
       "<white> Thank you for trying out my package. If you have problems, look me up in-game, on discord as 'breakone9r#5150', or send me an email to break19@gmail.com."
     )
+    cecho(
+      "<white> If you need an updated map of known areas, you can run 'mapper update' and download the latest map."
+    )
   end
 end

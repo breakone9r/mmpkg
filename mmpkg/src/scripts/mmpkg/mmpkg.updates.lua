@@ -12,6 +12,7 @@ function mmpkg.mapdownloaded(_,filename)
   end
   cecho("\n\n<green>DONE! Loading your new map.\n\n")
   loadMap(getMudletHomeDir() .. "/map/mm_map.dat.new")
+  os.remove(filename)
 end
   
 function mmpkg.updateMap()
