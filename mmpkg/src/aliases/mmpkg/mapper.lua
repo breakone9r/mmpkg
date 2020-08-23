@@ -10,8 +10,6 @@ elseif (matches[2] == "path") then
   end
 elseif (matches[2] == "update") then
   mmpkg.updateMap()
-end
-
 elseif (matches[2] == "stop") then
   mmpkg.isWalking = false
   cecho("<red>STOPPING YOUR RUN.<cyan> To clear highlighted rooms type: <gray>mapper clear\n")
