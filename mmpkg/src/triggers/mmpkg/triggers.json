@@ -565,24 +565,12 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": [
-                            "local time = (((tonumber(matches[2]) / 4) * 60)+4)",
-                            "if mmpkg.questtimer then",
-                            "  killTimer(mmpkg.questtimer)",
-                            "end",
-                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
-                        ]
+                        "script": "local time = (((tonumber(matches[2]) / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
                     },
                     {
                         "name": "Checkwait",
                         "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
-                        "script": [
-                            "local time = (((20 / 4) * 60)+4)",
-                            "if mmpkg.questtimer then",
-                            "  killTimer(mmpkg.questtimer)",
-                            "end",
-                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
-                        ]
+                        "script" : "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
                     }
                 ]
             },
