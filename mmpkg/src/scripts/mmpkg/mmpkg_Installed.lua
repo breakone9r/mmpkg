@@ -1,5 +1,5 @@
 function mmpkg_Installed(_, name)
-   if name ~= "mmpkg-0.8.0" then
+   if name ~= "mmpkg-0.8.1" then
     return
   end
   cecho(

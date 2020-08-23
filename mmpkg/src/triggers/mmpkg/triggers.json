@@ -619,10 +619,8 @@
                         "type": "regex"
                     }
                 ],
-                "script": [
-                    "mmpkg.CharName = matches[2]",
-                    "cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
-                ]
+                "script": "mmpkg.CharName = matches[2] cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
+                
             },
             {
                 "name": "onLogin",
