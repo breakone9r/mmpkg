@@ -10,7 +10,7 @@ function mmpkg.mapdownloaded(_,filename)
   if not filename:find("mm_map.dat.new", 1, true) then
     return
   end
-  cecho("<green>DONE! Loading your new map.")
+  cecho("\n\n<green>DONE! Loading your new map.\n\n")
   loadMap(getMudletHomeDir() .. "/map/mm_map.dat.new")
 end
   
