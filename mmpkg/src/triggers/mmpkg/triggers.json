@@ -414,7 +414,7 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": "doAffect(string.trim(matches[2],\"on\"))"
+                        "script": "mmpkg.doAffect(string.trim(matches[2],\"on\"))"
                     },
                     {
                         "name": "Total-end",
