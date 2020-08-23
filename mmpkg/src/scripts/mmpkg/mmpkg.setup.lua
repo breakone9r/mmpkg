@@ -1,5 +1,7 @@
 -- Initialize variables/tables
 mmpkg = mmpkg or {}
+mmpkg.version = "0.7.8"
+mmpkg.resources = getMudletHomeDir() .. "/mmpkg-" .. mmpkg.version
 mmpkg.previousRoom = mmpkg.previousRoom or {}
 mmpkg.currentRoom = mmpkg.currentRoom or {}
 mmpkg.previousRoom.ID = mmpkg.previousRoom.ID or {}
@@ -8,14 +10,14 @@ mmpkg.previousRoom.exits = mmpkg.previousRoom.exits or {}
 mmpkg.currentRoom.ID = mmpkg.currentRoom.ID or {}
 mmpkg.currentRoom.Area = mmpkg.currentRoom.Area or {}
 mmpkg.currentRoom.exits = mmpkg.currentRoom.exits or {}
-mmpkg.mapimg = getMudletHomeDir() .. "/mmpkg/alyria.png"
-mmpkg.ugimp = getMudletHomeDir() .. "/mmpkg/ug.png"
-mmpkg.fpimg = getMudletHomeDir() .. "/mmpkg/fp.png"
-mmpkg.sugimg = getMudletHomeDir() .. "/mmpkg/sug.png"
-mmpkg.laslerimg = getMudletHomeDir() .. "/mmpkg/lasler.png"
-mmpkg.verityimg = getMudletHomeDir() .. "/mmpkg/verity.png"
-mmpkg.social = getMudletHomeDir() .. "/mmpkg/social.png"
-mmpkg.arrowimg = getMudletHomeDir() .. "/mmpkg/arrow.png"
+mmpkg.mapimg = mmpkg.resources .. "/alyria.png"
+mmpkg.ugimp = mmpkg.resources .. "/ug.png"
+mmpkg.fpimg = mmpkg.resources .. "/fp.png"
+mmpkg.sugimg = mmpkg.resources .. "/sug.png"
+mmpkg.laslerimg = mmpkg.resources .. "/lasler.png"
+mmpkg.verityimg = mmpkg.resources .. "/verity.png"
+mmpkg.social = mmpkg.resources .. "/social.png"
+mmpkg.arrowimg = mmpkg.resources .. "/arrow.png"
 mmpkg.outsideZones = {"Alyria","Faerie Plane Wilderness","Lasler Valley","Great Alyrian Underground"}
 mmpkg.roadSymbols = {"#","=",":"}
 mmpkg.imapx = mmpkg.imapx or 1400

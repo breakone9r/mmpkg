@@ -477,185 +477,185 @@
                         "type": "regex"
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "name": "Captures",
+        "isFolder": "yes",
+        "children": [
             {
-                "name": "Captures",
-                "isFolder": "yes",
-                "children": [
+                "name": "Caps",
+                "patterns": [
                     {
-                        "name": "Caps",
-                        "patterns": [
-                            {
-                                "pattern": "^\\[CLAN\\] (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^\\[TALK (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^(\\w+)\\@\\#(.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^\\[(.*)\\] clan members heard you say, (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^You tell (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "(.*) tells the formation (.*)",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^You tell the formation (.*)",
-                                "type": "regex"
-                            }
-                        ],
-                        "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
+                        "pattern": "^\\[CLAN\\] (.*)$",
+                        "type": "regex"
                     },
                     {
-                        "name": "Novice Clan",
-                        "highlight": "yes",
-                        "highlightFG": "#d5d56a",
-                        "patterns": [
-                            {
-                                "pattern": "^\\[CLAN Novice Adventurers\\] (.*)$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^(\\[.*\\] Novice clan members heard you say, .*)$",
-                                "type": "regex"
-                            }
-                        ],
-                        "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
+                        "pattern": "^\\[TALK (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\w+)\\@\\#(.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^\\[(.*)\\] clan members heard you say, (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^You tell (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "(.*) tells the formation (.*)",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^You tell the formation (.*)",
+                        "type": "regex"
                     }
-                ]
+                ],
+                "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
             },
             {
-                "name": "Quest Tools",
+                "name": "Novice Clan",
+                "highlight": "yes",
+                "highlightFG": "#d5d56a",
+                "patterns": [
+                    {
+                        "pattern": "^\\[CLAN Novice Adventurers\\] (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\[.*\\] Novice clan members heard you say, .*)$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
+            }
+        ]
+    },
+    {
+        "name": "Quest Tools",
+        "isFolder": "yes",
+        "children": [
+            {
+                "name": "Quest Timers",
                 "isFolder": "yes",
                 "children": [
                     {
-                        "name": "Quest Timers",
-                        "isFolder": "yes",
-                        "children": [
+                        "name": "timer",
+                        "patterns": [
                             {
-                                "name": "timer",
-                                "patterns": [
-                                    {
-                                        "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request a new quest.$",
-                                        "type": "regex"
-                                    },
-                                    {
-                                        "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request another quest.$",
-                                        "type": "regex"
-                                    }
-                                ],
-                                "script": [
-                                    "local time = (((tonumber(matches[2]) / 4) * 60)+4)",
-                                    "if mmpkg.questtimer then",
-                                    "  killTimer(mmpkg.questtimer)",
-                                    "end",
-                                    "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
-                                ]
+                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request a new quest.$",
+                                "type": "regex"
                             },
                             {
-                                "name": "Checkwait",
-                                "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
-                                "script": [
-                                    "local time = (((20 / 4) * 60)+4)",
-                                    "if mmpkg.questtimer then",
-                                    "  killTimer(mmpkg.questtimer)",
-                                    "end",
-                                    "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "QLookTrigger",
-                        "patterns": [
-                            {
-                                "pattern": "^This quest \\[(\\d+)\\] is called '(.*)',$",
-                                "type": "regex"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "AutoStatus",
-                        "patterns": [
-                            {
-                                "pattern": "^You have completed a part of quest \\#(\\d+), '.*'\\!",
-                                "type": "regex"
-                            }
-                        ],
-                        "script": "send(\"quest status \" .. matches[2],false)"
-                    }
-                ]
-            },
-            {
-                "name": "Miscellaneous",
-                "isFolder": "yes",
-                "children": [
-                    {
-                        "name": "setCharName",
-                        "patterns": [
-                            {
-                                "pattern": "^(\\w+)'s registered email address is",
+                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request another quest.$",
                                 "type": "regex"
                             }
                         ],
                         "script": [
-                            "mmpkg.CharName = matches[2]",
-                            "cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
+                            "local time = (((tonumber(matches[2]) / 4) * 60)+4)",
+                            "if mmpkg.questtimer then",
+                            "  killTimer(mmpkg.questtimer)",
+                            "end",
+                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
                         ]
                     },
                     {
-                        "name": "onLogin",
-                        "patterns": [
-                            {
-                                "pattern": "Materia Magica is brought to you",
-                                "type": "startOfLine"
-                            },
-                            {
-                                "pattern": "Welcome back to Materia Magica",
-                                "type": "exactMatch"
-                            }
-                        ],
-                        "script": "send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false)"
-                    },
-                    {
-                        "name": "YouDied",
-                        "patterns": [
-                            {
-                                "pattern": "^Your disembodied soul rises from your ravaged corpse.$",
-                                "type": "regex"
-                            }
-                        ],
-                        "script": "mmpkg.dead = true raiseEvent(\"mmpkg.onDeath\")"
-                    },
-                    {
-                        "name": "YouLive",
-                        "patterns": [
-                            {
-                                "pattern": "^The Powers take pity on you and restore your soul to your body.$",
-                                "type": "regex"
-                            }
-                        ],
-                        "script": "mmpkg.dead = false raiseEvent(\"mmpkg.onAlive\")"
+                        "name": "Checkwait",
+                        "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
+                        "script": [
+                            "local time = (((20 / 4) * 60)+4)",
+                            "if mmpkg.questtimer then",
+                            "  killTimer(mmpkg.questtimer)",
+                            "end",
+                            "mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+                        ]
                     }
                 ]
+            },
+            {
+                "name": "QLookTrigger",
+                "patterns": [
+                    {
+                        "pattern": "^This quest \\[(\\d+)\\] is called '(.*)',$",
+                        "type": "regex"
+                    }
+                ]
+            },
+            {
+                "name": "AutoStatus",
+                "patterns": [
+                    {
+                        "pattern": "^You have completed a part of quest \\#(\\d+), '.*'\\!",
+                        "type": "regex"
+                    }
+                ],
+                "script": "send(\"quest status \" .. matches[2],false)"
+            }
+        ]
+    },
+    {
+        "name": "Miscellaneous",
+        "isFolder": "yes",
+        "children": [
+            {
+                "name": "setCharName",
+                "patterns": [
+                    {
+                        "pattern": "^(\\w+)'s registered email address is",
+                        "type": "regex"
+                    }
+                ],
+                "script": [
+                    "mmpkg.CharName = matches[2]",
+                    "cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
+                ]
+            },
+            {
+                "name": "onLogin",
+                "patterns": [
+                    {
+                        "pattern": "Materia Magica is brought to you",
+                        "type": "startOfLine"
+                    },
+                    {
+                        "pattern": "Welcome back to Materia Magica",
+                        "type": "exactMatch"
+                    }
+                ],
+                "script": "send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false)"
+            },
+            {
+                "name": "YouDied",
+                "patterns": [
+                    {
+                        "pattern": "^Your disembodied soul rises from your ravaged corpse.$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "mmpkg.dead = true raiseEvent(\"mmpkg.onDeath\")"
+            },
+            {
+                "name": "YouLive",
+                "patterns": [
+                    {
+                        "pattern": "^The Powers take pity on you and restore your soul to your body.$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "mmpkg.dead = false raiseEvent(\"mmpkg.onAlive\")"
             }
         ]
     }

@@ -1,28 +1,5 @@
 function mmpkg_Installed(_, name)
-  mmpkg = mmpkg or {}
-  mmpkg.previousRoom = mmpkg.previousRoom or {}
-  mmpkg.currentRoom = mmpkg.currentRoom or {}
-  mmpkg.previousRoom.ID = mmpkg.previousRoom.ID or {}
-  mmpkg.previousRoom.Area = mmpkg.previousRoom.Area or {}
-  mmpkg.previousRoom.exits = mmpkg.previousRoom.exits or {}
-  mmpkg.currentRoom.ID = mmpkg.currentRoom.ID or {}
-  mmpkg.currentRoom.Area = mmpkg.currentRoom.Area or {}
-  mmpkg.currentRoom.exits = mmpkg.currentRoom.exits or {}
-  mmpkg.mapimg = getMudletHomeDir() .. "/mmpkg/alyria.png"
-  mmpkg.ugimp = getMudletHomeDir() .. "/mmpkg/ug.png"
-  mmpkg.fpimg = getMudletHomeDir() .. "/mmpkg/fp.png"
-  mmpkg.sugimg = getMudletHomeDir() .. "/mmpkg/sug.png"
-  mmpkg.laslerimg = getMudletHomeDir() .. "/mmpkg/lasler.png"
-  mmpkg.verityimg = getMudletHomeDir() .. "/mmpkg/verity.png"
-  mmpkg.social = getMudletHomeDir() .. "/mmpkg/social.png"
-  mmpkg.arrowimg = getMudletHomeDir() .. "/mmpkg/arrow.png"
-  mmpkg.outsideZones = {"Alyria","Faerie Plane Wilderness","Lasler Valley","Great Alyrian Underground"}
-  mmpkg.roadSymbols = {"#","=",":"}
-  mmpkg.imapx = mmpkg.imapx or 1400
-  mmpkg.startx = mmpkg.startx or 0
-  mmpkg.imapy = mmpkg.impay or 1400
-  mmpkg.starty = mmpkg.starty or 0
-  if name ~= "mmpkg-0.7.7" then
+   if name ~= "mmpkg-0.7.7" then
     return
   end
   cecho(

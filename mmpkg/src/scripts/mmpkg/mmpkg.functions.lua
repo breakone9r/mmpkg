@@ -11,31 +11,14 @@ function mmpkg.isQuestTimer()
 end
 
 function mmpkg.doAffect(aff, ison)
-  if not myAffects then
-    myAffects = {}
-    myAffects.affects = {}
+  if not mmpkg.myAffects then
+    mmpkg.myAffects = {}
+    mmpkg.myAffects.affects = {}
   end
   if (ison == "on") then
-    table.insert(myAffects.affects, aff)
+    table.insert(mmpkg.myAffects.affects, aff)
   else
-    table.remove(myAffects.affects, table.index_of(myAffects.affects, aff))
-  end
-end
-
-function mmpkg.mapSwap()
-  if mmpkg.isOutside(gmcp.room.info.zone) then
-    GUI.vmapper:show()
-    GUI.Mapper:hide()
-    GUI.MapInfo:hide()
-    GUI.myarrow:show()
-    GUI.myarrow:move(
-      ((mmpkg.imapx * gmcp.room.info.coord.x) + mmpkg.startx),
-      ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty)
-    )
-  else
-    GUI.vmapper:hide()
-    GUI.Mapper:show()
-    GUI.MapInfo:show()
+    table.remove(mmpkg.myAffects.affects, table.index_of(myAffects.affects, aff))
   end
 end
 
@@ -57,7 +40,7 @@ function mmpkg.mapSwap()
 end
 
 function mmpkg.isOutside(zone)
-  if table.contains(outsideZones, zone) then
+  if table.contains(mmpkg.outsideZones, zone) then
     return true
   else
     return false
@@ -134,7 +117,7 @@ function mmpkg.isRoad(symbol, terrain)
     else
       return false
     end
-  elseif table.contains(roadSymbols, symbol) then
+  elseif table.contains(mmpkg.roadSymbols, symbol) then
     return true
   else
     return false
