@@ -530,9 +530,10 @@
                 "name": "Novice Clan",
                 "highlight": "yes",
                 "highlightFG": "#d5d56a",
+                "highlightBG": "#000000",
                 "patterns": [
                     {
-                        "pattern": "^\\[CLAN Novice Adventurers\\] (.*)$",
+                        "pattern": "^(\\[CLAN Novice Adventurers\\] .*)$",
                         "type": "regex"
                     },
                     {
