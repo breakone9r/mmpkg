@@ -565,7 +565,7 @@
                         "type": "regex"
                     }
                 ],
-                "script": "selectCurrentLine() mmpkg.Captures:append(\"Tells\") deselect() resetFormat()"
+                "script": "if not string.starts(matches[2],\"the formation\") then selectCurrentLine() mmpkg.Captures:append(\"Tells\") deselect() resetFormat() end"
             }
         ]
     },

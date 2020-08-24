@@ -1,6 +1,6 @@
 -- Initialize variables/tables
 mmpkg = mmpkg or {}
-mmpkg.resources = getMudletHomeDir() .. "@PKGNAME@"
+mmpkg.resources = getMudletHomeDir() .. "/@PKGNAME@"
 mmpkg.previousRoom = mmpkg.previousRoom or {}
 mmpkg.currentRoom = mmpkg.currentRoom or {}
 mmpkg.previousRoom.ID = mmpkg.previousRoom.ID or {}
