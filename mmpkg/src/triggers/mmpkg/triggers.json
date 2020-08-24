@@ -485,46 +485,18 @@
         "isFolder": "yes",
         "children": [
             {
-                "name": "Caps",
+                "name": "Clan",
                 "patterns": [
                     {
                         "pattern": "^\\[CLAN\\] (.*)$",
                         "type": "regex"
                     },
                     {
-                        "pattern": "^\\[TALK (.*)$",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "^(\\w+)\\@\\#(.*)$",
-                        "type": "regex"
-                    },
-                    {
                         "pattern": "^\\[(.*)\\] clan members heard you say, (.*)$",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "^You tell (.*)$",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "(.*) tells the formation (.*)",
-                        "type": "regex"
-                    },
-                    {
-                        "pattern": "^You tell the formation (.*)",
                         "type": "regex"
                     }
                 ],
-                "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Clan\") deselect() resetFormat()"
             },
             {
                 "name": "Novice Clan",
@@ -541,7 +513,59 @@
                         "type": "regex"
                     }
                 ],
-                "script": "selectCurrentLine() copy() mmpkg.Captures:appendBuffer()"
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Novice\") deselect() resetFormat()"
+            },
+            {
+                "name": "Talk",
+                "patterns": [
+                    {
+                        "pattern": "^\\[TALK (.*)$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Talk\") deselect() resetFormat()"
+            },
+            {
+                "name": "Relays",
+                "patterns": [
+                    {
+                        "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\w+)\\@\\#(.*)$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Relays\") deselect() resetFormat()"
+            },
+            {
+                "name": "Form",
+                "patterns": [
+                    {
+                        "pattern": "(.*) tells the formation (.*)",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^You tell the formation (.*)",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Form\") deselect() resetFormat()"
+            },
+            {
+                "name": "Tells",
+                "patterns": [
+                    {
+                        "pattern": "^You tell (.*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Tells\") deselect() resetFormat()"
             }
         ]
     },
@@ -570,7 +594,7 @@
                     {
                         "name": "Checkwait",
                         "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
-                        "script" : "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+                        "script": "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
                     }
                 ]
             },
@@ -608,7 +632,6 @@
                     }
                 ],
                 "script": "mmpkg.CharName = matches[2] cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
-                
             },
             {
                 "name": "onLogin",
@@ -622,7 +645,7 @@
                         "type": "exactMatch"
                     }
                 ],
-                "script": "send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false)"
+                "script": "send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
             },
             {
                 "name": "YouDied",

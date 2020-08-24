@@ -1,7 +1,6 @@
 -- Initialize variables/tables
 mmpkg = mmpkg or {}
-mmpkg.version = "0.8.5"
-mmpkg.resources = getMudletHomeDir() .. "/mmpkg-" .. mmpkg.version
+mmpkg.resources = getMudletHomeDir() .. "@PKGNAME@"
 mmpkg.previousRoom = mmpkg.previousRoom or {}
 mmpkg.currentRoom = mmpkg.currentRoom or {}
 mmpkg.previousRoom.ID = mmpkg.previousRoom.ID or {}
@@ -35,35 +34,6 @@ mmpkg.events.newzone = registerAnonymousEventHandler("mmpkg.OnNewZone", "mmpkg.o
 mmpkg.events.qtimerevent = registerAnonymousEventHandler("mmpkg.OnQuestTimer", "mmpkg.onQuestTimer")
 mmpkg.events.imdead = registerAnonymousEventHandler("mmpkg.OnDeath","mmpkg.onDeath")
 mmpkg.events.imalive = registerAnonymousEventHandler("mmpkg.OnAlive","mmpkg.onAlive")
-
--- Present welcome message to users.
-
-function mmpkgInstalled(_, name)
-  if name ~= "mmpkg" then
-    return
-  end
-  cecho(
-    "<cyan>Please Open your preferences, and go to the 'mapper colors' tab. Then set your link color to black.\n"
-  )
-  cecho(
-    "<cyan>Also set your mapper background color to cyan. These cannot be set via script, and this package expects.\n"
-  )
-  cecho("<cyan>the mapper to be those colors.\n\n")
-  cecho("<green>Welcome to Xozes's script package for Materia Magica.\n\n")
-  cecho("<yellow>It is still a work-in-progress, and many things are not yet implemented.\n\n")
-  cecho(
-    "<white>Useful aliases:\n<yellow>mapper goto <roomid><white>:<green>speedwalk to the specified room#.\n<yellow>mapper where <name of room><white>:<green>attempt to search for a room named <name of room> is a wildcard search.\n"
-  )
-  cecho(
-    "<yellow>mapper help<white>:<green>Shows you the full help text of the mapper command.\n"
-  )
-  cecho(
-    "<yellow>repos <direction><white>:<green>Where <dir> is the short version of any direction. Will reposition the room that exists just to the <dir> of the current room, just in case it gets placed in the wrong area.\n\n"
-  )
-  cecho(
-    "<white> Thank you for trying out my package. If you have problems, look me up in-game, on discord as 'breakone9r#5150', or send me an email to break19@gmail.com."
-  )
-end
 
 -- Begin setting up the GUI, beginning with default stylesheets
 -- CSSMan by Vadi. Public domain.
@@ -290,16 +260,6 @@ GUI.Box2 = Geyser.Label:new({
 },GUI.Right)
 GUI.Box2:setStyleSheet(GUI.BoxCSS:getCSS())
 
-mmpkg.Captures = Geyser.MiniConsole:new({
-  name = "mmpkg.Captures",
-  x = 20, y = 20,
-  width = -20,
-  height = -20,
-  color = "black",
-  fontSize = 10,
-  autoWrap = true
-}, GUI.Box2 )
-
 GUI.myarrow =
     Geyser.Label:new(
       {
@@ -315,6 +275,53 @@ GUI.myarrow =
   GUI.myarrow:setStyleSheet([[
   background-color: rgba(0,0,0,0%);
 ]])
+
+-- Add in EMCO.lua from demonnic - https://github.com/demonnic
+
+if not EMCO then
+  -- path kludge to bypass slight lua/mudlet bug
+  local path = package.path
+	local home_dir = mmpkg.resources
+	local lua_dir = string.format( "%s/%s", home_dir, [[?.lua]] )
+	local init_dir = string.format( "%s/%s", home_dir, [[?/init.lua]] )
+	package.path = string.format( "%s;%s;%s", path, lua_dir, init_dir )
+
+	local okay, content = pcall( require, "EMCO" )
+	package.path = path
+	if okay then
+		EMCO = content
+	else
+		error(string.format("EMCO: Error loading module: %s\n", content))
+	end
+end
+
+local stylesheet = [[background-color: rgb(0,0,0,0); border-width: 1px; border-style: solid; border-color: gold; border-radius: 1px;]]
+local istylesheet = [[background-color: rgb(0,0,0,0); border-width: 1px; border-style: solid; border-color: silver; border-radius: 1px;]]
+
+mmpkg.Captures = EMCO:new({
+  name = "mmpkg.Captures",
+  x = "20",
+  y = "20",
+  width = "-20",
+  height = "-20",
+  allTab = true,
+  allTabName = "All",
+  gap = 2,
+  consoleColor = "black",
+  consoles = {
+    "All",
+    "Clan", 
+    "Novice",
+    "Tells",
+    "Form",
+    "Relays",
+    "Talk",
+  },
+  mapTab = false,
+  activeTabCSS = stylesheet,
+  inactiveTabCSS = istylesheet,
+}, GUI.Box2)
+
 
 function doSpeedWalk()
   mmpkg.doHighLightPath()
