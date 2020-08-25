@@ -18,7 +18,7 @@ function mmpkg.doAffect(aff, ison)
   if (ison == "on") then
     table.insert(mmpkg.myAffects.affects, aff)
   else
-    table.remove(mmpkg.myAffects.affects, table.index_of(myAffects.affects, aff))
+    table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
   end
 end
 

@@ -581,11 +581,7 @@
                         "name": "timer",
                         "patterns": [
                             {
-                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request a new quest.$",
-                                "type": "regex"
-                            },
-                            {
-                                "pattern": "^You have (\\d+) Alyrian minutes remaining before you can request another quest.$",
+                                "pattern": "^You have (\\d+) Alyrian minutes remaining .* request .* quest.$",
                                 "type": "regex"
                             }
                         ],
@@ -593,7 +589,12 @@
                     },
                     {
                         "name": "Checkwait",
-                        "pattern": "^(.*) tells you, 'As a reward for thy valor, I am awarding you ",
+                        "patterns": [
+                            {
+                                "pattern": "^(\\w+) (\\w+) tells you, 'As a reward for thy valor, I am awarding you ",
+                                "type": "regex"
+                            }
+                        ],
                         "script": "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
                     }
                 ]
