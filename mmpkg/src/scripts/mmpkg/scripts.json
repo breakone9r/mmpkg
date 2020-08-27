@@ -32,6 +32,13 @@
     ]
   },
   {
+    "name": "mmpkg.isQuestTimer",
+    "isActive": "yes",
+    "eventHandlerList": [
+      "mmpkg.onQuestTimer"
+    ]
+  },
+  {
     "name": "mmpkg.functions",
     "isActive": "yes"
   },

@@ -6,10 +6,6 @@ function mmpkg.doHighLightPath()
   end
 end
 
-function mmpkg.isQuestTimer()
-  cecho("/n<blue>Quest Available!")
-end
-
 function mmpkg.doAffect(aff, ison)
   if not mmpkg.myAffects then
     mmpkg.myAffects = {}
@@ -198,6 +194,19 @@ function mmpkg.nextSpeedStep()
       table.remove(speedWalkDir, 1)
       table.remove(speedWalkPath, 1)
       if speedWalkDir[1] then
+        mmpkg.speedstep =
+        tempTimer(
+          1,
+          function()
+            mmpkg.isWalking = false
+            cecho(
+              "<red>ERROR! Expected room #:<white> " ..
+              speedWalkPath[1] ..
+              "<red> But we've stopped in room #:<white> " ..
+              mmpkg.currentRoom.ID
+            )
+          end
+        )
         send(speedWalkDir[1])
       else
         mmpkg.isWalking = false
