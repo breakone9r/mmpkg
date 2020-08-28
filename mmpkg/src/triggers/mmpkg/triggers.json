@@ -367,6 +367,31 @@
                 ]
             },
             {
+                "name": "Pass Door",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "passdoor.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel the protesdfsdction of the pentacle subsiding.$$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"pass door\",\"off\")"
+                    },
+                    {
+                        "name": "passdoor.on",
+                        "patterns": [
+                            {
+                                "pattern": "^(\\w+) turns translucent.$",
+                                "type": "regex"
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
                 "name": "affects.list",
                 "fireLength": "0",
                 "patterns": [
