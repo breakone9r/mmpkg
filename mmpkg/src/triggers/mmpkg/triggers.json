@@ -516,6 +516,20 @@
                 "script": "selectCurrentLine() mmpkg.Captures:append(\"Novice\") deselect() resetFormat()"
             },
             {
+                "name": "Alliance Chat",
+                "patterns": [
+                    {
+                        "pattern": "^(\\[ALLIED.*\\] .*)$",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "^(\\[\\d+\\] alliance members heard you say, .*)$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "selectCurrentLine() mmpkg.Captures:append(\"Alliance\") deselect() resetFormat()"
+            },
+            {
                 "name": "Talk",
                 "patterns": [
                     {

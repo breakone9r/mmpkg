@@ -8,7 +8,6 @@ function mmpkg_Installed(_, name)
     )
     cecho("<cyan>the mapper to be those colors.\n\n")
     cecho("<green>Welcome to Xozes's script package for Materia Magica.\n\n")
-    cecho("<yellow>It is still a work-in-progress, and many things are not yet implemented.\n\n")
     cecho(
       "<white>Useful aliases:\n<yellow>mapper goto <roomid><white>:<green>speedwalk to the specified room#.\n<yellow>mapper where <name of room><white>:<green>attempt to search for a room named <name of room> is a wildcard search.\n"
     )
