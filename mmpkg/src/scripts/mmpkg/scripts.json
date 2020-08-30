@@ -54,6 +54,13 @@
     ]
   },
   {
+    "name": "mmpkg.isAlive",
+    "isActive": "yes",
+    "eventHandlerList": [
+      "mmpkg.onAlive"
+    ]
+  },
+  {
     "name": "mmpkg.updateVitals",
     "isActive": "yes",
     "eventHandlerList": [
@@ -72,6 +79,13 @@
     "isActive": "yes",
     "eventHandlerList": [
       "gmcp.char.status"
+    ]
+  },
+  {
+    "name": "mmpkg.updateCharName",
+    "isActive": "yes",
+    "eventHandlerList": [
+      "gmcp.char.base.name"
     ]
   }
 ]

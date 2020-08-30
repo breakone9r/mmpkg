@@ -6,15 +6,28 @@ function mmpkg.doHighLightPath()
   end
 end
 
-function mmpkg.doAffect(aff, ison)
+function mmpkg.tchelper(first,rest)
+  return first:upper()..rest:lower()
+end
+
+function mmpkg.doTitle(strng)
+  return strng:gsub("(%a)([%w_']*)", mmpkg.tchelper)
+end
+
+function mmpkg.doAffect(aff, ison,quiet)
   if not mmpkg.myAffects then
     mmpkg.myAffects = {}
     mmpkg.myAffects.affects = {}
   end
   if (ison == "on") then
     table.insert(mmpkg.myAffects.affects, aff)
+    color = "\n<blue:green>"
   else
     table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
+    color = "\n<white:red>"
+  end
+  if not quiet then
+    cecho(color..mmpkg.doTitle(aff)..": "..string.upper(ison))
   end
 end
 
@@ -149,6 +162,7 @@ function mmpkg.doImap()
       mmpkg.mapimg, 100, 100, 0, 0
   end
   GUI.vmapper:setStyleSheet([[border-image: url(]] .. mmpkg.vmapimg .. [[);]])
+  GUI.myarrow:move(((mmpkg.imapx * gmcp.room.info.coord.x)+mmpkg.startx), ((mmpkg.imapy  * gmcp.room.info.coord.y)+mmpkg.starty))
 end
 
 function mmpkg.doCoords()

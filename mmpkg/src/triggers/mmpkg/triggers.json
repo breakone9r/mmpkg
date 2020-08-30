@@ -345,10 +345,10 @@
                 "isFolder": "yes",
                 "children": [
                     {
-                        "name": "Pentacle.off",
+                        "name": "pentacle.off",
                         "patterns": [
                             {
-                                "pattern": "^You feel the protection of the pentacle subsiding.$$",
+                                "pattern": "^You feel the protection of the pentacle subsiding.$",
                                 "type": "regex"
                             }
                         ],
@@ -367,6 +367,58 @@
                 ]
             },
             {
+                "name": "Improved Invisibility",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "impinvis.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You fade back into sight.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"improved invisibility\",\"off\")"
+                    },
+                    {
+                        "name": "impinvis.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You dissolve into nothingness.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"improved invisibility\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Shield",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "shield.off",
+                        "patterns": [
+                            {
+                                "pattern": "^Your force shield dissipates.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"shield\",\"off\")"
+                    },
+                    {
+                        "name": "shield.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You hear a high-pitched shriek as the air hardens around you, forming a shield.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"shield\",\"on\")"
+                    }
+                ]
+            },
+            {
                 "name": "Pass Door",
                 "isFolder": "yes",
                 "children": [
@@ -374,7 +426,7 @@
                         "name": "passdoor.off",
                         "patterns": [
                             {
-                                "pattern": "^You feel the protesdfsdction of the pentacle subsiding.$$",
+                                "pattern": "^You are no longer translucent.$",
                                 "type": "regex"
                             }
                         ],
@@ -387,13 +439,146 @@
                                 "pattern": "^(\\w+) turns translucent.$",
                                 "type": "regex"
                             }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name":"Wind Walk",
+                "isFolder":"yes",
+                "children":[
+                    {
+                        "name":"windwalk.off",
+                        "patterns":[
+                            {
+                                "pattern":"^The wind rushing through your body gradually slows, until its presence is gone.$",
+                                "type":"regex"
+                            }
                         ],
+                        "script":"mmpkg.doAffect(\"wind walk\",\"off\")"
+                    },
+                    {
+                        "name":"windwalk.on",
+                        "patterns":[
+                            {
+                                "pattern":"^Your footsteps grow lighter as you prepare your body to become like the wind.$",
+                                "type":"regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"wind walk\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name":"Enhanced Strength",
+                "isFolder":"yes",
+                "children":[
+                    {
+                        "name":"enhstr.off",
+                        "patterns":[
+                            {
+                                "pattern":"^Your super strength has worn off.$",
+                                "type":"regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"enhanced strength\",\"off\")"
+                    },
+                    {
+                        "name":"enhstr.on",
+                        "patterns":[
+                            {
+                                "pattern":"^Your muscles surge with increased strength.$",
+                                "type":"regex"
+                            }
+                        ],
+                        "script":"mmpkg.doAffect(\"enhanced strength\",\"on\")"
+                    }
+                ]
+            },
+            {
+                "name": "Detect Magic",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "detectmagic.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You can no longer detect magical auras.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect magic\",\"off\")"
+                    },
+                    {
+                        "name": "detectmagic.on",
+                        "patterns": [
+                            {
+                                "pattern": "^You feel a prickling on the back of your neck as your senses are heightened.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect magic\",\"on\")"
+
+                    }
+                ]
+            },
+            {
+                "name": "Detect Illusion",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "detectillusion.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You have lost your ability to detect illusions.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect illusion\",\"off\")"
+                    },
+                    {
+                        "name": "detectillusion.on",
+                        "patterns": [
+                            {
+                                "pattern": "^Goosebumps wash over you as the world starts to look a little bit more real.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect illusion\",\"on\")"
+
+                    }
+                ]
+            },
+            {
+                "name": "Detect Alignment",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "detectalign.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You are no longer trnnanslucent.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect illusion\",\"off\")"
+                    },
+                    {
+                        "name": "detectalign.on",
+                        "patterns": [
+                            {
+                                "pattern": "^A haze of crimson and gold sparks flit across your field of vision.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"detect alignment\",\"on\")"
+
                     }
                 ]
             },
             {
                 "name": "affects.list",
-                "fireLength": "0",
+                "fireLength": "99",
                 "patterns": [
                     {
                         "pattern": "^You are affected by the following:$",
@@ -419,17 +604,17 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": "mmpkg.myAffects.vulerabilities = string.split(string.trim(matches[2]),\" \")"
+                        "script": "mmpkg.myAffects.vulnerabilities = string.split(string.trim(matches[2]),\" \")"
                     },
                     {
                         "name": "racials",
                         "patterns": [
                             {
-                                "pattern": "^Racial: (.*).$",
+                                "pattern": "^Racial: (.*)$",
                                 "type": "regex"
                             }
                         ],
-                        "script": "mmpkg.myAffects.racials = string.split(string.trim(matches[2]),\" \")"
+                        "script": "mmpkg.myAffects.racials = string.split(string.trim(matches[2]),\", \")"
                     },
                     {
                         "name": "affects",
@@ -438,8 +623,7 @@
                                 "pattern": "^Spell:(.*)- Level(\\s+)(\\d+), modifies",
                                 "type": "regex"
                             }
-                        ],
-                        "script": "mmpkg.doAffect(string.trim(matches[2],\"on\"))"
+                        ]
                     },
                     {
                         "name": "Total-end",
