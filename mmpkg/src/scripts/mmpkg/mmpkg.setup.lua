@@ -88,10 +88,10 @@ end
 GUI = GUI or {}
 
 local w,h = getMainWindowSize()
-setBorderLeft(w/100)
-setBorderTop(h/100)
-setBorderBottom(h/10)
-setBorderRight(w/100)
+setBorderLeft("10")
+setBorderTop("10")
+setBorderBottom(h*.08)
+setBorderRight(w*.405)
 GUI.BackgroundCSS = CSSMan.new([[
   background-color: black;
 ]])

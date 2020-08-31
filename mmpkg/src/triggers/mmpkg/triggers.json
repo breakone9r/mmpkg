@@ -444,6 +444,31 @@
                 ]
             },
             {
+                "name": "Endurance of the Rhinoceros",
+                "isFolder": "yes",
+                "children": [
+                    {
+                        "name": "rhino.off",
+                        "patterns": [
+                            {
+                                "pattern": "^You are no longer a rhino.$",
+                                "type": "regex"
+                            }
+                        ],
+                        "script": "mmpkg.doAffect(\"endurance of the rhinoceros\",\"off\")"
+                    },
+                    {
+                        "name": "rhino.on",
+                        "patterns": [
+                            {
+                                "pattern": "^(\\w+)'s hide becomes thicker.$",
+                                "type": "regex"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "name":"Wind Walk",
                 "isFolder":"yes",
                 "children":[
