@@ -25,7 +25,7 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": "mmpkg.doAffect(\"combat blink\",\"on\")"
+                        "script": "mmpkg.doAffect(\"armor\",\"on\")"
                     }
                 ]
             },
@@ -129,7 +129,7 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": "mmpkg.doAffect(\"detect invisibility\",\"on\")"
+                        "script": "mmpkg.doAffect(\"detect invisibility\",\"off\")"
                     }
                 ]
             },
@@ -586,7 +586,7 @@
                                 "type": "regex"
                             }
                         ],
-                        "script": "mmpkg.doAffect(\"detect illusion\",\"off\")"
+                        "script": "mmpkg.doAffect(\"detect alignment\",\"off\")"
                     },
                     {
                         "name": "detectalign.on",
@@ -814,6 +814,27 @@
                     }
                 ],
                 "script": "if not string.starts(matches[2],\"the formation\") then selectCurrentLine() mmpkg.Captures:append(\"Tells\") deselect() resetFormat() end"
+            },
+            {
+                "name": "Paging",
+                "patterns": [
+                    {
+                        "pattern": "^\\a(\\w+) is paging you...$",
+                        "type": "regex"
+                    }
+                ],
+                "script": "mmpkg.pagedby = matches[2]",
+                "children":[
+                    {
+                        "name": "Reason",
+                        "patterns":[
+                            {
+                                "pattern": "^Reason: (.*)$",
+                                "type":"regex"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },

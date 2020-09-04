@@ -298,6 +298,45 @@ end
 local stylesheet = [[background-color: rgb(0,0,0,0); border-width: 1px; border-style: solid; border-color: gold; border-radius: 1px;]]
 local istylesheet = [[background-color: rgb(0,0,0,0); border-width: 1px; border-style: solid; border-color: silver; border-radius: 1px;]]
 
+-- Function to save mmpkg settings
+function mmpkg.onClose ()
+  table.save(mmpkg.resources .. "/mmpkg.conf",mmpkg.conf)
+end
+
+-- Hook into exit function to do the above function.
+registerAnonymousEventHandler("sysExitEvent","mmpkg.onClose")
+
+-- Load settings if they exist.
+mmpkg.conf = mmpkg.conf or {}
+if io.exists(mmpkg.resources .. "/mmpkg.conf") then
+  table.load(mmpkg.resources .. "/mmpkg.conf",mmpkg.conf)
+end
+
+-- Apply defaults if no settings
+if not mmpkg.conf.fontsize then
+  mmpkg.conf.fontsize = 10
+end
+
+if not mmpkg.conf.timestamps then
+  mmpkg.conf.timestamps = false
+end
+
+if not mmpkg.conf.tabs then
+  mmpkg.conf.tabs = {
+    "All",
+    "Alliance",
+    "Clan",
+    "Novice",
+    "Tells",
+    "Form",
+    "Relays",
+    "Talk",
+  }
+end
+-- Set main display fontsize to sane defaults.
+
+setFontSize(mmpkg.conf.fontsize)
+
 mmpkg.Captures = EMCO:new({
   name = "mmpkg.Captures",
   x = "20",
@@ -307,25 +346,18 @@ mmpkg.Captures = EMCO:new({
   allTab = true,
   allTabName = "All",
   gap = 2,
-  timestamp = true,
+  timestamp = mmpkg.conf.timestamps,
   blink = true,
   consoleColor = "black",
-  fontSize = 10,
-  consoles = {
-    "All",
-    "Alliance",
-    "Clan",
-    "Novice",
-    "Tells",
-    "Form",
-    "Relays",
-    "Talk",
-  },
+  fontSize = mmpkg.conf.fontsize,
+  consoles = mmpkg.conf.tabs,
+  customTimestampColor = true,
+  timestampBGColor = "black",
+  timestampFGColor = "cyan",
   mapTab = false,
   activeTabCSS = stylesheet,
   inactiveTabCSS = istylesheet,
 }, GUI.Box2)
-
 
 function doSpeedWalk()
   mmpkg.doHighLightPath()

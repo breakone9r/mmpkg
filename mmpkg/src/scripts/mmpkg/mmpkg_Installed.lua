@@ -1,5 +1,8 @@
 function mmpkg_Installed(_, name)
    if string.starts(name,"mmpkg") then
+    resetProfile()
+    send("protocol gmcp sendchar",false)
+    send("affects",false)
     cecho(
       "<cyan>Please Open your preferences, and go to the 'mapper colors' tab. Then set your link color to black.\n"
     )
@@ -21,7 +24,7 @@ function mmpkg_Installed(_, name)
       "<white> Thank you for trying out my package. If you have problems, look me up in-game, on discord as 'breakone9r#5150', or send me an email to break19@gmail.com."
     )
     cecho(
-      "<white> If you need an updated map of known areas, you can run 'mapper update' and download the latest map."
+      "<white> If you need an updated map of known areas, you can run 'mapper update' and download the latest map.\n\n"
     )
   end
 end
