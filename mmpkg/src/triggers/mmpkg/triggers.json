@@ -817,6 +817,7 @@
             },
             {
                 "name": "Paging",
+                "fireLength": "1",
                 "patterns": [
                     {
                         "pattern": "^\\a(\\w+) is paging you...$",
