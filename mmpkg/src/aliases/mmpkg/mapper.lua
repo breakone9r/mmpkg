@@ -1,5 +1,9 @@
 if (matches[2] == "goto") then
-    mmpkg.gotoID(string.trim(matches[3]))
+    if tonumber(matches[3]) then
+        mmpkg.gotoID(string.trim(matches[3]))
+    else
+        mmpkg.mwhere(string.trim(matches[3],true,false))
+    end
 elseif (matches[2] == "path") then
     mmpkg.pathtoID(string.trim(matches[3]))
 elseif (matches[2] == "update") then
@@ -11,9 +15,9 @@ elseif (matches[2] == "stop") then
 elseif (matches[2] == "where") then
     mmpkg.mwhere(string.trim(matches[3]))
 elseif (matches[2] == "find") then
-    mmpkg.mfind(string.trim(matches[3]))
+    mmpkg.mfind(string.trim(matches[3]),false,true)
 elseif (matches[2] == "sign") then
-    mmpkg.mfind("sign",true)
+    mmpkg.mfind("sign",true,false)
 elseif (matches[2] == "trainer") then
     if (getRoomUserData(gmcp.room.info.num, "trainer") == "true") then
         setRoomEnv(gmcp.room.info.num, 262)
@@ -50,14 +54,14 @@ else
     cecho("\n<cyan>    mapper where string")
     cecho(
         "\n<green>          Will search for rooms with name that includes string\n")
-    cecho("\n<cyan>    mapper goto roomIDnumber")
-    cecho("\n<green>          Will speedwalk to the specified room number\n")
+    cecho("\n<cyan>    mapper goto room# or string")
+    cecho("\n<green>          Will speedwalk to the specified room number, or the closest room to match string\n")
     cecho("\n<cyan>    mapper sign")
     cecho("\n<green>          Will speedwalk to the nearest roadsign for running.\n")
     cecho("\n<cyan>    mapper stop")
     cecho("\n<green>          Will halt any active speedwalks.\n")
     cecho("\n<cyan>    mapper path roomIDnumber")
-    cecho("\n<green>          Will show the path to the specified room numer\n")
+    cecho("\n<green>          Will show the path to the specified room number\n")
     cecho("\n<cyan>    mapper find roomflag")
     cecho(
         "\n<green>          Where roomflag is either safe, shop, trainer, or high-regen.\n          (or other known roomflags) will show rooms in your area that match.\n")
