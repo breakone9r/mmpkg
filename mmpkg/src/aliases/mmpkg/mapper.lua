@@ -2,7 +2,7 @@ if (matches[2] == "goto") then
     if tonumber(matches[3]) then
         mmpkg.gotoID(string.trim(matches[3]))
     else
-        mmpkg.mwhere(string.trim(matches[3],true,false))
+        mmpkg.mwhere(string.trim(matches[3]),true,false)
     end
 elseif (matches[2] == "path") then
     mmpkg.pathtoID(string.trim(matches[3]))
