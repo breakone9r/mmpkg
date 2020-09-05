@@ -1,14 +1,7 @@
 if (matches[2] == "goto") then
     mmpkg.gotoID(string.trim(matches[3]))
 elseif (matches[2] == "path") then
-    if getPath(gmcp.room.info.num, string.trim(matches[3])) then
-        cecho("<yellow> Highlighting the rooms you need to visit ")
-        cecho("<cyan>room#: " .. matches[3] .. "\n" ..
-                  table.concat(speedWalkDir, ", "))
-        mmpkg.doHighLightPath()
-    else
-        hecho("\n#ff0000Unable to find a path.")
-    end
+    mmpkg.pathtoID(string.trim(matches[3]))
 elseif (matches[2] == "update") then
     mmpkg.updateMap()
 elseif (matches[2] == "stop") then
@@ -16,41 +9,11 @@ elseif (matches[2] == "stop") then
     cecho(
         "<red>STOPPING YOUR RUN.<cyan> To clear highlighted rooms type: <gray>mapper clear\n")
 elseif (matches[2] == "where") then
-    local matchingRooms = searchRoom(string.trim(matches[3]))
-    if not table.is_empty(matchingRooms) then
-        for id, room in pairs(matchingRooms) do
-            local roomarea = getRoomAreaName(getRoomArea(id))
-            local gotocommand = "mapper goto " .. id
-            cechoLink("\n<cyan> #" .. string.cut(id .. "  ", 7) .. " - " ..
-                          string.cut(room ..
-                                         "                                                         ",
-                                     55) .. " -- " .. roomarea,
-                      [[mmpkg.gotoID(]] .. id .. [[)]], gotocommand, true)
-        end
-    else
-        cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
-    end
+    mmpkg.mwhere(string.trim(matches[3]))
 elseif (matches[2] == "find") then
-    local arearooms = getAreaRooms(getRoomArea(getPlayerRoom()))
-    local searchedareas = searchRoomUserData(string.trim(matches[3]), "true")
-    local areashops = table.n_intersection(arearooms, searchedareas)
-    local area = getRoomAreaName(getRoomArea(getPlayerRoom()))
-    local room = ""
-    cecho(
-        "<white>Rooms in " .. area .. " that match type/flag: " .. matches[3] ..
-            "\n")
-    if table.is_empty(areashops) then
-        cecho("<red>ERROR: No matching rooms!\n")
-    else
-        for id, roomid in pairs(areashops) do
-            local gotocommand = "mapper goto " .. roomid
-            local room = getRoomName(roomid)
-            cechoLink(string.cut("\n<cyan>" .. room ..
-                                     "                                           ",
-                                 55) .. " -- " .. area,
-                      [[mmpkg.gotoID(]] .. roomid .. [[)]], gotocommand, true)
-        end
-    end
+    mmpkg.mfind(string.trim(matches[3]))
+elseif (matches[2] == "sign") then
+    mmpkg.mfind("sign",true)
 elseif (matches[2] == "trainer") then
     if (getRoomUserData(gmcp.room.info.num, "trainer") == "true") then
         setRoomEnv(gmcp.room.info.num, 262)
@@ -89,6 +52,8 @@ else
         "\n<green>          Will search for rooms with name that includes string\n")
     cecho("\n<cyan>    mapper goto roomIDnumber")
     cecho("\n<green>          Will speedwalk to the specified room number\n")
+    cecho("\n<cyan>    mapper sign")
+    cecho("\n<green>          Will speedwalk to the nearest roadsign for running.\n")
     cecho("\n<cyan>    mapper stop")
     cecho("\n<green>          Will halt any active speedwalks.\n")
     cecho("\n<cyan>    mapper path roomIDnumber")
