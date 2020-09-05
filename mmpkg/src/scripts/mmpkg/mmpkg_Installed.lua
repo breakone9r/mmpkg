@@ -1,6 +1,5 @@
 function mmpkg_Installed(_, name)
    if string.starts(name,"mmpkg") then
-    resetProfile()
     send("protocol gmcp sendchar",false)
     send("affects",false)
     cecho(
