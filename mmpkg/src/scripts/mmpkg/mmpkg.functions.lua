@@ -272,7 +272,24 @@ function mmpkg.pathtoID(roomid)
     end
 end
 
-function mmpkg.mwhere(pattern)
+function spairs(tbl, order)
+    local keys = table.keys(tbl)
+    if order then
+      table.sort(keys, function(a,b) return order(tbl, a, b) end)
+    else
+      table.sort(keys)
+    end
+  
+    local i = 0
+    return function()
+      i = i + 1
+      if keys[i] then
+        return keys[i], tbl[keys[i]]
+      end
+    end
+  end
+
+function mmpkg.mwhere(pattern,gotofirst,areaonly)
     local matchingRooms = searchRoom(pattern)
     if table.is_empty(matchingRooms) then
       cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
@@ -291,22 +308,32 @@ function mmpkg.mwhere(pattern)
         unreachableRooms[id] = id
       end
     end
-    cecho("\n<white> Rooms Matching ".. [["]] .. pattern .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options")
-    cecho("\n<white> ( dist)    #room - Name                                                    -- Area\n")
-    cecho("<blue>----------------------------------------------------------------------------------------------------\n\n")
+    if not gotofirst then
+        cecho("\n<white> Rooms Matching ".. [["]] .. pattern .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options")
+        cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
+        cecho("<blue>------------------------------------------------------------------------------------------\n\n")
+    end
     if not table.is_empty(reachableRooms) then
       for tw,id in spairs(reachableRooms) do
         local area = getRoomAreaName(getRoomArea(id))
         local room = getRoomName(id)
         local gotocommand = "mapper goto " .. id
         local pathtocommand = "mapper path " .. id
+        if gotofirst then
+            mmpkg.gotoID(id)
+            do return end
+        end
         cecho("<cyan> (" .. string.cut("       ",5-string.len(tw)) .. tw ..")" .. string.cut("      ",9-string.len("#" ..id)))
         echoPopup("#" .. id,{[[mmpkg.gotoID(]] .. id .. [[)]],[[mmpkg.pathtoID(]]..id..[[)]]},{gotocommand,pathtocommand})
         cecho("<cyan> - " ..
           string.cut(room .. "                                                         ", 55) ..
           " -- " ..
-          area .. "\n")
+          string.cut(area,21) .. "\n")
       end
+    end
+    
+    if gotofirst then
+        do return end
     end
     
     if not table.is_empty(unreachableRooms) then
@@ -319,13 +346,13 @@ function mmpkg.mwhere(pattern)
         cecho("<cyan> - " ..
           string.cut(room .. "                                                         ", 55) ..
           " -- " ..
-          area .. "\n")
+          string.cut(area,21) .. "\n")
       end
     end
 
 end
 
-function mmpkg.mfind(flag,justgo)
+function mmpkg.mfind(flag,gotofirst,areaonly)
     local arearooms = getAreaRooms(getRoomArea(getPlayerRoom()))
     local searchedareas = searchRoomUserData(flag, "true")
     local matchingRooms = table.n_intersection(arearooms, searchedareas)
@@ -349,10 +376,10 @@ function mmpkg.mfind(flag,justgo)
       end
     end
 
-    if not justgo then
+    if not gotofirst then
         cecho("\n<white> Area Rooms with roomflag ".. [["]] .. flag .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options)")
-        cecho("\n<white> ( dist)    #room - Name                                                    -- Area\n")
-        cecho("<blue>----------------------------------------------------------------------------------------------------\n\n")
+        cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
+        cecho("<blue>------------------------------------------------------------------------------------------\n\n")
     end
 
     if not table.is_empty(reachableRooms) then
@@ -361,19 +388,23 @@ function mmpkg.mfind(flag,justgo)
         local room = getRoomName(id)
         local gotocommand = "mapper goto " .. id
         local pathtocommand = "mapper path " .. id
-        if justgo then
+        if gotofirst then
             mmpkg.gotoID(id)
             do return end
         end
         cecho("<cyan> (" .. string.cut("       ",5-string.len(tw)) .. tw ..")" .. string.cut("      ",9-string.len("#" ..id)))
         echoPopup("#" .. id,{[[mmpkg.gotoID(]] .. id .. [[)]],[[mmpkg.pathtoID(]]..id..[[)]]},{gotocommand,pathtocommand})
         cecho("<cyan> - " ..
-          string.cut(room .. "                                                         ", 55) ..
+          string.cut(room .. "                                                         ", 45) ..
           " -- " ..
-          area .. "\n")
+          string.cut(area,21) .. "\n")
       end
     end
-    
+
+    if gotofirst then
+        do return end
+    end
+
     if not table.is_empty(unreachableRooms) then
       for tw,id in spairs(unreachableRooms) do
        local area = getRoomAreaName(getRoomArea(id))
@@ -382,12 +413,11 @@ function mmpkg.mfind(flag,justgo)
         cecho("<cyan> (" .. string.cut("       ",5-string.len("n/a")) .. "n/a" ..")" .. string.cut("      ",9-string.len("#" ..id)))
         echoLink("#" .. id,[[mmpkg.gotoID(]] .. id .. [[)]],gotocommand)
         cecho("<cyan> - " ..
-          string.cut(room .. "                                                         ", 55) ..
+          string.cut(room .. "                                                         ", 45) ..
           " -- " ..
-          area .. "\n")
+          string.cut(area,21) .. "\n")
       end
     end
-
 end
 
 function findAreaID(areaname)

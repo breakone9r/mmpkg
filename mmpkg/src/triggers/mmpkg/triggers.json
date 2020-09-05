@@ -726,7 +726,7 @@
                         "type": "regex"
                     },
                     {
-                        "pattern": "^\\[(.*)\\] clan members heard you say, (.*)$",
+                        "pattern": "^\\[(.*)\\] clan members? heard you say, (.*)$",
                         "type": "regex"
                     }
                 ],
@@ -743,7 +743,7 @@
                         "type": "regex"
                     },
                     {
-                        "pattern": "^(\\[.*\\] Novice clan members heard you say, .*)$",
+                        "pattern": "^(\\[.*\\] Novice clan members? heard you say, .*)$",
                         "type": "regex"
                     }
                 ],
@@ -757,7 +757,7 @@
                         "type": "regex"
                     },
                     {
-                        "pattern": "^(\\[\\d+\\] alliance members heard you say, .*)$",
+                        "pattern": "^(\\[\\d+\\] alliance members? heard you say, .*)$",
                         "type": "regex"
                     }
                 ],
@@ -777,7 +777,7 @@
                 "name": "Relays",
                 "patterns": [
                     {
-                        "pattern": "^\\[(\\d+)\\] people in (.*) heard you relay (.*)$",
+                        "pattern": "^\\[(\\d+)\\] people|person in (.*) heard you relay (.*)$",
                         "type": "regex"
                     },
                     {
