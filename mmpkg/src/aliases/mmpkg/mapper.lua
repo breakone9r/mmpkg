@@ -13,7 +13,7 @@ elseif (matches[2] == "stop") then
     cecho(
         "<red>STOPPING YOUR RUN.<cyan> To clear highlighted rooms type: <gray>mapper clear\n")
 elseif (matches[2] == "where") then
-    mmpkg.mwhere(string.trim(matches[3]))
+    mmpkg.mwhere(string.trim(matches[3]),false,mmpkg.conf.areaonly)
 elseif (matches[2] == "find") then
     mmpkg.mfind(string.trim(matches[3]),false,true)
 elseif (matches[2] == "sign") then

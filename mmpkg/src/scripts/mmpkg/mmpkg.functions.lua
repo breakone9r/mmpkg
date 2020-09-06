@@ -290,15 +290,20 @@ function spairs(tbl, order)
 end
 
 function mmpkg.mwhere(pattern,gotofirst,areaonly)
-    if mmpkg.conf.whereareaonly == "true" then
-        areaonly = true
-    end
     local matchingRooms = {}
-    local searchedareas = searchRoom(pattern)
+    local searchedareas = {}
+    local localonly = ""
+    local tmpsearchedareas = searchRoom(pattern)
     local arearooms = getAreaRooms(getRoomArea(getPlayerRoom()))
     local matchingRooms = {}
+    local key = 0
+    for id,_ in pairs(tmpsearchedareas) do
+        searchedareas[key] = id
+        key = key + 1
+    end
     if areaonly then
         matchingRooms = table.n_intersection(arearooms, searchedareas)
+        localonly = " in Current Area"
     else
         matchingRooms = table.deepcopy(searchedareas)
     end
@@ -311,7 +316,7 @@ function mmpkg.mwhere(pattern,gotofirst,areaonly)
     local reachableRooms = {}
     local unreachableRooms = {}
     
-    for id,room in pairs(matchingRooms) do
+    for _,id in pairs(matchingRooms) do
       local _,tw = getPath(gmcp.room.info.num, id)
       if tw > -1 then
         reachableRooms[tw] = id
@@ -320,7 +325,7 @@ function mmpkg.mwhere(pattern,gotofirst,areaonly)
       end
     end
     if not gotofirst then
-        cecho("\n<white> Rooms Matching ".. [["]] .. pattern .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options")
+        cecho("\n<white> Rooms"..localonly.." Matching ".. [["]] .. pattern .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options)")
         cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
         cecho("<blue>------------------------------------------------------------------------------------------\n\n")
     end

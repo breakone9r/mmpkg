@@ -19,14 +19,27 @@ if (matches[2] == "config") then
         end
     elseif (matches[3] == "tabs") then
         cecho("\n<white:red>Sorry, Disabling/Enabling Tabs is not yet supported.\n")
+    elseif (matches[3] == "localonly") then
+        if (mmpkg.conf.areaonly == false) then
+            cecho("\n<yellow>mapper where <white> now searches only local rooms\n")
+            mmpkg.conf.areaonly = true
+            table.save(mmpkg.resources .. "/mmpkg.conf",mmpkg.conf)
+        else
+            cecho("\n<yellow>mapper where <white> now searches all rooms\n")
+            mmpkg.conf.areaonly = false
+            table.save(mmpkg.resources .. "/mmpkg.conf",mmpkg.conf)
+        end
     else
-        cecho("\n<white:red>ERROR: You must say what to configure: fontsize, timestamps, tabs\n")
+        cecho("\n<white:red>ERROR: You must say what to configure: fontsize, timestamps, tabs, localonly\n")
     end
 else
-    local TimeStamps
+    local TimeStamps = {}
+    local LocalOnly = {}
     if mmpkg.conf.timestamps == true then TimeStamps = "On" else TimeStamps = "Off" end
+    if mmpkg.conf.areaonly == true then LocalOnly = "mapper where shows only local results" else LocalOnly = "mapper where shows all results" end
     cecho("\n<cyan>mmpkg settings:")
-    cecho("\n<green>    Fontsize:     " .. mmpkg.conf.fontsize)
-    cecho("\n<green>    Timestamps:   " .. TimeStamps)
-    cecho("\n<green>    Enabled Tabs: " .. table.concat(mmpkg.conf.tabs," ").."\n")
+    cecho("\n<green>    LocalOnly  : " .. LocalOnly)
+    cecho("\n<green>    Fontsize   : " .. mmpkg.conf.fontsize)
+    cecho("\n<green>    Timestamps : " .. TimeStamps)
+    cecho("\n<green>    Tabs       : " .. table.concat(mmpkg.conf.tabs," ").."\n")
 end

@@ -314,7 +314,11 @@ end
 
 -- Apply defaults if no settings
 if not mmpkg.conf.fontsize then
-  mmpkg.conf.fontsize = 10
+  mmpkg.conf.fontsize = getFontSize()
+end
+
+if not mmpkg.conf.areaonly then
+  mmpkg.conf.areaonly = false
 end
 
 if not mmpkg.conf.timestamps then
@@ -333,8 +337,8 @@ if not mmpkg.conf.tabs then
     "Talk",
   }
 end
--- Set main display fontsize to sane defaults.
 
+-- Set main display fontsize to mmpkg settings.
 setFontSize(mmpkg.conf.fontsize)
 
 mmpkg.Captures = EMCO:new({
