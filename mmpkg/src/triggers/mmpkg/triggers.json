@@ -469,54 +469,54 @@
                 ]
             },
             {
-                "name":"Wind Walk",
-                "isFolder":"yes",
-                "children":[
+                "name": "Wind Walk",
+                "isFolder": "yes",
+                "children": [
                     {
-                        "name":"windwalk.off",
-                        "patterns":[
+                        "name": "windwalk.off",
+                        "patterns": [
                             {
-                                "pattern":"^The wind rushing through your body gradually slows, until its presence is gone.$",
-                                "type":"regex"
+                                "pattern": "^The wind rushing through your body gradually slows, until its presence is gone.$",
+                                "type": "regex"
                             }
                         ],
-                        "script":"mmpkg.doAffect(\"wind walk\",\"off\")"
+                        "script": "mmpkg.doAffect(\"wind walk\",\"off\")"
                     },
                     {
-                        "name":"windwalk.on",
-                        "patterns":[
+                        "name": "windwalk.on",
+                        "patterns": [
                             {
-                                "pattern":"^Your footsteps grow lighter as you prepare your body to become like the wind.$",
-                                "type":"regex"
+                                "pattern": "^Your footsteps grow lighter as you prepare your body to become like the wind.$",
+                                "type": "regex"
                             }
                         ],
-                        "script":"mmpkg.doAffect(\"wind walk\",\"on\")"
+                        "script": "mmpkg.doAffect(\"wind walk\",\"on\")"
                     }
                 ]
             },
             {
-                "name":"Enhanced Strength",
-                "isFolder":"yes",
-                "children":[
+                "name": "Enhanced Strength",
+                "isFolder": "yes",
+                "children": [
                     {
-                        "name":"enhstr.off",
-                        "patterns":[
+                        "name": "enhstr.off",
+                        "patterns": [
                             {
-                                "pattern":"^Your super strength has worn off.$",
-                                "type":"regex"
+                                "pattern": "^Your super strength has worn off.$",
+                                "type": "regex"
                             }
                         ],
-                        "script":"mmpkg.doAffect(\"enhanced strength\",\"off\")"
+                        "script": "mmpkg.doAffect(\"enhanced strength\",\"off\")"
                     },
                     {
-                        "name":"enhstr.on",
-                        "patterns":[
+                        "name": "enhstr.on",
+                        "patterns": [
                             {
-                                "pattern":"^Your muscles surge with increased strength.$",
-                                "type":"regex"
+                                "pattern": "^Your muscles surge with increased strength.$",
+                                "type": "regex"
                             }
                         ],
-                        "script":"mmpkg.doAffect(\"enhanced strength\",\"on\")"
+                        "script": "mmpkg.doAffect(\"enhanced strength\",\"on\")"
                     }
                 ]
             },
@@ -543,7 +543,6 @@
                             }
                         ],
                         "script": "mmpkg.doAffect(\"detect magic\",\"on\")"
-
                     }
                 ]
             },
@@ -570,7 +569,6 @@
                             }
                         ],
                         "script": "mmpkg.doAffect(\"detect illusion\",\"on\")"
-
                     }
                 ]
             },
@@ -597,7 +595,6 @@
                             }
                         ],
                         "script": "mmpkg.doAffect(\"detect alignment\",\"on\")"
-
                     }
                 ]
             },
@@ -825,13 +822,13 @@
                     }
                 ],
                 "script": "mmpkg.pagedby = matches[2]",
-                "children":[
+                "children": [
                     {
                         "name": "Reason",
-                        "patterns":[
+                        "patterns": [
                             {
                                 "pattern": "^Reason: (.*)$",
-                                "type":"regex"
+                                "type": "regex"
                             }
                         ]
                     }
@@ -937,6 +934,19 @@
                     }
                 ],
                 "script": "mmpkg.dead = false raiseEvent(\"mmpkg.onAlive\")"
+            },
+            {
+                "name": "Linkify",
+                "patterns": [
+                    {
+                        "pattern": "(?i:https?:\\/\\/\\S*)",
+                        "type": "regex"
+                    },
+                    {
+                        "pattern": "(?i:www\\.\\S*)",
+                        "type": "regex"
+                    }
+                ]
             }
         ]
     }
