@@ -1,3 +1,5 @@
-if not mmpkg.CharName then
-    if gmcp.char then mmpkg.CharName = gmcp.char.base.name end
+function mmpkg.updateCharName()
+    if not mmpkg.CharName then
+        mmpkg.CharName = gmcp.char.base.name
+    end
 end

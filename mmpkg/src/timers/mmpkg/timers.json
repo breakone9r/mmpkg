@@ -1,10 +1,10 @@
 [
-    {
-      "name": "mapSaver",
-      "hours": "0",
-      "minutes": "5",
-      "seconds": "0",
-      "milliseconds": "0",
-      "script": "mmpkg.backup = mmpkg.backup or 0 mmpkg.backup = (mmpkg.backup +1) % 5 local fileName = getMudletHomeDir() .. \"/map/backup\" .. mmpkg.backup .. \".dat\" saveMap(fileName)"
-    }
-  ]
+  {
+    "name": "mapSaver",
+    "hours": "0",
+    "minutes": "5",
+    "seconds": "0",
+    "milliseconds": "0",
+    "script": "mmpkg.backup = mmpkg.backup or 0 mmpkg.backup = (mmpkg.backup +1) % 5 local fileName = getMudletHomeDir() .. \"/map/backup\" .. mmpkg.backup .. \".dat\" saveMap(fileName)"
+  }
+]

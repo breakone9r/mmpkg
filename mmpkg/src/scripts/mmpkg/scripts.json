@@ -8,35 +8,26 @@
   },
   {
     "name": "mmpkg.setup",
-    "isActive": "yes"
+    "isActive": "yes",
+    "eventHandlerList": [
+      "sysLoadEvent"
+    ]
   },
   {
     "name": "mapping",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "gmcp.room.info"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.isNewZone",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "mmpkg.onNewZone"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.isNewRoom",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "mmpkg.onNewRoom"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.isQuestTimer",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "mmpkg.onQuestTimer"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.functions",
@@ -47,45 +38,31 @@
     "isActive": "yes"
   },
   {
+    "name": "mmpkg.onResize",
+    "isActive": "yes"
+  },
+  {
     "name": "mmpkg.isDead",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "mmpkg.onDeath"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.isAlive",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "mmpkg.onAlive"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.updateVitals",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "gmcp.char.vitals"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.updateMaxStats",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "gmcp.char.maxstats"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.updateXP",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "gmcp.char.status"
-    ]
+    "isActive": "yes"
   },
   {
     "name": "mmpkg.updateCharName",
-    "isActive": "yes",
-    "eventHandlerList": [
-      "gmcp.char.base.name"
-    ]
+    "isActive": "yes"
   }
 ]

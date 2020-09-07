@@ -6,9 +6,13 @@ function mmpkg.doHighLightPath()
     end
 end
 
-function mmpkg.tchelper(first, rest) return first:upper() .. rest:lower() end
+function mmpkg.tchelper(first, rest)
+    return first:upper() .. rest:lower()
+end
 
-function mmpkg.doTitle(strng) return strng:gsub("(%a)([%w_']*)", mmpkg.tchelper) end
+function mmpkg.doTitle(strng)
+    return strng:gsub("(%a)([%w_']*)", mmpkg.tchelper)
+end
 
 function mmpkg.doAffect(aff, ison, quiet)
     if not mmpkg.myAffects then
@@ -19,8 +23,7 @@ function mmpkg.doAffect(aff, ison, quiet)
         table.insert(mmpkg.myAffects.affects, aff)
         color = "\n<blue:green>"
     else
-        table.remove(mmpkg.myAffects.affects,
-                     table.index_of(mmpkg.myAffects.affects, aff))
+        table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
         color = "\n<white:red>"
     end
     if not quiet then
@@ -36,7 +39,8 @@ function mmpkg.mapSwap()
         GUI.myarrow:show()
         GUI.myarrow:move(
             ((mmpkg.imapx * gmcp.room.info.coord.x) + mmpkg.startx),
-            ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty))
+            ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty)
+        )
     else
         GUI.vmapper:hide()
         GUI.Mapper:show()
@@ -58,7 +62,9 @@ function mmpkg.setFlags()
     for i, v in pairs(flags) do
         setRoomUserData(gmcp.room.info.num, v, "true")
     end
-    if table.contains(flags, "safe") then setRoomEnv(gmcp.room.info.num, 271) end
+    if table.contains(flags, "safe") then
+        setRoomEnv(gmcp.room.info.num, 271)
+    end
     if table.contains(flags, "player-kill-lawful") then
         setRoomEnv(gmcp.room.info.num, 265)
     end
@@ -72,7 +78,9 @@ end
 
 function mmpkg.doExits(zone, curroom, exits, sym, terrain)
     if mmpkg.isMaze(curroom) then
-        do return end
+        do
+            return
+        end
     elseif mmpkg.isOutside(zone) then
         if mmpkg.isRoad(sym, terrain) then
             for dir, room in pairs(exits) do
@@ -82,16 +90,16 @@ function mmpkg.doExits(zone, curroom, exits, sym, terrain)
                 end
             end
             if table.matches(mmpkg.previousRoom.exits, curroom) then
-                local keys = table.keys(table.matches(mmpkg.previousRoom.exits,
-                                                      mmpkg.currentRoom.ID))
-                if roomExists(mmpkg.previousRoom.ID) and
-                    roomExists(mmpkg.currentRoom.ID) and keys[1] then
+                local keys = table.keys(table.matches(mmpkg.previousRoom.exits, mmpkg.currentRoom.ID))
+                if roomExists(mmpkg.previousRoom.ID) and roomExists(mmpkg.currentRoom.ID) and keys[1] then
                     setExit(mmpkg.previousRoom.ID, mmpkg.currentRoom.ID, keys[1])
                 end
             end
         else
-            do return end
             -- Outside, not on a road. do nothing!
+            do
+                return
+            end
         end
     else
         -- Not outside. Link all known exits, and create stub rooms.
@@ -103,10 +111,8 @@ function mmpkg.doExits(zone, curroom, exits, sym, terrain)
             end
         end
         if table.matches(mmpkg.previousRoom.exits, curroom) then
-            local keys = table.keys(table.matches(mmpkg.previousRoom.exits,
-                                                  mmpkg.currentRoom.ID))
-            if roomExists(mmpkg.previousRoom.ID) and
-                roomExists(mmpkg.currentRoom.ID) and keys[1] then
+            local keys = table.keys(table.matches(mmpkg.previousRoom.exits, mmpkg.currentRoom.ID))
+            if roomExists(mmpkg.previousRoom.ID) and roomExists(mmpkg.currentRoom.ID) and keys[1] then
                 setExit(mmpkg.previousRoom.ID, mmpkg.currentRoom.ID, keys[1])
             end
         end
@@ -130,31 +136,54 @@ end
 function mmpkg.doImap()
     if (gmcp.room.info.zone == "Alyria") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.mapimg, (GUI.vmapper:get_width() / 2300),
-            (GUI.vmapper:get_height() / 1500), 0, 0
+            mmpkg.mapimg,
+            (GUI.vmapper:get_width() / 2300),
+            (GUI.vmapper:get_height() / 1500),
+            0,
+            0
     elseif (gmcp.room.info.zone == "Alyrian Underworld") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.ugimg, (GUI.vmapper:get_width() / 2300),
-            (GUI.vmapper:get_height() / 1500), 0, 0
+            mmpkg.ugimg,
+            (GUI.vmapper:get_width() / 2300),
+            (GUI.vmapper:get_height() / 1500),
+            0,
+            0
     elseif (gmcp.room.info.zone == "Faerie Plane Wilderness") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.fpimg, (GUI.vmapper:get_width() / (610)),
-            (GUI.vmapper:get_height() / 400), 57 + 18, 0
+            mmpkg.fpimg,
+            (GUI.vmapper:get_width() / (610)),
+            (GUI.vmapper:get_height() / 400),
+            57 + 18,
+            0
     elseif (gmcp.room.info.zone == "Sigil Underground") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.sugimg, (GUI.vmapper:get_width() / 889),
-            (GUI.vmapper:get_height() / 580), -183, (922 + (34 / 2))
+            mmpkg.sugimg,
+            (GUI.vmapper:get_width() / 889),
+            (GUI.vmapper:get_height() / 580),
+            -183,
+            (922 + (34 / 2))
     elseif (gmcp.room.info.zone == "Lasler Valley") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.laslerimg, (GUI.vmapper:get_width() / 155),
-            (GUI.vmapper:get_height() / 101), (GUI.vmapper:get_width() / 7), 0
-    else
+            mmpkg.laslerimg,
+            (GUI.vmapper:get_width() / 155),
+            (GUI.vmapper:get_height() / 101),
+            (GUI.vmapper:get_width() / 7),
+            0
+    elseif (gmcp.room.info.zone == "Chat Rooms Wilderness") then
         mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-            mmpkg.mapimg, 100, 100, 0, 0
+            mmpkg.socialimg,
+            (GUI.vmapper:get_width() / 144),
+            (GUI.vmapper:get_height() / 94),
+            (GUI.vmapper:get_width() / 175),
+            (GUI.vmapper:get_height() / 5.75)
+    else
+        mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = mmpkg.mapimg, 100, 100, 0, 0
     end
     GUI.vmapper:setStyleSheet([[border-image: url(]] .. mmpkg.vmapimg .. [[);]])
-    GUI.myarrow:move(((mmpkg.imapx * gmcp.room.info.coord.x) + mmpkg.startx),
-                     ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty))
+    GUI.myarrow:move(
+        ((mmpkg.imapx * gmcp.room.info.coord.x) + mmpkg.startx),
+        ((mmpkg.imapy * gmcp.room.info.coord.y) + mmpkg.starty)
+    )
 end
 
 function mmpkg.doCoords()
@@ -181,8 +210,7 @@ function mmpkg.doCoords()
             sw = {x + 1, y + 1, z}
         }
         if table.matches(mmpkg.currentRoom.exits, mmpkg.previousRoom.ID) then
-            local keys = table.keys(table.matches(mmpkg.currentRoom.exits,
-                                                  mmpkg.previousRoom.ID))
+            local keys = table.keys(table.matches(mmpkg.currentRoom.exits, mmpkg.previousRoom.ID))
             local coords = dirToCoords[keys[1]]
             if coords then
                 setRoomCoordinates(mmpkg.currentRoom.ID, unpack(coords))
@@ -193,27 +221,34 @@ end
 
 function mmpkg.nextSpeedStep()
     if mmpkg.isWalking then
-        if mmpkg.speedstep then killTimer(mmpkg.speedstep) end
+        if mmpkg.speedstep then
+            killTimer(mmpkg.speedstep)
+        end
         if (mmpkg.currentRoom.ID == speedWalkPath[1]) then
             table.remove(speedWalkDir, 1)
             table.remove(speedWalkPath, 1)
             if speedWalkDir[1] then
-                mmpkg.speedstep = tempTimer(1, function()
-                    mmpkg.isWalking = false
-                    cecho("<red>ERROR! Expected room #:<white> " ..
-                              speedWalkPath[1] ..
-                              "<red> But we've stopped in room #:<white> " ..
-                              mmpkg.currentRoom.ID)
-                end)
+                mmpkg.speedstep =
+                    tempTimer(
+                    1,
+                    function()
+                        mmpkg.isWalking = false
+                        cecho(
+                            "<red>ERROR! Expected room #:<white> " ..
+                                speedWalkPath[1] .. "<red> But we've stopped in room #:<white> " .. mmpkg.currentRoom.ID
+                        )
+                    end
+                )
                 send(speedWalkDir[1])
             else
                 mmpkg.isWalking = false
             end
         else
             mmpkg.isWalking = false
-            cecho("<red>ERROR! Expected room #:<white> " .. speedWalkPath[1] ..
-                      "<red> But we're in room #:<white> " ..
-                      mmpkg.currentRoom.ID)
+            cecho(
+                "<red>ERROR! Expected room #:<white> " ..
+                    speedWalkPath[1] .. "<red> But we're in room #:<white> " .. mmpkg.currentRoom.ID
+            )
         end
     end
 end
@@ -221,7 +256,9 @@ end
 function mmpkg.fixExits(exits)
     if not table.is_empty(exits) then
         local pullexits = function(key, value)
-            if type(value) ~= "table" then return true end
+            if type(value) ~= "table" then
+                return true
+            end
         end
         local fixedexits = table.collect(exits, pullexits)
         return fixedexits
@@ -238,18 +275,30 @@ function mmpkg.infoMap()
     else
         roomflags = gmcp.room.info.flags
     end
-    if (roomflags == "_empty") then roomflags = "none" end
-    GUI.MapInfo:echo("<&nbsp> <&nbsp>" .. gmcp.room.info.zone .. " [" ..
-                         gmcp.room.info.coord.x .. "/" .. gmcp.room.info.coord.y ..
-                         "] -- " .. gmcp.room.info.name .. " (#" ..
-                         gmcp.room.info.num .. ")<br>  Flags: " .. roomflags)
+    if (roomflags == "_empty") then
+        roomflags = "none"
+    end
+    GUI.MapInfo:echo(
+        "<&nbsp> <&nbsp>" ..
+            gmcp.room.info.zone ..
+                " [" ..
+                    gmcp.room.info.coord.x ..
+                        "/" ..
+                            gmcp.room.info.coord.y ..
+                                "] -- " ..
+                                    gmcp.room.info.name .. " (#" .. gmcp.room.info.num .. ")<br>  Flags: " .. roomflags
+    )
 end
 
 function mmpkg.isMaze(InRoom)
     if (InRoom ~= -99) then
-        do return false end
+        do
+            return false
+        end
     else
-        do return true end
+        do
+            return true
+        end
     end
 end
 
@@ -264,22 +313,27 @@ end
 
 function mmpkg.pathtoID(roomid)
     if getPath(gmcp.room.info.num, roomid) then
-      cecho("<yellow> Highlighting the rooms you need to visit ")
-      cecho("<cyan>room#: " .. roomid .. "\n" .. table.concat(speedWalkDir, ", "))
-      mmpkg.doHighLightPath()
+        cecho("<yellow> Highlighting the rooms you need to visit ")
+        cecho("<cyan>room#: " .. roomid .. "\n" .. table.concat(speedWalkDir, ", "))
+        mmpkg.doHighLightPath()
     else
-      hecho("\n#ff0000Unable to find a path.")
+        hecho("\n#ff0000Unable to find a path.")
     end
 end
 
 function spairs(tbl, order)
     local keys = table.keys(tbl)
     if order then
-        table.sort(keys, function(a,b) return order(tbl, a, b) end)
+        table.sort(
+            keys,
+            function(a, b)
+                return order(tbl, a, b)
+            end
+        )
     else
         table.sort(keys)
     end
-  
+
     local i = 0
     return function()
         i = i + 1
@@ -289,7 +343,7 @@ function spairs(tbl, order)
     end
 end
 
-function mmpkg.mwhere(pattern,gotofirst,areaonly)
+function mmpkg.mwhere(pattern, gotofirst, areaonly)
     local matchingRooms = {}
     local searchedareas = {}
     local localonly = ""
@@ -297,7 +351,7 @@ function mmpkg.mwhere(pattern,gotofirst,areaonly)
     local arearooms = getAreaRooms(getRoomArea(getPlayerRoom()))
     local matchingRooms = {}
     local key = 0
-    for id,_ in pairs(tmpsearchedareas) do
+    for id, _ in pairs(tmpsearchedareas) do
         searchedareas[key] = id
         key = key + 1
     end
@@ -308,67 +362,91 @@ function mmpkg.mwhere(pattern,gotofirst,areaonly)
         matchingRooms = table.deepcopy(searchedareas)
     end
     if table.is_empty(matchingRooms) then
-      cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
-      do
-        return
-      end
+        cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
+        do
+            return
+        end
     end
     local reachableRooms = {}
     local unreachableRooms = {}
-    
-    for _,id in pairs(matchingRooms) do
-      local _,tw = getPath(gmcp.room.info.num, id)
-      if tw > -1 then
-        reachableRooms[tw] = id
-      else
-        unreachableRooms[id] = id
-      end
+
+    for _, id in pairs(matchingRooms) do
+        local _, tw = getPath(gmcp.room.info.num, id)
+        if tw > -1 then
+            reachableRooms[tw] = id
+        else
+            unreachableRooms[id] = id
+        end
     end
     if not gotofirst then
-        cecho("\n<white> Rooms"..localonly.." Matching ".. [["]] .. pattern .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options)")
+        cecho(
+            "\n<white> Rooms" ..
+                localonly ..
+                    " Matching " ..
+                        [["]] ..
+                            pattern ..
+                                [["]] .. " \n closest first. (n/a = unreachable) (right-click room# for more options)"
+        )
         cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
         cecho("<blue>------------------------------------------------------------------------------------------\n\n")
     end
     if not table.is_empty(reachableRooms) then
-      for tw,id in spairs(reachableRooms) do
-        local area = getRoomAreaName(getRoomArea(id))
-        local room = getRoomName(id)
-        local gotocommand = "mapper goto " .. id
-        local pathtocommand = "mapper path " .. id
-        if gotofirst then
-            mmpkg.gotoID(id)
-            do return end
+        for tw, id in spairs(reachableRooms) do
+            local area = getRoomAreaName(getRoomArea(id))
+            local room = getRoomName(id)
+            local gotocommand = "mapper goto " .. id
+            local pathtocommand = "mapper path " .. id
+            if gotofirst then
+                mmpkg.gotoID(id)
+                do
+                    return
+                end
+            end
+            cecho(
+                "<cyan> (" ..
+                    string.cut("       ", 5 - string.len(tw)) ..
+                        tw .. ")" .. string.cut("      ", 9 - string.len("#" .. id))
+            )
+            echoPopup(
+                "#" .. id,
+                {[[mmpkg.gotoID(]] .. id .. [[)]], [[mmpkg.pathtoID(]] .. id .. [[)]]},
+                {gotocommand, pathtocommand}
+            )
+            cecho(
+                "<cyan> - " ..
+                    string.cut(room .. "                                                         ", 55) ..
+                        " -- " .. string.cut(area, 21) .. "\n"
+            )
         end
-        cecho("<cyan> (" .. string.cut("       ",5-string.len(tw)) .. tw ..")" .. string.cut("      ",9-string.len("#" ..id)))
-        echoPopup("#" .. id,{[[mmpkg.gotoID(]] .. id .. [[)]],[[mmpkg.pathtoID(]]..id..[[)]]},{gotocommand,pathtocommand})
-        cecho("<cyan> - " ..
-          string.cut(room .. "                                                         ", 55) ..
-          " -- " ..
-          string.cut(area,21) .. "\n")
-      end
-    end
-    
-    if gotofirst then
-        do return end
-    end
-    
-    if not table.is_empty(unreachableRooms) then
-      for tw,id in spairs(unreachableRooms) do
-       local area = getRoomAreaName(getRoomArea(id))
-       local room = getRoomName(id)
-       local gotocommand = "mapper goto " .. id
-        cecho("<cyan> (" .. string.cut("       ",5-string.len("n/a")) .. "n/a" ..")" .. string.cut("      ",9-string.len("#" ..id)))
-        echoLink("#" .. id,[[mmpkg.gotoID(]] .. id .. [[)]],gotocommand)
-        cecho("<cyan> - " ..
-          string.cut(room .. "                                                         ", 55) ..
-          " -- " ..
-          string.cut(area,21) .. "\n")
-      end
     end
 
+    if gotofirst then
+        do
+            return
+        end
+    end
+
+    if not table.is_empty(unreachableRooms) then
+        for tw, id in spairs(unreachableRooms) do
+            local area = getRoomAreaName(getRoomArea(id))
+            local room = getRoomName(id)
+            local gotocommand = "mapper goto " .. id
+            cecho(
+                "<cyan> (" ..
+                    string.cut("       ", 5 - string.len("n/a")) ..
+                        "n/a" .. ")" .. string.cut("      ", 9 - string.len("#" .. id))
+            )
+            echoLink("#" .. id, [[mmpkg.gotoID(]] .. id .. [[)]], gotocommand)
+            cecho(
+                "<cyan> - " ..
+                    string.cut(room .. "                                                         ", 55) ..
+                        " -- " .. string.cut(area, 21) .. "\n"
+            )
+        end
+    end
 end
 
-function mmpkg.mfind(flag,gotofirst,areaonly)
+function mmpkg.mfind(flag, gotofirst, areaonly)
     if mmpkg.conf.findareaonly == true then
         areaonly = true
     end
@@ -381,64 +459,85 @@ function mmpkg.mfind(flag,gotofirst,areaonly)
         matchingRooms = table.deepcopy(searchedareas)
     end
     if table.is_empty(matchingRooms) then
-    cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
+        cecho("\n<red>ERROR!: <cyan>No matching rooms found.")
         do
             return
         end
     end
-    
+
     local reachableRooms = {}
     local unreachableRooms = {}
-    
-    for key,id in pairs(matchingRooms) do
-      local _,tw = getPath(gmcp.room.info.num, id)
-      if tw > -1 then
-        reachableRooms[tw] = id
-      else
-        unreachableRooms[id] = id
-      end
+
+    for key, id in pairs(matchingRooms) do
+        local _, tw = getPath(gmcp.room.info.num, id)
+        if tw > -1 then
+            reachableRooms[tw] = id
+        else
+            unreachableRooms[id] = id
+        end
     end
 
     if not gotofirst then
-        cecho("\n<white> Area Rooms with roomflag ".. [["]] .. flag .. [["]].." \n closest first. (n/a = unreachable) (right-click room# for more options)")
+        cecho(
+            "\n<white> Area Rooms with roomflag " ..
+                [["]] .. flag .. [["]] .. " \n closest first. (n/a = unreachable) (right-click room# for more options)"
+        )
         cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
         cecho("<blue>------------------------------------------------------------------------------------------\n\n")
     end
 
     if not table.is_empty(reachableRooms) then
-        for tw,id in spairs(reachableRooms) do
+        for tw, id in spairs(reachableRooms) do
             local area = getRoomAreaName(getRoomArea(id))
             local room = getRoomName(id)
             local gotocommand = "mapper goto " .. id
             local pathtocommand = "mapper path " .. id
             if gotofirst then
                 mmpkg.gotoID(id)
-                do return end
+                do
+                    return
+                end
             end
-            cecho("<cyan> (" .. string.cut("       ",5-string.len(tw)) .. tw ..")" .. string.cut("      ",9-string.len("#" ..id)))
-            echoPopup("#" .. id,{[[mmpkg.gotoID(]] .. id .. [[)]],[[mmpkg.pathtoID(]]..id..[[)]]},{gotocommand,pathtocommand})
-            cecho("<cyan> - " ..
-            string.cut(room .. "                                                         ", 45) ..
-            " -- " ..
-            string.cut(area,21) .. "\n")
+            cecho(
+                "<cyan> (" ..
+                    string.cut("       ", 5 - string.len(tw)) ..
+                        tw .. ")" .. string.cut("      ", 9 - string.len("#" .. id))
+            )
+            echoPopup(
+                "#" .. id,
+                {[[mmpkg.gotoID(]] .. id .. [[)]], [[mmpkg.pathtoID(]] .. id .. [[)]]},
+                {gotocommand, pathtocommand}
+            )
+            cecho(
+                "<cyan> - " ..
+                    string.cut(room .. "                                                         ", 45) ..
+                        " -- " .. string.cut(area, 21) .. "\n"
+            )
         end
     end
 
     if gotofirst then
-        do return end
+        do
+            return
+        end
     end
 
     if not table.is_empty(unreachableRooms) then
-        for tw,id in spairs(unreachableRooms) do
+        for tw, id in spairs(unreachableRooms) do
             local area = getRoomAreaName(getRoomArea(id))
             local room = getRoomName(id)
             local gotocommand = "mapper goto " .. id
-            cecho("<cyan> (" .. string.cut("       ",5-string.len("n/a")) .. "n/a" ..")" .. string.cut("      ",9-string.len("#" ..id)))
-            echoLink("#" .. id,[[mmpkg.gotoID(]] .. id .. [[)]],gotocommand)
-            cecho("<cyan> - " ..
-            string.cut(room .. "                                                         ", 45) ..
-            " -- " ..
-            string.cut(area,21) .. "\n")
+            cecho(
+                "<cyan> (" ..
+                    string.cut("       ", 5 - string.len("n/a")) ..
+                        "n/a" .. ")" .. string.cut("      ", 9 - string.len("#" .. id))
+            )
+            echoLink("#" .. id, [[mmpkg.gotoID(]] .. id .. [[)]], gotocommand)
+            cecho(
+                "<cyan> - " ..
+                    string.cut(room .. "                                                         ", 45) ..
+                        " -- " .. string.cut(area, 21) .. "\n"
+            )
         end
     end
 end
@@ -452,9 +551,9 @@ function findAreaID(areaname)
     for area, id in pairs(list) do
         if area:find(areaname, 1, true) then
             if returnid then
-                -- return false, "more than one area matches"
+            -- return false, "more than one area matches"
             end
-            returnid = id;
+            returnid = id
             fullareaname = area
         end
     end

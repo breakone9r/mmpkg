@@ -4,4 +4,4 @@ if affect == "improved invisibilit" then
 elseif affect == "endurance of the rhi" then
     affect = "endurance of the rhinoceros"
 end
-mmpkg.doAffect(affect,"on",true)
+mmpkg.doAffect(affect, "on", true)
