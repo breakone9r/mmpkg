@@ -49,5 +49,39 @@ if (matches[2] == "config") then
         cecho("\n<green>    Tabs       : " .. table.concat(mmpkg.conf.tabs, " ") .. "\n")
     end
 elseif (matches[2] == "pages") then
-    mmpkg.PagesCon:show()
+    if not mmpkg.PagesCon then
+        mmpkg.PagesCon =
+            Geyser.UserWindow:new(
+            {
+                name = "mmpkg.PagesCon",
+                titleText = "Pages",
+                x = "20%",
+                y = "20%",
+                width = "50%",
+                height = "40%"
+            }
+        )
+
+        mmpkg.Pages =
+            Geyser.MiniConsole:new(
+            {
+                name = "mmpkg.Pages",
+                x = 0,
+                y = 0,
+                autoWrap = true,
+                color = "gray",
+                scrollBar = false,
+                fontSize = 10,
+                width = -5,
+                height = -5
+            },
+            mmpkg.PagesCon
+        )
+    else
+        mmpkg.PagesCon:show()
+    end
+else
+    cecho("<red:white>ERROR: <white>Unknown command '"..matches[2].."'!\n  Available commands: pages config\n")
+    cecho("<yellow>mmpkg pages  :<white>Shows the Pages window.\n")
+    cecho("<yellow>mmpkg config :<white>Shows/Sets Various configuration options.\n")
 end

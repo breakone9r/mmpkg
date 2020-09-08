@@ -35,6 +35,6 @@ function mmpkg.updateVitals()
     GUI.SPLabel:echo("<center>" .. mmpkg.mysp .. "/" .. mmpkg.mymaxsp .. "sp</center>")
     GUI.Stamina:update(mmpkg.myst / mmpkg.mymaxst)
     GUI.STLabel:echo("<center>" .. mmpkg.myst .. "/" .. mmpkg.mymaxst .. "st</center>")
-    GUI.XPgauge:update(mmpkg.tnlpct)
+    GUI.XPgauge:update(mmpkg.tnlpct/100)
     GUI.XPLabel:echo("<center>Exp: " .. mmpkg.tnlpct .. "%</center>")
 end

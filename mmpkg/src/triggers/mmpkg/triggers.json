@@ -923,7 +923,7 @@
                         "type": "regex"
                     }
                 ],
-                "script": "mmpkg.dead = true raiseEvent(\"mmpkg.onDeath\")"
+                "script": "mmpkg.dead = true raiseEvent(\"mmpkg.OnDeath\")"
             },
             {
                 "name": "YouLive",
@@ -933,10 +933,11 @@
                         "type": "regex"
                     }
                 ],
-                "script": "mmpkg.dead = false raiseEvent(\"mmpkg.onAlive\")"
+                "script": "mmpkg.dead = false raiseEvent(\"mmpkg.OnAlive\")"
             },
             {
                 "name": "Linkify",
+                "matchall": "yes",
                 "patterns": [
                     {
                         "pattern": "(?i:https?:\\/\\/\\S*)",
