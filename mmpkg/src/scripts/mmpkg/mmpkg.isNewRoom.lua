@@ -9,6 +9,7 @@ function mmpkg.isNewRoom()
     )
     if mmpkg.isRoad(gmcp.room.info.coord.sym, gmcp.room.info.terrain) then
       if not roomExists(gmcp.room.info.num) then
+        mmpkg.roomchanged = true
         addRoom(gmcp.room.info.num)
       end
       setRoomChar(gmcp.room.info.num, gmcp.room.info.coord.sym)
@@ -21,6 +22,7 @@ function mmpkg.isNewRoom()
     mmpkg.doCoords()
   else
     if not roomExists(gmcp.room.info.num) then
+      mmpkg.roomchanged = true
       addRoom(gmcp.room.info.num)
       setRoomEnv(gmcp.room.info.num, 262)
       mmpkg.doCoords()
