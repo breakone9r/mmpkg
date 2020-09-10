@@ -852,7 +852,7 @@
                 "type":    "regex"
               }
             ],
-            "script":      "local time = (((tonumber(matches[2]) / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+            "script":      "local time = (((tonumber(matches[2]) / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.OnQuestTimer\") end)"
           },
           {
             "name":        "Checkwait",
