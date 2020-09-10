@@ -14,12 +14,12 @@ mmpkg.updates = mmpkg.updates or {}
 
 
 function mmpkg.updates.checkupdate()
-  local saveto = getMudletHomeDir() .. "/mmpkg-updater-1.0.mpackage"
+  local saveto = getMudletHomeDir() .. "/mmpkg.currentversion"
   local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg.currentversion"
   if mmpkg.updates.downloads then
     killAnonymousEventHandler(mmpkg.updates.downloads)
   end
-  mmpkg.updates.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.updates.checkversion")
+  mmpkg.updates.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.updates.getlatestversion")
   downloadFile(saveto, url)
 end
 
