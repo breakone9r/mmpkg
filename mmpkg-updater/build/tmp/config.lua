@@ -1,0 +1,1 @@
+mpackage = "mmpkg-updater-1.0"
