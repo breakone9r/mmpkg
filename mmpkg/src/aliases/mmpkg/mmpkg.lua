@@ -88,7 +88,7 @@ elseif (matches[2] == "update") then
   end
 else
   local cmd = matches[2] or ""
-  cecho("<red:white>ERROR:<white:black> Unknown command '"..cmd.."'!")
+  cecho("<red:white>ERROR:<white:black> Unknown command '"..cmd.."'!\n")
   cecho("<yellow>mmpkg pages  :<white>Shows the Pages window.\n")
   cecho("<yellow>mmpkg config :<white>Shows/Sets Various configuration options.\n")
   cecho("<yellow>mmpkg update :<white>Check for, download and install updated mmpkg.\n")
