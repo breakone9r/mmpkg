@@ -913,7 +913,7 @@
             "type":        "exactMatch"
           }
         ],
-        "script":          "send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
+        "script":          "mmpkg.doupdate() send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
       },
       {
         "name":            "YouDied",

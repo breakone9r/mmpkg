@@ -81,11 +81,7 @@ elseif (matches[2] == "pages") then
     mmpkg.PagesCon:show()
   end
 elseif (matches[2] == "update") then
-  if not mmpkg.updates then
-    cecho("<red:white>mmpkg updater does not exist, downloading now...")
-  else
-    mmpkg.updates.checkupdate()
-  end
+  mmpkg.doupdate()
 else
   local cmd = matches[2] or ""
   cecho("<red:white>ERROR:<white:black> Unknown command '"..cmd.."'!\n")

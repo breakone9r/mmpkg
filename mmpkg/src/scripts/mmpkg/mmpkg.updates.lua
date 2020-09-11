@@ -1,3 +1,12 @@
+function mmpkg.doupdate()
+  if not mmpkg.updates then
+    cecho("<red:white>mmpkg updater does not exist, downloading now...")
+    mmpkg.getupdater()
+  else
+    mmpkg.updates.checkupdate()
+  end
+end
+
 function mmpkg.getupdater()
   local saveto = getMudletHomeDir() .. "/mmpkg-updater-1.0.mpackage"
   local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg-updater-1.0.mpackage"
