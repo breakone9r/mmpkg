@@ -1,5 +1,6 @@
 mmpkg = mmpkg or {}
 mmpkg.updates = mmpkg.updates or {}
+mmpkg.currentversion = mmpkg.currentversion or {}
 
 
 function mmpkg.updates.checkupdate()
@@ -33,7 +34,7 @@ end
 
 function mmpkg.updates.downupdate()
   local saveto = getMudletHomeDir() .. "/" .. mmpkg.currentversion
-  local url = "https://github.com/breakone9r/mmpkg/raw/master/" .. mmpkg.currentversion
+  local url = "https://github.com/breakone9r/mmpkg/raw/master/" .. mmpkg.currentversion .. ".mpackage"
   if mmpkg.updates.downloads then
     killAnonymousEventHandler(mmpkg.updates.downloads)
   end

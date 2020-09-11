@@ -1,7 +1,9 @@
 function mmpkg.getupdater()
   local saveto = getMudletHomeDir() .. "/mmpkg-updater-1.0.mpackage"
   local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg-updater-1.0.mpackage"
-  killAnonymousEventHandler(mmpkg.events.downloads)
+  if mmpkg.events.downloads then
+    killAnonymousEventHandler(mmpkg.events.downloads)
+  end
   mmpkg.events.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.installupdater")
   downloadFile(saveto, url)
 end
@@ -38,7 +40,9 @@ function mmpkg.updateMap()
     )
     local saveto = getMudletHomeDir() .. "/map/mm_map.dat.new"
     local url = "https://github.com/breakone9r/mmpkg/raw/master/mm_map.dat"
-    killAnonymousEventHandler(mmpkg.events.downloads)
+    if mmpkg.events.downloads then
+      killAnonymousEventHandler(mmpkg.events.downloads)
+    end
     mmpkg.events.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.mapdownloaded")
     downloadFile(saveto, url)
   else
