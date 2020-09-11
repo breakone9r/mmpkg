@@ -32,7 +32,7 @@ function mmpkg.updates.checkversion()
   end
 end
 
-function mmpkg.updates.downupdate()
+function mmpkg.updates.downupdate(_, filename)
   local saveto = getMudletHomeDir() .. "/" .. mmpkg.currentversion
   local url = "https://github.com/breakone9r/mmpkg/raw/master/" .. mmpkg.currentversion .. ".mpackage"
   if mmpkg.updates.downloads then
