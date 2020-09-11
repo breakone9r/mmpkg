@@ -1,4 +1,4 @@
-mmpkg/build
-mmpkg/build/**
+**/build
+**/build/**
 **/.vscode
 **/.vscode/**

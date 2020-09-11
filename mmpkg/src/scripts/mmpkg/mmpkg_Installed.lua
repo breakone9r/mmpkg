@@ -1,14 +1,18 @@
 function mmpkg_Installed(_, name)
   if string.starts(name, "mmpkg") then
-    cecho("<white>\nInitializing, Please wait...")
-    mmpkg.setup()
-    tempTimer(5,mmpkg_PostSetup,false)
+    if not string.find(name, "update") then
+      cecho("<white>\nInitializing, Please wait...")
+      mmpkg.setup()
+      tempTimer(5,mmpkg_PostSetup,false)
+    end
   end
 end
 
 function mmpkg_Uninstalled(_, name)
   if string.starts(name, "mmpkg") then
-    cecho("<white>\nThanks for using mmpkg. Please close mudlet to finish the uninstall, or you will not be able to access the map.")
+    if not string.find(name, "update") then
+      cecho("<white>\nThanks for using mmpkg. Please close mudlet to finish the uninstall, or you will not be able to access the map.")
+    end
   end
 end
 

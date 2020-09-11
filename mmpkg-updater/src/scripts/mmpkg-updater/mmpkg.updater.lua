@@ -42,7 +42,7 @@ function mmpkg.updates.downupdate()
   downloadFile(saveto, url)
 end
 
-function mmpkg.updates.installupdate()
+function mmpkg.updates.installupdate(_ ,filename)
   if not filename:find(mmpkg.currentversion, 1, true) then
     return
   end
