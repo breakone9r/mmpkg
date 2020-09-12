@@ -196,7 +196,7 @@ function mmpkg.doCoords()
       setRoomChar(gmcp.room.info.num, gmcp.room.info.coord.sym)
     end
   else
-    local x, y, z = getRoomCoordinates(mmpkg.previousRoom.ID) or 0, 0, 0
+    local x, y, z = getRoomCoordinates(mmpkg.previousRoom.ID)
     local dirToCoords = {
       u = {x, y, z - 1},
       d = {x, y, z + 1},
