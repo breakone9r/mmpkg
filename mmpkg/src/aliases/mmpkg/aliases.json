@@ -37,6 +37,11 @@
     "script": "mmpkg.gotoID(41852)"
   },
   {
+    "name": "keepqm",
+    "regex": "^keepqm$",
+    "script": "mmpkg.gotoID(67947)"
+  },
+  {
     "name": "sigqm",
     "regex": "^sigqm$",
     "script": "mmpkg.gotoID(28450)"
