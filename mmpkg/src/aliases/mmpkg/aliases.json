@@ -1,44 +1,44 @@
 [
   {
-    "name":   "runeqm",
-    "regex":  "^runeqm$",
+    "name": "runeqm",
+    "regex": "^runeqm$",
     "script": "mmpkg.gotoID(31323)"
   },
   {
-    "name":   "nrqm",
-    "regex":  "^nrqm$",
+    "name": "nrqm",
+    "regex": "^nrqm$",
     "script": "mmpkg.gotoID(62566)"
   },
   {
-    "name":   "repos",
-    "regex":  "^repos (n|s|e|w|nw|ne|sw|se|u|d)$"
+    "name": "repos",
+    "regex": "^repos (n|s|e|w|nw|ne|sw|se|u|d)$"
   },
   {
-    "name":   "xavqm",
-    "regex":  "^xavqm$",
+    "name": "xavqm",
+    "regex": "^xavqm$",
     "script": "mmpkg.gotoID(73968)"
   },
   {
-    "name":   "temqm",
-    "regex":  "^temqm$",
+    "name": "temqm",
+    "regex": "^temqm$",
     "script": "mmpkg.gotoID(47421)"
   },
   {
-    "name":   "mapper",
-    "regex":  "^mapper (\\w+)( .*)?$"
+    "name": "mapper",
+    "regex": "^mapper (\\w+)( .*)?$"
   },
   {
-    "name":   "mmpkg",
-    "regex":  "^mmpkg ?(\\w+)?\\s?(\\w+)?\\s?(\\w+)?$"
+    "name": "mmpkg",
+    "regex": "^mmpkg ?(\\w+)?\\s?(\\w+)?\\s?(\\w+)?$"
   },
   {
-    "name":   "tellqm",
-    "regex":  "^tellqm$",
+    "name": "tellqm",
+    "regex": "^tellqm$",
     "script": "mmpkg.gotoID(41852)"
   },
   {
-    "name":   "sigqm",
-    "regex":  "^sigqm$",
+    "name": "sigqm",
+    "regex": "^sigqm$",
     "script": "mmpkg.gotoID(28450)"
   }
 ]

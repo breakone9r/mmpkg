@@ -1,177 +1,177 @@
 [
   {
-    "name":    "mmpkg.numpad0",
+    "name": "mmpkg.numpad0",
     "command": "scan",
-    "keys":    "keypad+0"
+    "keys": "keypad+0"
   },
   {
-    "name":    "mmpkg.numpad1",
+    "name": "mmpkg.numpad1",
     "command": "southwest",
-    "keys":    "keypad+1"
+    "keys": "keypad+1"
   },
   {
-    "name":    "mmpkg.numpad2",
+    "name": "mmpkg.numpad2",
     "command": "south",
-    "keys":    "keypad+2"
+    "keys": "keypad+2"
   },
   {
-    "name":    "mmpkg.numpad3",
+    "name": "mmpkg.numpad3",
     "command": "southeast",
-    "keys":    "keypad+3"
+    "keys": "keypad+3"
   },
   {
-    "name":    "mmpkg.numpad4",
+    "name": "mmpkg.numpad4",
     "command": "west",
-    "keys":    "keypad+4"
+    "keys": "keypad+4"
   },
   {
-    "name":    "mmpkg.numpad5",
+    "name": "mmpkg.numpad5",
     "command": "look",
-    "keys":    "keypad+5"
+    "keys": "keypad+5"
   },
   {
-    "name":    "mmpkg.numpad6",
+    "name": "mmpkg.numpad6",
     "command": "east",
-    "keys":    "keypad+6"
+    "keys": "keypad+6"
   },
   {
-    "name":    "mmpkg.numpad7",
+    "name": "mmpkg.numpad7",
     "command": "northwest",
-    "keys":    "keypad+7"
+    "keys": "keypad+7"
   },
   {
-    "name":    "mmpkg.numpad8",
+    "name": "mmpkg.numpad8",
     "command": "north",
-    "keys":    "keypad+8"
+    "keys": "keypad+8"
   },
   {
-    "name":    "mmpkg.numpad9",
+    "name": "mmpkg.numpad9",
     "command": "northeast",
-    "keys":    "keypad+9"
+    "keys": "keypad+9"
   },
   {
-    "name":    "mmpkg.numpad-",
+    "name": "mmpkg.numpad-",
     "command": "up",
-    "keys":    "keypad+-"
+    "keys": "keypad+-"
   },
   {
-    "name":    "mmpkg.numpad+",
+    "name": "mmpkg.numpad+",
     "command": "down",
-    "keys":    "keypad+plus"
+    "keys": "keypad+plus"
   },
   {
-    "name":    "mmpkg.numpad/",
+    "name": "mmpkg.numpad/",
     "command": "inventory",
-    "keys":    "keypad+/"
+    "keys": "keypad+/"
   },
   {
-    "name":    "mmpkg.numpad*",
+    "name": "mmpkg.numpad*",
     "command": "equipment",
-    "keys":    "keypad+*"
+    "keys": "keypad+*"
   },
   {
-    "name":    "mmpkg.numpad.",
+    "name": "mmpkg.numpad.",
     "command": "score",
-    "keys":    "keypad+."
+    "keys": "keypad+."
   },
   {
-    "name":    "mmpkg.ctrl+numpad1",
+    "name": "mmpkg.ctrl+numpad1",
     "command": "look southwest",
-    "keys":    "ctrl+keypad+1"
+    "keys": "ctrl+keypad+1"
   },
   {
-    "name":    "mmpkg.ctrl+numpad2",
+    "name": "mmpkg.ctrl+numpad2",
     "command": "look south",
-    "keys":    "ctrl+keypad+2"
+    "keys": "ctrl+keypad+2"
   },
   {
-    "name":    "mmpkg.ctrl+numpad3",
+    "name": "mmpkg.ctrl+numpad3",
     "command": "look southeast",
-    "keys":    "ctrl+keypad+3"
+    "keys": "ctrl+keypad+3"
   },
   {
-    "name":    "mmpkg.ctrl+numpad4",
+    "name": "mmpkg.ctrl+numpad4",
     "command": "look west",
-    "keys":    "ctrl+keypad+4"
+    "keys": "ctrl+keypad+4"
   },
   {
-    "name":    "mmpkg.ctrl+numpad6",
+    "name": "mmpkg.ctrl+numpad6",
     "command": "look east",
-    "keys":    "ctrl+keypad+6"
+    "keys": "ctrl+keypad+6"
   },
   {
-    "name":    "mmpkg.ctrl+numpad7",
+    "name": "mmpkg.ctrl+numpad7",
     "command": "look northwest",
-    "keys":    "ctrl+keypad+7"
+    "keys": "ctrl+keypad+7"
   },
   {
-    "name":    "mmpkg.ctrl.numpad8",
+    "name": "mmpkg.ctrl.numpad8",
     "command": "look north",
-    "keys":    "ctrl+keypad+8"
+    "keys": "ctrl+keypad+8"
   },
   {
-    "name":    "mmpkg.ctrl+numpad9",
+    "name": "mmpkg.ctrl+numpad9",
     "command": "look northeast",
-    "keys":    "ctrl+keypad+9"
+    "keys": "ctrl+keypad+9"
   },
   {
-    "name":    "mmpkg.ctrl+numpad-",
+    "name": "mmpkg.ctrl+numpad-",
     "command": "look up",
-    "keys":    "ctrl+keypad+-"
+    "keys": "ctrl+keypad+-"
   },
   {
-    "name":    "mmpkg.ctrl+numpad+",
+    "name": "mmpkg.ctrl+numpad+",
     "command": "look down",
-    "keys":    "ctrl+keypad+plus"
+    "keys": "ctrl+keypad+plus"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad1",
+    "name": "mmpkg.ctrl+alt+numpad1",
     "command": "open southwest",
-    "keys":    "ctrl+alt+keypad+1"
+    "keys": "ctrl+alt+keypad+1"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad2",
+    "name": "mmpkg.ctrl+alt+numpad2",
     "command": "open south",
-    "keys":    "ctrl+alt+keypad+2"
+    "keys": "ctrl+alt+keypad+2"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad3",
+    "name": "mmpkg.ctrl+alt+numpad3",
     "command": "open southeast",
-    "keys":    "ctrl+alt+keypad+3"
+    "keys": "ctrl+alt+keypad+3"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad4",
+    "name": "mmpkg.ctrl+alt+numpad4",
     "command": "open west",
-    "keys":    "ctrl+alt+keypad+4"
+    "keys": "ctrl+alt+keypad+4"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad6",
+    "name": "mmpkg.ctrl+alt+numpad6",
     "command": "open east",
-    "keys":    "ctrl+alt+keypad+6"
+    "keys": "ctrl+alt+keypad+6"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad7",
+    "name": "mmpkg.ctrl+alt+numpad7",
     "command": "open northwest",
-    "keys":    "ctrl+alt+keypad+7"
+    "keys": "ctrl+alt+keypad+7"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad8",
+    "name": "mmpkg.ctrl+alt+numpad8",
     "command": "open north",
-    "keys":    "ctrl+alt+keypad+8"
+    "keys": "ctrl+alt+keypad+8"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad9",
+    "name": "mmpkg.ctrl+alt+numpad9",
     "command": "open northeast",
-    "keys":    "ctrl+alt+keypad+9"
+    "keys": "ctrl+alt+keypad+9"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad-",
+    "name": "mmpkg.ctrl+alt+numpad-",
     "command": "open up",
-    "keys":    "ctrl+alt+keypad+-"
+    "keys": "ctrl+alt+keypad+-"
   },
   {
-    "name":    "mmpkg.ctrl+alt+numpad+",
+    "name": "mmpkg.ctrl+alt+numpad+",
     "command": "open down",
-    "keys":    "ctrl+alt+keypad+plus"
+    "keys": "ctrl+alt+keypad+plus"
   }
 ]

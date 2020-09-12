@@ -1,30 +1,61 @@
-function mmpkg.doupdate()
-  if not mmpkg.updates then
-    cecho("<red:white>mmpkg updater does not exist, downloading now...")
-    mmpkg.getupdater()
-  else
-    mmpkg.updates.checkupdate()
-  end
-end
-
-function mmpkg.getupdater()
-  local saveto = getMudletHomeDir() .. "/mmpkg-updater-1.0.mpackage"
-  local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg-updater-1.0.mpackage"
+function mmpkg.checkupdate(auto)
+  mmpkg.conf.autodl = auto
+  local saveto = getMudletHomeDir() .. "/mmpkg.currentversion"
+  local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg.currentversion"
   if mmpkg.events.downloads then
     killAnonymousEventHandler(mmpkg.events.downloads)
   end
-  mmpkg.events.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.installupdater")
+  mmpkg.events.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.getlatestversion")
   downloadFile(saveto, url)
 end
 
-function mmpkg.installupdater(_, filename)
-  if not filename:find("mmpkg-updater-1.0.mpackage", 1, true) then
+function mmpkg.getlatestversion(_, filename)
+  if not filename:find("mmpkg.currentversion", 1, true) then
     return
   end
-  cecho("\n\n<green>Download complete, installing updater.")
+  mmpkg.currentversion = {}
+  table.load(filename, mmpkg.currentversion)
+  mmpkg.currentversion = table.concat(mmpkg.currentversion)
+  os.remove(filename)
+  mmpkg.checkversion(mmpkg.conf.autodl)
+end
+
+function mmpkg.checkversion(auto)
+  local newver = utf8.remove(mmpkg.currentversion, 1, 6)
+  local curver = utf8.remove(mmpkg.packagename, 1, 6)
+  if newver == curver then
+    cecho("<green>\nYou're already running the latest version: "..mmpkg.currentversion.."\n")
+  elseif newver > curver then
+    cecho("<white>Updated version is: <green>'"..mmpkg.currentversion.."'<white>, but you're still running: '<green>"..mmpkg.packagename)
+    if auto then
+      cecho("\n<white>Downloading update...")
+      mmpkg.downupdate()
+    end
+  elseif newver < curver then
+    cecho("\n<blue:white>You appear to running a pre-release: <green:black>"..mmpkg.packagename)
+    cecho("\n<blue:white> Current release                   : <green:black>"..mmpkg.currentversion)
+    cecho("\n")
+  end
+end
+
+function mmpkg.downupdate(_, filename)
+  local saveto = getMudletHomeDir() .. "/" .. mmpkg.currentversion .. ".mpackage"
+  local url = "https://github.com/breakone9r/mmpkg/raw/master/" .. mmpkg.currentversion .. ".mpackage"
+  if mmpkg.events.downloads then
+    killAnonymousEventHandler(mmpkg.events.downloads)
+  end
+  mmpkg.events.downloads = registerAnonymousEventHandler("sysDownloadDone", "mmpkg.installupdate")
+  downloadFile(saveto, url)
+end
+
+function mmpkg.installupdate(_, filename)
+  if not filename:find(mmpkg.currentversion, 1, true) then
+    return
+  end
+  uninstallPackage(mmpkg.packagename)
   installPackage(filename)
   os.remove(filename)
-  cecho("<white>Updater installed, please re-run '<yellow>mmpkg update<white>'")
+  cecho("\n<blue:white>Update installed, please restart Mudlet for updates to take effect.")
 end
 
 function mmpkg.mapdownloaded(_, filename)

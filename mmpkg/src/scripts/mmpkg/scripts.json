@@ -1,68 +1,68 @@
 [
   {
-    "name":             "mmpkg_Installed",
-    "isActive":         "yes",
+    "name": "mmpkg_Installed",
+    "isActive": "yes",
     "eventHandlerList": [
       "sysInstallPackage"
     ]
   },
   {
-    "name":             "mmpkg.setup",
-    "isActive":         "yes",
+    "name": "mmpkg.setup",
+    "isActive": "yes",
     "eventHandlerList": [
       "sysLoadEvent"
     ]
   },
   {
-    "name":             "mapping",
-    "isActive":         "yes"
+    "name": "mapping",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.isNewZone",
-    "isActive":         "yes"
+    "name": "mmpkg.isNewZone",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.isNewRoom",
-    "isActive":         "yes"
+    "name": "mmpkg.isNewRoom",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.isQuestTimer",
-    "isActive":         "yes"
+    "name": "mmpkg.isQuestTimer",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.functions",
-    "isActive":         "yes"
+    "name": "mmpkg.functions",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.updates",
-    "isActive":         "yes"
+    "name": "mmpkg.updates",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.onResize",
-    "isActive":         "yes"
+    "name": "mmpkg.onResize",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.isDead",
-    "isActive":         "yes"
+    "name": "mmpkg.isDead",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.isAlive",
-    "isActive":         "yes"
+    "name": "mmpkg.isAlive",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.updateVitals",
-    "isActive":         "yes"
+    "name": "mmpkg.updateVitals",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.updateMaxStats",
-    "isActive":         "yes"
+    "name": "mmpkg.updateMaxStats",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.updateXP",
-    "isActive":         "yes"
+    "name": "mmpkg.updateXP",
+    "isActive": "yes"
   },
   {
-    "name":             "mmpkg.updateCharName",
-    "isActive":         "yes"
+    "name": "mmpkg.updateCharName",
+    "isActive": "yes"
   }
 ]

@@ -1,834 +1,834 @@
 [
   {
-    "name":                "My Affects",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "My Affects",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "Armor",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Armor",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "armor.off",
-            "patterns":    [
+            "name": "armor.off",
+            "patterns": [
               {
                 "pattern": "^The hardened air around you dissipates.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"armor\",\"off\")"
+            "script": "mmpkg.doAffect(\"armor\",\"off\")"
           },
           {
-            "name":        "armor.on",
-            "patterns":    [
+            "name": "armor.on",
+            "patterns": [
               {
                 "pattern": "^There is a faint sound, a very high pitched shriek as the air is hardened around you.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"armor\",\"on\")"
+            "script": "mmpkg.doAffect(\"armor\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Combat Blink",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Combat Blink",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "combat.blink.off",
-            "patterns":    [
+            "name": "combat.blink.off",
+            "patterns": [
               {
                 "pattern": "^The bluish field at the edge of your vision dissipates.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"combat blink\",\"off\")"
+            "script": "mmpkg.doAffect(\"combat blink\",\"off\")"
           },
           {
-            "name":        "combat.blink.on",
-            "patterns":    [
+            "name": "combat.blink.on",
+            "patterns": [
               {
                 "pattern": "^The world becomes blue-tinted for a moment, then fades back to normal.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"combat blink\",\"on\")"
+            "script": "mmpkg.doAffect(\"combat blink\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Underwater Breathing",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Underwater Breathing",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "uwbreathing.off",
-            "patterns":    [
+            "name": "uwbreathing.off",
+            "patterns": [
               {
                 "pattern": "^You feel the magic enabling you to breathe underwater diminish.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"uwbreathing\",\"off\")"
+            "script": "mmpkg.doAffect(\"uwbreathing\",\"off\")"
           },
           {
-            "name":        "uwbreathing.on",
-            "patterns":    [
+            "name": "uwbreathing.on",
+            "patterns": [
               {
                 "pattern": "^You choke as your lungs adjust to underwater breathing.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"uwbreathing\",\"on\")"
+            "script": "mmpkg.doAffect(\"uwbreathing\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Shadow Armor",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Shadow Armor",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "shadow.armor.off",
-            "patterns":    [
+            "name": "shadow.armor.off",
+            "patterns": [
               {
                 "pattern": "^The shadows protecting you seem to subside.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"shadow armor\",\"off\")"
+            "script": "mmpkg.doAffect(\"shadow armor\",\"off\")"
           },
           {
-            "name":        "shadow.armor.on",
-            "patterns":    [
+            "name": "shadow.armor.on",
+            "patterns": [
               {
                 "pattern": "^A dark, shadowy mist gathers itself around your form.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"shadow armor\",\"on\")"
+            "script": "mmpkg.doAffect(\"shadow armor\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Detect Invisibility",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Detect Invisibility",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "detect.invisibility.on",
-            "patterns":    [
+            "name": "detect.invisibility.on",
+            "patterns": [
               {
                 "pattern": "^You feel a sharp prickling on the back of your neck as your senses are heightened.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect invisibility\",\"on\")"
+            "script": "mmpkg.doAffect(\"detect invisibility\",\"on\")"
           },
           {
-            "name":        "detect.invisibility.off",
-            "patterns":    [
+            "name": "detect.invisibility.off",
+            "patterns": [
               {
                 "pattern": "^You feel different as your senses become less heightened.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect invisibility\",\"off\")"
+            "script": "mmpkg.doAffect(\"detect invisibility\",\"off\")"
           }
         ]
       },
       {
-        "name":            "Haste",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Haste",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "haste.off",
-            "patterns":    [
+            "name": "haste.off",
+            "patterns": [
               {
                 "pattern": "^You feel your movements slow to normal.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"haste\",\"off\")"
+            "script": "mmpkg.doAffect(\"haste\",\"off\")"
           },
           {
-            "name":        "haste.on",
-            "patterns":    [
+            "name": "haste.on",
+            "patterns": [
               {
                 "pattern": "^You begin moving much faster, almost seeming to blur.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"haste\",\"on\")"
+            "script": "mmpkg.doAffect(\"haste\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Levitation",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Levitation",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "levitation.off",
-            "patterns":    [
+            "name": "levitation.off",
+            "patterns": [
               {
                 "pattern": "^You slowly settle back to the ground.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"levitation\",\"off\")"
+            "script": "mmpkg.doAffect(\"levitation\",\"off\")"
           },
           {
-            "name":        "levitation.on",
-            "patterns":    [
+            "name": "levitation.on",
+            "patterns": [
               {
                 "pattern": "^Your feet rise a few inches above the surface.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"levitation\",\"on\")"
+            "script": "mmpkg.doAffect(\"levitation\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Stone Skin",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Stone Skin",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "stone.skin.off",
-            "patterns":    [
+            "name": "stone.skin.off",
+            "patterns": [
               {
                 "pattern": "^Your skin feels soft and pliable again.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"stone skin\",\"off\")"
+            "script": "mmpkg.doAffect(\"stone skin\",\"off\")"
           },
           {
-            "name":        "stone.skin.on",
-            "patterns":    [
+            "name": "stone.skin.on",
+            "patterns": [
               {
                 "pattern": "^There is a faint sound, a very high pitched shriek as your skin hardens.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"stone skin\",\"on\")"
+            "script": "mmpkg.doAffect(\"stone skin\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Protection from Good",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Protection from Good",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "protection.from.good.off",
-            "patterns":    [
+            "name": "protection.from.good.off",
+            "patterns": [
               {
                 "pattern": "^You feel vulnerable to good forces again.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"protection from good\",\"off\")"
+            "script": "mmpkg.doAffect(\"protection from good\",\"off\")"
           },
           {
-            "name":        "protection.from.good.on",
-            "patterns":    [
+            "name": "protection.from.good.on",
+            "patterns": [
               {
                 "pattern": "^You feel safer, as if there were forces watching over you.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"protection from good\",\"on\")"
+            "script": "mmpkg.doAffect(\"protection from good\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Bless",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Bless",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "bless.off",
-            "patterns":    [
+            "name": "bless.off",
+            "patterns": [
               {
                 "pattern": "^You no longer feel blessed by the Powers.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"bless\",\"off\")"
+            "script": "mmpkg.doAffect(\"bless\",\"off\")"
           },
           {
-            "name":        "bless.on",
-            "patterns":    [
+            "name": "bless.on",
+            "patterns": [
               {
                 "pattern": "^You glow briefly with a brilliant silver aura, which slowly sparkles and fades.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"bless\",\"on\")"
+            "script": "mmpkg.doAffect(\"bless\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Sanctuary",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Sanctuary",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "sanctuary.off",
-            "patterns":    [
+            "name": "sanctuary.off",
+            "patterns": [
               {
                 "pattern": "^The white aura surrounding you fades away.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"sanctuary\",\"off\")"
+            "script": "mmpkg.doAffect(\"sanctuary\",\"off\")"
           },
           {
-            "name":        "sanctuary.on",
-            "patterns":    [
+            "name": "sanctuary.on",
+            "patterns": [
               {
                 "pattern": "^You begin glowing with a bright light\\!$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"sanctuary\",\"on\")"
+            "script": "mmpkg.doAffect(\"sanctuary\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Sense Life",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Sense Life",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "sense.life.off",
-            "patterns":    [
+            "name": "sense.life.off",
+            "patterns": [
               {
                 "pattern": "^Lost-Sense-Life.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"sense life\",\"off\")"
+            "script": "mmpkg.doAffect(\"sense life\",\"off\")"
           },
           {
-            "name":        "sense.life.on",
-            "patterns":    [
+            "name": "sense.life.on",
+            "patterns": [
               {
                 "pattern": "^You feel a soft prickling on the back of your neck as your senses are heightened.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"sense life\",\"on\")"
+            "script": "mmpkg.doAffect(\"sense life\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Infravision",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Infravision",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "infravision.off",
-            "patterns":    [
+            "name": "infravision.off",
+            "patterns": [
               {
                 "pattern": "^Lost Infravision$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"infravision\",\"on\")"
+            "script": "mmpkg.doAffect(\"infravision\",\"on\")"
           },
           {
-            "name":        "infravision.on",
-            "patterns":    [
+            "name": "infravision.on",
+            "patterns": [
               {
                 "pattern": "^(\\w+)'s eyes glow red.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ]
           }
         ]
       },
       {
-        "name":            "Pentacle",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Pentacle",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "pentacle.off",
-            "patterns":    [
+            "name": "pentacle.off",
+            "patterns": [
               {
                 "pattern": "^You feel the protection of the pentacle subsiding.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"pentacle\",\"off\")"
+            "script": "mmpkg.doAffect(\"pentacle\",\"off\")"
           },
           {
-            "name":        "pentacle.on",
-            "patterns":    [
+            "name": "pentacle.on",
+            "patterns": [
               {
                 "pattern": "^A pentacle of reddish light shines briefly upon your chest before fading.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"pentacle\",\"on\")"
+            "script": "mmpkg.doAffect(\"pentacle\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Improved Invisibility",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Improved Invisibility",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "impinvis.off",
-            "patterns":    [
+            "name": "impinvis.off",
+            "patterns": [
               {
                 "pattern": "^You fade back into sight.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"improved invisibility\",\"off\")"
+            "script": "mmpkg.doAffect(\"improved invisibility\",\"off\")"
           },
           {
-            "name":        "impinvis.on",
-            "patterns":    [
+            "name": "impinvis.on",
+            "patterns": [
               {
                 "pattern": "^You dissolve into nothingness.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"improved invisibility\",\"on\")"
+            "script": "mmpkg.doAffect(\"improved invisibility\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Shield",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Shield",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "shield.off",
-            "patterns":    [
+            "name": "shield.off",
+            "patterns": [
               {
                 "pattern": "^Your force shield dissipates.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"shield\",\"off\")"
+            "script": "mmpkg.doAffect(\"shield\",\"off\")"
           },
           {
-            "name":        "shield.on",
-            "patterns":    [
+            "name": "shield.on",
+            "patterns": [
               {
                 "pattern": "^You hear a high-pitched shriek as the air hardens around you, forming a shield.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"shield\",\"on\")"
+            "script": "mmpkg.doAffect(\"shield\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Pass Door",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Pass Door",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "passdoor.off",
-            "patterns":    [
+            "name": "passdoor.off",
+            "patterns": [
               {
                 "pattern": "^You are no longer translucent.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"pass door\",\"off\")"
+            "script": "mmpkg.doAffect(\"pass door\",\"off\")"
           },
           {
-            "name":        "passdoor.on",
-            "patterns":    [
+            "name": "passdoor.on",
+            "patterns": [
               {
                 "pattern": "^(\\w+) turns translucent.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ]
           }
         ]
       },
       {
-        "name":            "Endurance of the Rhinoceros",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Endurance of the Rhinoceros",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "rhino.off",
-            "patterns":    [
+            "name": "rhino.off",
+            "patterns": [
               {
                 "pattern": "^You are no longer a rhino.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"endurance of the rhinoceros\",\"off\")"
+            "script": "mmpkg.doAffect(\"endurance of the rhinoceros\",\"off\")"
           },
           {
-            "name":        "rhino.on",
-            "patterns":    [
+            "name": "rhino.on",
+            "patterns": [
               {
                 "pattern": "^(\\w+)'s hide becomes thicker.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ]
           }
         ]
       },
       {
-        "name":            "Wind Walk",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Wind Walk",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "windwalk.off",
-            "patterns":    [
+            "name": "windwalk.off",
+            "patterns": [
               {
                 "pattern": "^The wind rushing through your body gradually slows, until its presence is gone.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"wind walk\",\"off\")"
+            "script": "mmpkg.doAffect(\"wind walk\",\"off\")"
           },
           {
-            "name":        "windwalk.on",
-            "patterns":    [
+            "name": "windwalk.on",
+            "patterns": [
               {
                 "pattern": "^Your footsteps grow lighter as you prepare your body to become like the wind.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"wind walk\",\"on\")"
+            "script": "mmpkg.doAffect(\"wind walk\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Enhanced Strength",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Enhanced Strength",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "enhstr.off",
-            "patterns":    [
+            "name": "enhstr.off",
+            "patterns": [
               {
                 "pattern": "^Your super strength has worn off.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"enhanced strength\",\"off\")"
+            "script": "mmpkg.doAffect(\"enhanced strength\",\"off\")"
           },
           {
-            "name":        "enhstr.on",
-            "patterns":    [
+            "name": "enhstr.on",
+            "patterns": [
               {
                 "pattern": "^Your muscles surge with increased strength.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"enhanced strength\",\"on\")"
+            "script": "mmpkg.doAffect(\"enhanced strength\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Detect Magic",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Detect Magic",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "detectmagic.off",
-            "patterns":    [
+            "name": "detectmagic.off",
+            "patterns": [
               {
                 "pattern": "^You can no longer detect magical auras.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect magic\",\"off\")"
+            "script": "mmpkg.doAffect(\"detect magic\",\"off\")"
           },
           {
-            "name":        "detectmagic.on",
-            "patterns":    [
+            "name": "detectmagic.on",
+            "patterns": [
               {
                 "pattern": "^You feel a prickling on the back of your neck as your senses are heightened.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect magic\",\"on\")"
+            "script": "mmpkg.doAffect(\"detect magic\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Detect Illusion",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Detect Illusion",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "detectillusion.off",
-            "patterns":    [
+            "name": "detectillusion.off",
+            "patterns": [
               {
                 "pattern": "^You have lost your ability to detect illusions.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect illusion\",\"off\")"
+            "script": "mmpkg.doAffect(\"detect illusion\",\"off\")"
           },
           {
-            "name":        "detectillusion.on",
-            "patterns":    [
+            "name": "detectillusion.on",
+            "patterns": [
               {
                 "pattern": "^Goosebumps wash over you as the world starts to look a little bit more real.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect illusion\",\"on\")"
+            "script": "mmpkg.doAffect(\"detect illusion\",\"on\")"
           }
         ]
       },
       {
-        "name":            "Detect Alignment",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Detect Alignment",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "detectalign.off",
-            "patterns":    [
+            "name": "detectalign.off",
+            "patterns": [
               {
                 "pattern": "^You are no longer trnnanslucent.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect alignment\",\"off\")"
+            "script": "mmpkg.doAffect(\"detect alignment\",\"off\")"
           },
           {
-            "name":        "detectalign.on",
-            "patterns":    [
+            "name": "detectalign.on",
+            "patterns": [
               {
                 "pattern": "^A haze of crimson and gold sparks flit across your field of vision.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.doAffect(\"detect alignment\",\"on\")"
+            "script": "mmpkg.doAffect(\"detect alignment\",\"on\")"
           }
         ]
       },
       {
-        "name":            "affects.list",
-        "fireLength":      "99",
-        "patterns":        [
+        "name": "affects.list",
+        "fireLength": "99",
+        "patterns": [
           {
-            "pattern":     "^You are affected by the following:$",
-            "type":        "regex"
+            "pattern": "^You are affected by the following:$",
+            "type": "regex"
           }
         ],
-        "children":        [
+        "children": [
           {
-            "name":        "resists",
-            "patterns":    [
+            "name": "resists",
+            "patterns": [
               {
                 "pattern": "^\\* You are resistant to: (.*).$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.myAffects.resists = string.split(string.trim(matches[2]),\" \")"
+            "script": "mmpkg.myAffects.resists = string.split(string.trim(matches[2]),\" \")"
           },
           {
-            "name":        "vulnerabilities",
-            "patterns":    [
+            "name": "vulnerabilities",
+            "patterns": [
               {
                 "pattern": "^\\* You are vulnerable to: (.*).$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.myAffects.vulnerabilities = string.split(string.trim(matches[2]),\" \")"
+            "script": "mmpkg.myAffects.vulnerabilities = string.split(string.trim(matches[2]),\" \")"
           },
           {
-            "name":        "racials",
-            "patterns":    [
+            "name": "racials",
+            "patterns": [
               {
                 "pattern": "^Racial: (.*)$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "mmpkg.myAffects.racials = string.split(string.trim(matches[2]),\", \")"
+            "script": "mmpkg.myAffects.racials = string.split(string.trim(matches[2]),\", \")"
           },
           {
-            "name":        "affects",
-            "patterns":    [
+            "name": "affects",
+            "patterns": [
               {
                 "pattern": "^Spell:(.*)- Level(\\s+)(\\d+), modifies",
-                "type":    "regex"
+                "type": "regex"
               }
             ]
           },
           {
-            "name":        "Total-end",
-            "patterns":    [
+            "name": "Total-end",
+            "patterns": [
               {
                 "pattern": "^Total of (\\d+) magical affects.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "setTriggerStayOpen(\"affects.list\",0)"
+            "script": "setTriggerStayOpen(\"affects.list\",0)"
           }
         ]
       }
     ]
   },
   {
-    "name":                "msp",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "msp",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "sounds",
-        "patterns":        [
+        "name": "sounds",
+        "patterns": [
           {
-            "pattern":     "\\!\\!SOUND\\((.*) V=(\\d+) L=(\\d+) P=(\\d+) T=(\\w+)\\)",
-            "type":        "regex"
+            "pattern": "\\!\\!SOUND\\((.*) V=(\\d+) L=(\\d+) P=(\\d+) T=(\\w+)\\)",
+            "type": "regex"
           }
         ],
-        "script":          "receiveMSP(matches[2]) deleteLine()"
+        "script": "receiveMSP(matches[2]) deleteLine()"
       }
     ]
   },
   {
-    "name":                "mapper",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "mapper",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "whereiswalk",
-        "patterns":        [
+        "name": "whereiswalk",
+        "patterns": [
           {
-            "pattern":     "^You sense that (.*) may be located (.*).$",
-            "type":        "regex"
+            "pattern": "^You sense that (.*) may be located (.*).$",
+            "type": "regex"
           }
         ],
-        "script":          "speedwalk(matches[3])"
+        "script": "speedwalk(matches[3])"
       },
       {
-        "name":            "fake-sextant",
-        "patterns":        [
+        "name": "fake-sextant",
+        "patterns": [
           {
-            "pattern":     "^\\((-+)\\)",
-            "type":        "regex"
+            "pattern": "^\\((-+)\\)",
+            "type": "regex"
           }
         ]
       },
       {
-        "name":            "fake-sextant-forest",
-        "patterns":        [
+        "name": "fake-sextant-forest",
+        "patterns": [
           {
-            "pattern":     "^\\((-+\\*Forested\\*---)\\) ",
-            "type":        "regex"
+            "pattern": "^\\((-+\\*Forested\\*---)\\) ",
+            "type": "regex"
           }
         ]
       }
     ]
   },
   {
-    "name":                "Captures",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "Captures",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "Clan",
-        "patterns":        [
+        "name": "Clan",
+        "patterns": [
           {
-            "pattern":     "^\\[CLAN\\] (.*)$",
-            "type":        "regex"
+            "pattern": "^\\[CLAN\\] (.*)$",
+            "type": "regex"
           },
           {
-            "pattern":     "^\\[(.*)\\] clan members? heard you say, (.*)$",
-            "type":        "regex"
+            "pattern": "^\\[(.*)\\] clan members? heard you say, (.*)$",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Clan\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Clan\",matches[1])"
       },
       {
-        "name":            "Novice Clan",
-        "highlight":       "yes",
-        "highlightFG":     "#d5d56a",
-        "highlightBG":     "#000000",
-        "patterns":        [
+        "name": "Novice Clan",
+        "highlight": "yes",
+        "highlightFG": "#d5d56a",
+        "highlightBG": "#000000",
+        "patterns": [
           {
-            "pattern":     "^(\\[CLAN Novice Adventurers\\] .*)$",
-            "type":        "regex"
+            "pattern": "^(\\[CLAN Novice Adventurers\\] .*)$",
+            "type": "regex"
           },
           {
-            "pattern":     "^(\\[.*\\] Novice clan members? heard you say, .*)$",
-            "type":        "regex"
+            "pattern": "^(\\[.*\\] Novice clan members? heard you say, .*)$",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Novice\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Novice\",matches[1])"
       },
       {
-        "name":            "Alliance Chat",
-        "patterns":        [
+        "name": "Alliance Chat",
+        "patterns": [
           {
-            "pattern":     "^(\\[ALLIED.*\\] .*)$",
-            "type":        "regex"
+            "pattern": "^(\\[ALLIED.*\\] .*)$",
+            "type": "regex"
           },
           {
-            "pattern":     "^(\\[\\d+\\] alliance members? heard you say, .*)$",
-            "type":        "regex"
+            "pattern": "^(\\[\\d+\\] alliance members? heard you say, .*)$",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Alliance\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Alliance\",matches[1])"
       },
       {
-        "name":            "Talk",
-        "patterns":        [
+        "name": "Talk",
+        "patterns": [
           {
-            "pattern":     "^\\[TALK (.*)$",
-            "type":        "regex"
+            "pattern": "^\\[TALK (.*)$",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Talk\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Talk\",matches[1])"
       },
       {
-        "name":            "Relays",
-        "patterns":        [
+        "name": "Relays",
+        "patterns": [
           {
-            "pattern":     "^\\[(\\d+)\\] people|person in (.*) heard you relay (.*)$",
-            "type":        "regex"
+            "pattern": "^\\[(\\d+)\\] people|person in (.*) heard you relay (.*)$",
+            "type": "regex"
           },
           {
-            "pattern":     "^(\\w+)\\@\\#(.*)$",
-            "type":        "regex"
+            "pattern": "^(\\w+)\\@\\#(.*)$",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Relays\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Relays\",matches[1])"
       },
       {
-        "name":            "Form",
-        "patterns":        [
+        "name": "Form",
+        "patterns": [
           {
-            "pattern":     "(.*) tells the formation (.*)",
-            "type":        "regex"
+            "pattern": "(.*) tells the formation (.*)",
+            "type": "regex"
           },
           {
-            "pattern":     "^You tell the formation (.*)",
-            "type":        "regex"
+            "pattern": "^You tell the formation (.*)",
+            "type": "regex"
           }
         ],
-        "script":          "selectCurrentLine() mmpkg.Captures:append(\"Form\") deselect() resetFormat()"
+        "script": "mmpkg.Cap(\"Form\",matches[1])"
       },
       {
-        "name":            "Tells",
-        "patterns":        [
+        "name": "Tells",
+        "patterns": [
           {
-            "pattern":     "^You tell (.*)$",
-            "type":        "regex"
+            "pattern": "^You tell (.*)$",
+            "type": "regex"
           },
           {
-            "pattern":     "^(.*) (tells|impresses upon) you '(.*)'$",
-            "type":        "regex"
+            "pattern": "^(.*) (tells|impresses upon) you '(.*)'$",
+            "type": "regex"
           }
         ],
-        "script":          "if not string.starts(matches[2],\"the formation\") then selectCurrentLine() mmpkg.Captures:append(\"Tells\") deselect() resetFormat() end"
+        "script": "if not string.starts(matches[2],\"the formation\") then mmpkg.Cap(\"Relays\",matches[1]) end"
       },
       {
-        "name":            "Paging",
-        "fireLength":      "1",
-        "patterns":        [
+        "name": "Paging",
+        "fireLength": "1",
+        "patterns": [
           {
-            "pattern":     "^\\a(\\w+) is paging you...$",
-            "type":        "regex"
+            "pattern": "^\\a(\\w+) is paging you...$",
+            "type": "regex"
           }
         ],
-        "script":          "mmpkg.pagedby = matches[2]",
-        "children":        [
+        "script": "mmpkg.pagedby = matches[2]",
+        "children": [
           {
-            "name":        "Reason",
-            "patterns":    [
+            "name": "Reason",
+            "patterns": [
               {
                 "pattern": "^Reason: (.*)$",
-                "type":    "regex"
+                "type": "regex"
               }
             ]
           }
@@ -837,115 +837,115 @@
     ]
   },
   {
-    "name":                "Quest Tools",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "Quest Tools",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "Quest Timers",
-        "isFolder":        "yes",
-        "children":        [
+        "name": "Quest Timers",
+        "isFolder": "yes",
+        "children": [
           {
-            "name":        "timer",
-            "patterns":    [
+            "name": "timer",
+            "patterns": [
               {
                 "pattern": "^You have (\\d+) Alyrian minutes remaining .* request .* quest.$",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "local time = (((tonumber(matches[2]) / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.OnQuestTimer\") end)"
+            "script": "local time = (((tonumber(matches[2]) / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.OnQuestTimer\") end)"
           },
           {
-            "name":        "Checkwait",
-            "patterns":    [
+            "name": "Checkwait",
+            "patterns": [
               {
                 "pattern": "^(\\w+) (\\w+) tells you, 'As a reward for thy valor, I am awarding you ",
-                "type":    "regex"
+                "type": "regex"
               }
             ],
-            "script":      "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+            "script": "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
           }
         ]
       },
       {
-        "name":            "QLookTrigger",
-        "patterns":        [
+        "name": "QLookTrigger",
+        "patterns": [
           {
-            "pattern":     "^This quest \\[(\\d+)\\] is called '(.*)',$",
-            "type":        "regex"
+            "pattern": "^This quest \\[(\\d+)\\] is called '(.*)',$",
+            "type": "regex"
           }
         ]
       },
       {
-        "name":            "AutoStatus",
-        "patterns":        [
+        "name": "AutoStatus",
+        "patterns": [
           {
-            "pattern":     "^You have completed a part of quest \\#(\\d+), '.*'\\!",
-            "type":        "regex"
+            "pattern": "^You have completed a part of quest \\#(\\d+), '.*'\\!",
+            "type": "regex"
           }
         ],
-        "script":          "send(\"quest status \" .. matches[2],false)"
+        "script": "send(\"quest status \" .. matches[2],false)"
       }
     ]
   },
   {
-    "name":                "Miscellaneous",
-    "isFolder":            "yes",
-    "children":            [
+    "name": "Miscellaneous",
+    "isFolder": "yes",
+    "children": [
       {
-        "name":            "setCharName",
-        "patterns":        [
+        "name": "setCharName",
+        "patterns": [
           {
-            "pattern":     "^(\\w+)'s registered email address is",
-            "type":        "regex"
+            "pattern": "^(\\w+)'s registered email address is",
+            "type": "regex"
           }
         ],
-        "script":          "mmpkg.CharName = matches[2] cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
+        "script": "mmpkg.CharName = matches[2] cecho(\"\\n\\n<white>Setting Character Name: \" .. matches[2])"
       },
       {
-        "name":            "onLogin",
-        "patterns":        [
+        "name": "onLogin",
+        "patterns": [
           {
-            "pattern":     "Materia Magica is brought to you",
-            "type":        "startOfLine"
+            "pattern": "Materia Magica is brought to you",
+            "type": "startOfLine"
           },
           {
-            "pattern":     "Welcome back to Materia Magica.",
-            "type":        "exactMatch"
+            "pattern": "Welcome back to Materia Magica.",
+            "type": "exactMatch"
           }
         ],
-        "script":          "mmpkg.doupdate() send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
+        "script": "mmpkg.checkupdate(false) send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
       },
       {
-        "name":            "YouDied",
-        "patterns":        [
+        "name": "YouDied",
+        "patterns": [
           {
-            "pattern":     "^Your disembodied soul rises from your ravaged corpse.$",
-            "type":        "regex"
+            "pattern": "^Your disembodied soul rises from your ravaged corpse.$",
+            "type": "regex"
           }
         ],
-        "script":          "mmpkg.dead = true raiseEvent(\"mmpkg.OnDeath\")"
+        "script": "mmpkg.dead = true raiseEvent(\"mmpkg.OnDeath\")"
       },
       {
-        "name":            "YouLive",
-        "patterns":        [
+        "name": "YouLive",
+        "patterns": [
           {
-            "pattern":     "^The Powers take pity on you and restore your soul to your body.$",
-            "type":        "regex"
+            "pattern": "^The Powers take pity on you and restore your soul to your body.$",
+            "type": "regex"
           }
         ],
-        "script":          "mmpkg.dead = false raiseEvent(\"mmpkg.OnAlive\")"
+        "script": "mmpkg.dead = false raiseEvent(\"mmpkg.OnAlive\")"
       },
       {
-        "name":            "Linkify",
-        "matchall":        "yes",
-        "patterns":        [
+        "name": "Linkify",
+        "matchall": "yes",
+        "patterns": [
           {
-            "pattern":     "(?i:https?:\\/\\/\\S*)",
-            "type":        "regex"
+            "pattern": "(?i:https?:\\/\\/\\S*)",
+            "type": "regex"
           },
           {
-            "pattern":     "(?i:www\\.\\S*)",
-            "type":        "regex"
+            "pattern": "(?i:www\\.\\S*)",
+            "type": "regex"
           }
         ]
       }

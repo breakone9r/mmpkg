@@ -3,7 +3,7 @@ function mmpkg_Installed(_, name)
     if not string.find(name, "update") then
       cecho("<white>\nInitializing, Please wait...")
       mmpkg.setup()
-      tempTimer(5,mmpkg_PostSetup,false)
+      tempTimer(5, mmpkg_PostSetup, false)
     end
   end
 end
@@ -134,7 +134,7 @@ function mmpkg_PostSetup()
     if roomExists(room) then
       setRoomUserData(room, "sign", "true")
     else
-      cecho("\n<red:white> ERROR: Missing Rooms detected! No map loaded? Please run mapper update")
+      cecho("\n<red:white> ERROR: Missing Rooms detected! No/old map loaded? Please run mapper update")
       break
     end
   end

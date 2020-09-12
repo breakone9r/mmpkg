@@ -57,21 +57,17 @@ else
   cecho("\n<cyan>    mapper path roomIDnumber")
   cecho("\n<green>          Will show the path to the specified room number\n")
   cecho("\n<cyan>    mapper find roomflag")
-  cecho(
-    "\n<green>          Where roomflag is either safe, shop, trainer, or high-regen.\n          (or other known roomflags) will show rooms in your area that match.\n"
-  )
+  cecho("\n<green>          Where roomflag is either safe, shop, trainer, or high-regen.")
+  cecho("\n<green>          (or other known roomflags) will show rooms in your area that match.\n")
   cecho("\n<cyan>    mapper shop")
-  cecho(
-    "\n<green>          Will toggle the room flag: shop and color the room appropriately (room\n          colors will be overwritten by PK and SAFE colors)\n"
-  )
+  cecho("\n<green>          Will toggle the room flag: shop and color the room appropriately (room")
+  cecho("\n<green>          colors will be overwritten by PK and SAFE colors)\n")
   cecho("\n<cyan>    mapper trainer")
-  cecho(
-    "\n<green>          Will toggle the room flag: trainer and color the room appropriately (room\n          colors will be overwritten by PK and SAFE colors)\n"
-  )
+  cecho("\n<green>          Will toggle the room flag: trainer and color the room appropriately (room")
+  cecho("\n<green>          colors will be overwritten by PK and SAFE colors)\n")
   cecho("\n<cyan>    mapper clear")
   cecho("\n<green>          Clears all highlighted rooms from your current area.\n")
   cecho("\n<cyan>    mapper update")
-  cecho(
-    "\n<green>          Downloads and installs the latest map database from github.\n          <white>THIS WILL OVERWRITE YOUR CURRENT MAP!\n"
-  )
+  cecho("\n<green>          Downloads and installs the latest map database from github.")
+  cecho("\n<green>          <white>THIS WILL OVERWRITE YOUR CURRENT MAP!\n")
 end

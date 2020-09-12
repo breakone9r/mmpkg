@@ -31,16 +31,16 @@ if (matches[2] == "config") then
     end
   else
     local TimeStamps = {}
-    local LocalOnly  = {}
+    local LocalOnly = {}
     if mmpkg.conf.timestamps == true then
-      TimeStamps   = "On"
+      TimeStamps = "On"
     else
-      TimeStamps   = "Off"
+      TimeStamps = "Off"
     end
     if mmpkg.conf.areaonly == true then
-      LocalOnly    = "mapper where shows only local results"
+      LocalOnly = "mapper where shows only local results"
     else
-      LocalOnly    = "mapper where shows all results"
+      LocalOnly = "mapper where shows all results"
     end
     cecho("\n<cyan>mmpkg config settings:")
     cecho("\n<green>    LocalOnly  : " .. LocalOnly)
@@ -50,38 +50,38 @@ if (matches[2] == "config") then
   end
 elseif (matches[2] == "pages") then
   if not mmpkg.PagesCon then
-    mmpkg.PagesCon =
-      Geyser.UserWindow:new(
-        {
-          name = "mmpkg.PagesCon",
-          titleText = "Pages",
-          x = "20%",
-          y = "20%",
-          width = "50%",
-          height = "40%"
-        }
-      )
+    mmpkg.PagesCon = 
+    Geyser.UserWindow:new(
+      {
+        name = "mmpkg.PagesCon",
+        titleText = "Pages",
+        x = "20%",
+        y = "20%",
+        width = "50%",
+        height = "40%"
+      }
+    )
 
-    mmpkg.Pages =
-      Geyser.MiniConsole:new(
-        {
-          name = "mmpkg.Pages",
-          x = 0,
-          y = 0,
-          autoWrap = true,
-          color = "gray",
-          scrollBar = false,
-          fontSize = 10,
-          width = -5,
-          height = -5
-        },
-        mmpkg.PagesCon
-      )
+    mmpkg.Pages = 
+    Geyser.MiniConsole:new(
+      {
+        name = "mmpkg.Pages",
+        x = 0,
+        y = 0,
+        autoWrap = true,
+        color = "gray",
+        scrollBar = false,
+        fontSize = 10,
+        width = -5,
+        height = -5
+      },
+      mmpkg.PagesCon
+    )
   else
     mmpkg.PagesCon:show()
   end
 elseif (matches[2] == "update") then
-  mmpkg.doupdate()
+  mmpkg.checkupdate()
 else
   local cmd = matches[2] or ""
   cecho("<red:white>ERROR:<white:black> Unknown command '"..cmd.."'!\n")

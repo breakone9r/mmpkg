@@ -1,6 +1,6 @@
 function mmpkg.doHighLightPath()
   for i, v in pairs(speedWalkPath) do
-    local r, g, b    = unpack(color_table.red)
+    local r, g, b = unpack(color_table.red)
     local br, bg, bb = unpack(color_table.blue)
     highlightRoom(v, r, g, b, br, bg, bb, 1, 125, 125)
   end
@@ -16,7 +16,7 @@ end
 
 function mmpkg.doAffect(aff, ison, quiet)
   if not mmpkg.myAffects then
-    mmpkg.myAffects         = {}
+    mmpkg.myAffects = {}
     mmpkg.myAffects.affects = {}
   end
   if (ison == "on") then
@@ -57,7 +57,7 @@ function mmpkg.isOutside(zone)
 end
 
 function mmpkg.setFlags()
-  local s     = gmcp.room.info.flags
+  local s = gmcp.room.info.flags
   local flags = string.split(s, ", ")
   for i, v in pairs(flags) do
     setRoomUserData(gmcp.room.info.num, v, "true")
@@ -135,47 +135,47 @@ end
 
 function mmpkg.doImap()
   if (gmcp.room.info.zone == "Alyria") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.mapimg,
-      (GUI.vmapper:get_width() / 2300),
-      (GUI.vmapper:get_height() / 1500),
-      0,
-      0
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.mapimg,
+    (GUI.vmapper:get_width() / 2300),
+    (GUI.vmapper:get_height() / 1500),
+    0,
+    0
   elseif (gmcp.room.info.zone == "Alyrian Underworld") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.ugimg,
-      (GUI.vmapper:get_width() / 2300),
-      (GUI.vmapper:get_height() / 1500),
-      0,
-      0
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.ugimg,
+    (GUI.vmapper:get_width() / 2300),
+    (GUI.vmapper:get_height() / 1500),
+    0,
+    0
   elseif (gmcp.room.info.zone == "Faerie Plane Wilderness") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.fpimg,
-      (GUI.vmapper:get_width() / (610)),
-      (GUI.vmapper:get_height() / 400),
-      57 + 18,
-      0
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.fpimg,
+    (GUI.vmapper:get_width() / (610)),
+    (GUI.vmapper:get_height() / 400),
+    57 + 18,
+    0
   elseif (gmcp.room.info.zone == "Sigil Underground") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.sugimg,
-      (GUI.vmapper:get_width() / 889),
-      (GUI.vmapper:get_height() / 580),
-      -183,
-      (922 + (34 / 2))
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.sugimg,
+    (GUI.vmapper:get_width() / 889),
+    (GUI.vmapper:get_height() / 580),
+    -183,
+    (922 + (34 / 2))
   elseif (gmcp.room.info.zone == "Lasler Valley") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.laslerimg,
-      (GUI.vmapper:get_width() / 155),
-      (GUI.vmapper:get_height() / 101),
-      (GUI.vmapper:get_width() / 7),
-      0
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.laslerimg,
+    (GUI.vmapper:get_width() / 155),
+    (GUI.vmapper:get_height() / 101),
+    (GUI.vmapper:get_width() / 7),
+    0
   elseif (gmcp.room.info.zone == "Chat Rooms Wilderness") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
-      mmpkg.socialimg,
-      (GUI.vmapper:get_width() / 144),
-      (GUI.vmapper:get_height() / 94),
-      (GUI.vmapper:get_width() / 175),
-      (GUI.vmapper:get_height() / 5.75)
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.socialimg,
+    (GUI.vmapper:get_width() / 144),
+    (GUI.vmapper:get_height() / 94),
+    (GUI.vmapper:get_width() / 175),
+    (GUI.vmapper:get_height() / 5.75)
   else
     mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = mmpkg.mapimg, 100, 100, 0, 0
   end
@@ -196,7 +196,7 @@ function mmpkg.doCoords()
       setRoomChar(gmcp.room.info.num, gmcp.room.info.coord.sym)
     end
   else
-    local x, y, z = getRoomCoordinates(mmpkg.previousRoom.ID) or 0,0,0
+    local x, y, z = getRoomCoordinates(mmpkg.previousRoom.ID) or 0, 0, 0
     local dirToCoords = {
       u = {x, y, z - 1},
       d = {x, y, z + 1},
@@ -219,6 +219,13 @@ function mmpkg.doCoords()
   end
 end
 
+function mmpkg.Cap(chan, line)
+  selectCurrentLine()
+  mmpkg.Captures:append(chan)
+  deselect()
+  resetFormat()
+end
+
 function mmpkg.nextSpeedStep()
   if mmpkg.isWalking then
     if mmpkg.speedstep then
@@ -228,17 +235,17 @@ function mmpkg.nextSpeedStep()
       table.remove(speedWalkDir, 1)
       table.remove(speedWalkPath, 1)
       if speedWalkDir[1] then
-        mmpkg.speedstep =
-          tempTimer(
-            1.7,
-            function()
-              mmpkg.isWalking = false
-              cecho(
-                "<red>ERROR! Expected room #:<white> " ..
-                speedWalkPath[1] .. "<red> But we've stopped in room #:<white> " .. mmpkg.currentRoom.ID
-              )
-            end
-          )
+        mmpkg.speedstep = 
+        tempTimer(
+          1.7,
+          function()
+            mmpkg.isWalking = false
+            cecho(
+              "<red>ERROR! Expected room #:<white> " ..
+              speedWalkPath[1] .. "<red> But we've stopped in room #:<white> " .. mmpkg.currentRoom.ID
+            )
+          end
+        )
         send(speedWalkDir[1])
       else
         mmpkg.isWalking = false
@@ -280,7 +287,7 @@ function mmpkg.infoMap()
   end
   GUI.MapInfo:echo("<&nbsp> <&nbsp>"..gmcp.room.info.zone.." ["..gmcp.room.info.coord.x..
     "/"..gmcp.room.info.coord.y.."] -- "..gmcp.room.info.name.." (#"..gmcp.room.info.num..
-    ")<br>  Flags: "..roomflags)
+  ")<br>  Flags: "..roomflags)
 end
 
 function mmpkg.isMaze(InRoom)
@@ -365,7 +372,7 @@ function mmpkg.mwhere(pattern, gotofirst, areaonly)
 
   for _, id in pairs(matchingRooms) do
     local _, tw = getPath(gmcp.room.info.num, id)
-    if tw > -1 then
+    if tw > - 1 then
       reachableRooms[id] = tw
     else
       unreachableRooms[id] = id
@@ -378,17 +385,17 @@ function mmpkg.mwhere(pattern, gotofirst, areaonly)
       " Matching " ..
       [["]] ..
       pattern ..
-      [["]] .. " \n closest first. (n/a = unreachable) (right-click room# for more options)"
+      [["]] .. " \n closest first. (n / a = unreachable) (right - click room# for more options)"
     )
     cecho("\n<white> ( dist)    #room - Name                                          -- Area\n")
     cecho("<blue>------------------------------------------------------------------------------------------\n\n")
   end
   if not table.is_empty(reachableRooms) then
-    local sortFunc = function(t,a,b)
+    local sortFunc = function(t, a, b)
       return t[a] < t[b]
     end
 
-    for id, tw in spairs(reachableRooms,sortFunc) do
+    for id, tw in spairs(reachableRooms, sortFunc) do
       local area = getRoomAreaName(getRoomArea(id))
       local room = getRoomName(id)
       local gotocommand = "mapper goto " .. id
@@ -467,7 +474,7 @@ function mmpkg.mfind(flag, gotofirst, areaonly)
 
   for key, id in pairs(matchingRooms) do
     local _, tw = getPath(gmcp.room.info.num, id)
-    if tw > -1 then
+    if tw > - 1 then
       reachableRooms[id] = tw
     else
       unreachableRooms[id] = id
@@ -484,11 +491,11 @@ function mmpkg.mfind(flag, gotofirst, areaonly)
   end
 
   if not table.is_empty(reachableRooms) then
-    local sortFunc = function(t,a,b)
+    local sortFunc = function(t, a, b)
       return t[a] < t[b]
     end
 
-    for id, tw in spairs(reachableRooms,sortFunc) do
+    for id, tw in spairs(reachableRooms, sortFunc) do
       local area = getRoomAreaName(getRoomArea(id))
       local room = getRoomName(id)
       local gotocommand = "mapper goto " .. id
@@ -552,7 +559,7 @@ function findAreaID(areaname)
   for area, id in pairs(list) do
     if area:find(areaname, 1, true) then
       if returnid then
-      -- return false, "more than one area matches"
+        -- return false, "more than one area matches"
       end
       returnid = id
       fullareaname = area

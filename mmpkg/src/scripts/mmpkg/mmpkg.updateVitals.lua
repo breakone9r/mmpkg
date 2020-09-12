@@ -11,10 +11,7 @@ function mmpkg.updateVitals()
   if not mmpkg.tnlpct then
     mmpkg.tnlpct = 100
   end
-  mmpkg.myhp, mmpkg.mysp, mmpkg.myst =
-    tonumber(gmcp.char.vitals.hp),
-    tonumber(gmcp.char.vitals.sp),
-    tonumber(gmcp.char.vitals.st)
+  mmpkg.myhp, mmpkg.mysp, mmpkg.myst = tonumber(gmcp.char.vitals.hp), tonumber(gmcp.char.vitals.sp), tonumber(gmcp.char.vitals.st)
   if (mmpkg.tnlpct < 1) then
     mmpkg.tnlpct = 0
   end
@@ -35,6 +32,6 @@ function mmpkg.updateVitals()
   GUI.SPLabel:echo("<center>" .. mmpkg.mysp .. "/" .. mmpkg.mymaxsp .. "sp</center>")
   GUI.Stamina:update(mmpkg.myst / mmpkg.mymaxst)
   GUI.STLabel:echo("<center>" .. mmpkg.myst .. "/" .. mmpkg.mymaxst .. "st</center>")
-  GUI.XPgauge:update(mmpkg.tnlpct/100)
+  GUI.XPgauge:update(mmpkg.tnlpct / 100)
   GUI.XPLabel:echo("<center>Exp: " .. mmpkg.tnlpct .. "%</center>")
 end
