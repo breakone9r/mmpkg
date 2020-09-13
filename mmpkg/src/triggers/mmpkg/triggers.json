@@ -699,7 +699,7 @@
         "script": "mmpkg.Cap(\"Clan\",matches[1])"
       },
       {
-        "name": "Novice Clan",
+        "name": "Novice",
         "highlight": "yes",
         "highlightFG": "#d5d56a",
         "highlightBG": "#000000",
@@ -716,7 +716,7 @@
         "script": "mmpkg.Cap(\"Novice\",matches[1])"
       },
       {
-        "name": "Alliance Chat",
+        "name": "Alliance",
         "patterns": [
           {
             "pattern": "^(\\[ALLIED.*\\] .*)$",
