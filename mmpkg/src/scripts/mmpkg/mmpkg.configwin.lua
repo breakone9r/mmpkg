@@ -12,23 +12,27 @@ function mmpkg.config.timestampbox_click()
 end
 
 function mmpkg.config.scanhelperbox_click()
-  if isActive("Scan Helper", "trigger") then
-    disableTrigger("Scan Helper")
+  if mmpkg.config.scanhelper == true then
+    mmpkg.config.scanhelper = false
+    mmpkg.config.scanhelperbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   else
-    enableTrigger("Scan Helper")
+    mmpkg.config.scanhelper = true
+    mmpkg.config.scanhelperbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   end
 end
 
 function mmpkg.config.linkifybox_click()
-  if isActive("Linkify", "trigger") then
-    disableTrigger("Linkify")
+  if mmpkg.config.linkify == true then
+    mmpkg.config.linkify = false
+    mmpkg.config.linkifybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   else
-    enableTrigger("Linkify")
+    mmpkg.config.linkify = true
+    mmpkg.config.linkifybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   end
 end
 
 function mmpkg.config.areaonlybox_click()
-  if mmpkg.conf.areaonly then
+  if mmpkg.conf.areaonly == true then
     mmpkg.conf.areaonly = false
     mmpkg.config.areaonlybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   else
@@ -165,6 +169,16 @@ function mmpkg.config.applysettings()
     mmpkg.Captures:enableTimestamp()
   else
     mmpkg.Captures:disableTimestamp()
+  end
+  if (mmpkg.config.scanhelper == true) then
+    enableTrigger("Scan Helper")
+  else
+    disableTrigger("Scan Helper")
+  end
+  if (mmpkg.config.linkify == true) then
+    enableTrigger("Linkify")
+  else
+    disableTrigger("Linkify")
   end
   for _, chan in pairs(mmpkg.Captures.consoles) do
     if not table.contains(mmpkg.conf.tabs, chan) then

@@ -18,6 +18,10 @@
     "isActive": "yes"
   },
   {
+    "name": "mmpkg.config.doWindow",
+    "isActive": "yes"
+  },
+  {
     "name": "mapping",
     "isActive": "yes"
   },
