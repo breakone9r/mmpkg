@@ -89,7 +89,7 @@ function mmpkg.setup()
     table.load(getMudletHomeDir() .. "/mmpkg.conf", mmpkg.conf)
   end
   -- Apply defaults if no settings
-  if not mmpkg.conf.fontsize then mmpkg.conf.fontsize = getFontSize() end
+  mmpkg.conf.fontsize = getFontSize()
   if not mmpkg.conf.areaonly then mmpkg.conf.areaonly = false end
   if not mmpkg.conf.timestamps then mmpkg.conf.timestamps = false end
   if not mmpkg.conf.tabs then
@@ -98,8 +98,7 @@ function mmpkg.setup()
       "Talk"
     }
   end
-  -- Set main display fontsize to mmpkg settings.
-  setFontSize(mmpkg.conf.fontsize)
+
   -- Now for the meat and potatoes of the GUI.
   -- iGauges by demonnic : https://forums.mudlet.org/viewtopic.php?f=6&t=22779
   -- GUI Template by Akaya : https://forums.mudlet.org/viewtopic.php?f=6&t=4098
