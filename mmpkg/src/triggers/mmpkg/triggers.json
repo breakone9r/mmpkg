@@ -1,134 +1,103 @@
-[
-  {
+[{
     "name": "My Affects",
     "isFolder": "yes",
-    "children": [
-      {
+    "children": [{
         "name": "Armor",
         "isFolder": "yes",
-        "children": [
-          {
+        "children": [{
             "name": "armor.off",
-            "patterns": [
-              {
-                "pattern": "^The hardened air around you dissipates.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^The hardened air around you dissipates.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"armor\",\"off\")"
           },
           {
             "name": "armor.on",
-            "patterns": [
-              {
-                "pattern": "^There is a faint sound, a very high pitched shriek as the air is hardened around you.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^There is a faint sound, a very high pitched shriek as the air is hardened around you.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"armor\",\"on\")"
-          }
-        ]
+          }]
       },
       {
         "name": "Combat Blink",
         "isFolder": "yes",
-        "children": [
-          {
+        "children": [{
             "name": "combat.blink.off",
-            "patterns": [
-              {
-                "pattern": "^The bluish field at the edge of your vision dissipates.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^The bluish field at the edge of your vision dissipates.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"combat blink\",\"off\")"
           },
           {
             "name": "combat.blink.on",
-            "patterns": [
-              {
-                "pattern": "^The world becomes blue-tinted for a moment, then fades back to normal.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^The world becomes blue-tinted for a moment, then fades back to normal.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"combat blink\",\"on\")"
-          }
-        ]
+          }]
       },
       {
         "name": "Underwater Breathing",
         "isFolder": "yes",
-        "children": [
-          {
+        "children": [{
             "name": "uwbreathing.off",
-            "patterns": [
-              {
-                "pattern": "^You feel the magic enabling you to breathe underwater diminish.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^You feel the magic enabling you to breathe underwater diminish.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"uwbreathing\",\"off\")"
           },
           {
             "name": "uwbreathing.on",
-            "patterns": [
-              {
-                "pattern": "^You choke as your lungs adjust to underwater breathing.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^You choke as your lungs adjust to underwater breathing.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"uwbreathing\",\"on\")"
-          }
-        ]
+          }]
       },
       {
         "name": "Shadow Armor",
         "isFolder": "yes",
-        "children": [
-          {
+        "children": [{
             "name": "shadow.armor.off",
-            "patterns": [
-              {
-                "pattern": "^The shadows protecting you seem to subside.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^The shadows protecting you seem to subside.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"shadow armor\",\"off\")"
           },
           {
             "name": "shadow.armor.on",
-            "patterns": [
-              {
-                "pattern": "^A dark, shadowy mist gathers itself around your form.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^A dark, shadowy mist gathers itself around your form.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"shadow armor\",\"on\")"
-          }
-        ]
+          }]
       },
       {
         "name": "Detect Invisibility",
         "isFolder": "yes",
-        "children": [
-          {
+        "children": [{
             "name": "detect.invisibility.on",
-            "patterns": [
-              {
-                "pattern": "^You feel a sharp prickling on the back of your neck as your senses are heightened.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^You feel a sharp prickling on the back of your neck as your senses are heightened.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"detect invisibility\",\"on\")"
           },
           {
             "name": "detect.invisibility.off",
-            "patterns": [
-              {
-                "pattern": "^You feel different as your senses become less heightened.$",
-                "type": "regex"
-              }
-            ],
+            "patterns": [{
+              "pattern": "^You feel different as your senses become less heightened.$",
+              "type": "regex"
+              }],
             "script": "mmpkg.doAffect(\"detect invisibility\",\"off\")"
           }
         ]
@@ -848,7 +817,7 @@
             "name": "timer",
             "patterns": [
               {
-                "pattern": "^You have (\\d+) Alyrian minutes remaining .* request .* quest.$",
+                "pattern": "^You have (\\d+) Alyrian minutes? remaining .* request .* quest.$",
                 "type": "regex"
               }
             ],
@@ -862,7 +831,7 @@
                 "type": "regex"
               }
             ],
-            "script": "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.onQuestTimer\") end)"
+            "script": "local time = (((20 / 4) * 60)+4) if mmpkg.questtimer then killTimer(mmpkg.questtimer) end mmpkg.questtimer = tempTimer(time, function() raiseEvent(\"mmpkg.OnQuestTimer\") end)"
           }
         ]
       },
@@ -950,5 +919,24 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Scan Helper",
+    "isFolder": "yes",
+    "children": [{
+        "name": "GagNone",
+        "patterns": [{
+          "pattern": "^You don't see anything (upwards|downwards|to the north|to the south|to the west|to the east|to the northwest|to the northeast|to the southwest|to the southeast).$",
+          "type": "regex"
+          }],
+        "script": "deleteLine()"
+      },
+      {
+        "name": "RoomsAway",
+        "patterns": [{
+          "pattern": "^(.*) is (right here|close by|not far off|a brief walk away|rather far off) (upwards|downwards|to the north|to the south|to the west|to the east|to the northwest|to the northeast|to the southwest|to the southeast).$",
+          "type": "regex"
+        }]
+    }]
   }
 ]

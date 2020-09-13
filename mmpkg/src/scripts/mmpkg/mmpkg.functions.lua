@@ -285,9 +285,9 @@ function mmpkg.infoMap()
   if (roomflags == "_empty") then
     roomflags = "none"
   end
-  GUI.MapInfo:echo("<&nbsp> <&nbsp>"..gmcp.room.info.zone.." ["..gmcp.room.info.coord.x..
+  GUI.MapInfo:echo("&nbsp;"..gmcp.room.info.zone.." ["..gmcp.room.info.coord.x..
     "/"..gmcp.room.info.coord.y.."] -- "..gmcp.room.info.name.." (#"..gmcp.room.info.num..
-  ")<br>  Flags: "..roomflags)
+  ")<br>&nbsp;Flags: "..roomflags)
 end
 
 function mmpkg.isMaze(InRoom)
