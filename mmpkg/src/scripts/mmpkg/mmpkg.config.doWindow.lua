@@ -53,16 +53,45 @@ function mmpkg.config.doWindow()
     mmpkg.config.timestampbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   end
   mmpkg.config.timestampbox:setClickCallback("mmpkg.config.timestampbox_click")
+
+  mmpkg.config.loggingbox = 
+  Geyser.Label:new(
+    {name = "mmpkg.config.logging", x = 10, y = 50, width = 21, height = 19}, mmpkg.confwin
+  )
+  mmpkg.config.logginglabel = 
+  Geyser.Label:new(
+    {
+      name = "mmpkg.config.logginglabel",
+      x = 32,
+      y = 52,
+      fgColor = "black",
+      color = "gray",
+      width = 200,
+      height = 20,
+      message = [[Log chats to file?]],
+    },
+    mmpkg.confwin
+  )
+  mmpkg.config.loggingbox:setStyleSheet([[
+  background-color: rgba(0,0,0,0%);
+]])
+  if mmpkg.conf.logging then
+    mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  else
+    mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  end
+  mmpkg.config.loggingbox:setClickCallback("mmpkg.config.loggingbox_click")
+
   mmpkg.config.areaonlybox = 
   Geyser.Label:new(
-    {name = "mmpkg.config.areaonlybox", x = 10, y = 70, width = 21, height = 19}, mmpkg.confwin
+    {name = "mmpkg.config.areaonlybox", x = 10, y = 90, width = 21, height = 19}, mmpkg.confwin
   )
   mmpkg.config.areaonlylabel = 
   Geyser.Label:new(
     {
       name = "mmpkg.config.areaonlylabel",
       x = 32,
-      y = 72,
+      y = 92,
       fgColor = "black",
       color = "gray",
       width = 220,
@@ -83,14 +112,14 @@ function mmpkg.config.doWindow()
 
   mmpkg.config.scanhelperbox = 
   Geyser.Label:new(
-    {name = "mmpkg.config.scanhelperbox", x = 10, y = 90, width = 21, height = 19}, mmpkg.confwin
+    {name = "mmpkg.config.scanhelperbox", x = 10, y = 110, width = 21, height = 19}, mmpkg.confwin
   )
   mmpkg.config.scanhelperlabel = 
   Geyser.Label:new(
     {
       name = "mmpkg.config.scanhelperlabel",
       x = 32,
-      y = 92,
+      y = 112,
       fgColor = "black",
       color = "gray",
       width = 220,
@@ -113,14 +142,14 @@ function mmpkg.config.doWindow()
 
   mmpkg.config.linkifybox = 
   Geyser.Label:new(
-    {name = "mmpkg.config.linkifybox", x = 10, y = 110, width = 21, height = 19}, mmpkg.confwin
+    {name = "mmpkg.config.linkifybox", x = 10, y = 130, width = 21, height = 19}, mmpkg.confwin
   )
   mmpkg.config.linkifylabel = 
   Geyser.Label:new(
     {
       name = "mmpkg.config.linkifylabel",
       x = 32,
-      y = 112,
+      y = 132,
       fgColor = "black",
       color = "gray",
       width = 220,

@@ -91,6 +91,7 @@ function mmpkg.setup()
   -- Apply defaults if no settings
   mmpkg.conf.fontsize = getFontSize()
   if not mmpkg.conf.areaonly then mmpkg.conf.areaonly = false end
+  if not mmpkg.conf.logging then mmpkg.conf.logging = false end
   if not mmpkg.conf.timestamps then mmpkg.conf.timestamps = false end
   if not mmpkg.conf.tabs then
     mmpkg.conf.tabs = {
@@ -342,6 +343,9 @@ function mmpkg.setup()
   }, GUI.Box2)
   if mmpkg.updates then
     cecho("\n\n<red:white>Updater package is no longer needed! Please remove it now, as it can interfere.")
+  end
+  for _, tab in spairs(mmpkg.Captures.consoles) do
+    mmpkg.playlog(tab)
   end
 end
 

@@ -21,6 +21,16 @@ function mmpkg.config.scanhelperbox_click()
   end
 end
 
+function mmpkg.config.loggingbox_click()
+  if mmpkg.config.logging == true then
+    mmpkg.config.logging = false
+    mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  else
+    mmpkg.config.logging = true
+    mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  end
+end
+
 function mmpkg.config.linkifybox_click()
   if mmpkg.config.linkify == true then
     mmpkg.config.linkify = false
@@ -179,6 +189,11 @@ function mmpkg.config.applysettings()
     enableTrigger("Linkify")
   else
     disableTrigger("Linkify")
+  end
+  if (mmpkg.config.logging == true) then
+    mmpkg.conf.logging = true
+  else
+    mmpkg.conf.logging = false
   end
   for _, chan in pairs(mmpkg.Captures.consoles) do
     if not table.contains(mmpkg.conf.tabs, chan) then

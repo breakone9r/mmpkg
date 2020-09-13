@@ -219,11 +219,50 @@ function mmpkg.doCoords()
   end
 end
 
+function mmpkg.log(chan, cap)
+  local line = ""
+  line = line .. getTime(true, "MM/dd/yy hh:mm:ss - ")
+  filename = getMudletHomeDir() .. "/log/" .. chan .. ".log"
+  fname = io.open(filename, "a+")
+  line = line .. cap .. "\n"
+  fname:write(line)
+  fname:close()
+end
+
+function mmpkg.playlog(chan)
+  mmpkg.Captures:disableTimestamp()
+  local lines = 0
+  local startline = 0
+  filename = getMudletHomeDir() .. "/log/" .. chan .. ".log"
+  if not io.exists(filename) then
+    do return end
+  end
+  for line in io.lines(filename) do
+    lines = lines + 1
+  end
+  if lines > 10 then
+    startline = lines - 10
+  end
+  lines = 0
+  for line in io.lines(filename) do
+    lines = lines + 1
+    if lines > startline then
+      mmpkg.Captures:echo(chan, line .. "\n")
+    end
+  end
+  if mmpkg.conf.timestamps == true then
+    mmpkg.Captures:enableTimestamp()
+  end
+end
+
 function mmpkg.Cap(chan, line)
   selectCurrentLine()
   mmpkg.Captures:append(chan)
   deselect()
   resetFormat()
+  if mmpkg.conf.logging == true then
+    mmpkg.log(chan, line)
+  end
 end
 
 function mmpkg.nextSpeedStep()
