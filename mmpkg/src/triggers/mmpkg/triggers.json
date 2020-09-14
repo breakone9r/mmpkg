@@ -696,7 +696,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Clan\",matches[1])"
+        "script": "mmpkg.Cap(\"Clan\",copy2decho(matches[1]))"
       },
       {
         "name": "Novice",
@@ -713,7 +713,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Novice\",matches[1])"
+        "script": "mmpkg.Cap(\"Novice\",copy2decho(matches[1]))"
       },
       {
         "name": "Alliance",
@@ -727,7 +727,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Alliance\",matches[1])"
+        "script": "mmpkg.Cap(\"Alliance\",copy2decho(matches[1]))"
       },
       {
         "name": "Talk",
@@ -737,7 +737,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Talk\",matches[1])"
+        "script": "mmpkg.Cap(\"Talk\",copy2decho(matches[1]))"
       },
       {
         "name": "Relays",
@@ -751,7 +751,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Relays\",matches[1])"
+        "script": "mmpkg.Cap(\"Relays\",copy2decho(matches[1]))"
       },
       {
         "name": "Form",
@@ -765,7 +765,7 @@
             "type": "regex"
           }
         ],
-        "script": "selectString(matches[1],1) if isAnsiFgColor(3) then mmpkg.Cap(\"Form\",matches[1]) end"
+        "script": "selectString(matches[1],1) if isAnsiFgColor(13) then mmpkg.Cap(\"Form\",copy2decho(matches[1])) end"
       },
       {
         "name": "Tells",
@@ -779,7 +779,7 @@
             "type": "regex"
           }
         ],
-        "script": "selectString(matches[1],1) if isAnsiFgColor(3) then mmpkg.Cap(\"Tells\",matches[1]) end"
+        "script": "selectString(matches[1],1) if isAnsiFgColor(3) then mmpkg.Cap(\"Tells\",copy2decho(matches[1])) end"
       },
       {
         "name": "Paging",
