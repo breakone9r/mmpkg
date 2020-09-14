@@ -244,14 +244,14 @@ function mmpkg.playlog(chan)
     startline = lines - 10
   end
   lines = 0
-  mmpkg.Captures:cecho(chan, "<gray>Begin playback of old logs (last <10 lines)\n", true)
+  mmpkg.Captures:cecho(chan, "<brown>Begin playback of old logs (last <10 lines)\n", true)
   for line in io.lines(filename) do
     lines = lines + 1
     if lines > startline then
       mmpkg.Captures:decho(chan, line .. "\n", true)
     end
   end
-  mmpkg.Captures:cecho(chan, "<gray>End playback of old logs (last <10 lines)\n", true)
+  mmpkg.Captures:cecho(chan, "<brown>End playback of old logs (last <10 lines)\n", true)
   if mmpkg.conf.timestamps == true then
     mmpkg.Captures:enableTimestamp()
   end
