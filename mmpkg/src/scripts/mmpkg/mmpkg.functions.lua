@@ -230,13 +230,13 @@ function mmpkg.log(chan, cap)
 end
 
 function mmpkg.playlog(chan)
-  mmpkg.Captures:disableTimestamp()
   local lines = 0
   local startline = 0
   filename = getMudletHomeDir() .. "/log/" .. chan .. ".log"
   if not io.exists(filename) then
     do return end
   end
+  mmpkg.Captures:disableTimestamp()
   for line in io.lines(filename) do
     lines = lines + 1
   end
