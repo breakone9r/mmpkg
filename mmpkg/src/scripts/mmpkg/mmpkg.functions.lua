@@ -247,7 +247,7 @@ function mmpkg.playlog(chan)
   for line in io.lines(filename) do
     lines = lines + 1
     if lines > startline then
-      mmpkg.Captures:echo(chan, line .. "\n")
+      mmpkg.Captures:echo(chan, line .. "\n", true)
     end
   end
   if mmpkg.conf.timestamps == true then
@@ -262,6 +262,7 @@ function mmpkg.Cap(chan, line)
   resetFormat()
   if mmpkg.conf.logging == true then
     mmpkg.log(chan, line)
+    mmpkg.log("All", line)
   end
 end
 

@@ -2,11 +2,11 @@ mmpkg = mmpkg or {}
 mmpkg.config = mmpkg.config or {}
 
 function mmpkg.config.timestampbox_click()
-  if mmpkg.conf.timestamps then
-    mmpkg.conf.timestamps = false
+  if mmpkg.config.timestamps then
+    mmpkg.config.timestamps = false
     mmpkg.config.timestampbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   else
-    mmpkg.conf.timestamps = true
+    mmpkg.config.timestamps = true
     mmpkg.config.timestampbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   end
 end
@@ -42,19 +42,19 @@ function mmpkg.config.linkifybox_click()
 end
 
 function mmpkg.config.areaonlybox_click()
-  if mmpkg.conf.areaonly == true then
-    mmpkg.conf.areaonly = false
+  if mmpkg.config.areaonly == true then
+    mmpkg.config.areaonly = false
     mmpkg.config.areaonlybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   else
-    mmpkg.conf.areaonly = true
+    mmpkg.config.areaonly = true
     mmpkg.config.areaonlybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   end
 end
 
 function mmpkg.config.savebtn_click()
+  mmpkg.config.applysettings()
   table.save(getMudletHomeDir() .. "/mmpkg.conf", mmpkg.conf)
   mmpkg.confwin:hide()
-  mmpkg.config.applysettings()
   cecho("\n<green>Saved!")
 end
 
@@ -175,10 +175,17 @@ function mmpkg.config.doTabs()
 end
 
 function mmpkg.config.applysettings()
-  if (mmpkg.conf.timestamps == true) then
+  if (mmpkg.config.timestamps == true) then
+    mmpkg.conf.timestamps = true
     mmpkg.Captures:enableTimestamp()
   else
+    mmpkg.conf.timestamps = false
     mmpkg.Captures:disableTimestamp()
+  end
+  if (mmpkg.config.areaonly == true) then
+    mmpkg.conf.areaonly = true
+  else
+    mmpkg.conf.areaonly = false
   end
   if (mmpkg.config.scanhelper == true) then
     enableTrigger("Scan Helper")

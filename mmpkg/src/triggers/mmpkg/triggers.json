@@ -779,7 +779,7 @@
             "type": "regex"
           }
         ],
-        "script": "if not string.starts(matches[2],\"the formation\") then mmpkg.Cap(\"Relays\",matches[1]) end"
+        "script": "if not string.starts(matches[2],\"the formation\") then mmpkg.Cap(\"Tells\",matches[1]) end"
       },
       {
         "name": "Paging",

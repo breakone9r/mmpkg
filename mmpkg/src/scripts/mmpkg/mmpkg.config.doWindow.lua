@@ -48,22 +48,24 @@ function mmpkg.config.doWindow()
   background-color: rgba(0,0,0,0%);
 ]])
   if mmpkg.conf.timestamps then
+    mmpkg.config.timestamps = true
     mmpkg.config.timestampbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   else
+    mmpkg.config.timestamps = false
     mmpkg.config.timestampbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   end
   mmpkg.config.timestampbox:setClickCallback("mmpkg.config.timestampbox_click")
 
   mmpkg.config.loggingbox = 
   Geyser.Label:new(
-    {name = "mmpkg.config.logging", x = 10, y = 50, width = 21, height = 19}, mmpkg.confwin
+    {name = "mmpkg.config.logging", x = 10, y = 70, width = 21, height = 19}, mmpkg.confwin
   )
   mmpkg.config.logginglabel = 
   Geyser.Label:new(
     {
       name = "mmpkg.config.logginglabel",
       x = 32,
-      y = 52,
+      y = 72,
       fgColor = "black",
       color = "gray",
       width = 200,
@@ -76,8 +78,10 @@ function mmpkg.config.doWindow()
   background-color: rgba(0,0,0,0%);
 ]])
   if mmpkg.conf.logging then
+    mmpkg.config.logging = true
     mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   else
+    mmpkg.config.logging = false
     mmpkg.config.loggingbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   end
   mmpkg.config.loggingbox:setClickCallback("mmpkg.config.loggingbox_click")
@@ -104,8 +108,10 @@ function mmpkg.config.doWindow()
   background-color: rgba(0,0,0,0%);
 ]])
   if mmpkg.conf.areaonly then
+    mmpkg.config.areaonly = true
     mmpkg.config.areaonlybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
   else
+    mmpkg.config.areaonly = false
     mmpkg.config.areaonlybox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
   end
   mmpkg.config.areaonlybox:setClickCallback("mmpkg.config.areaonlybox_click")
