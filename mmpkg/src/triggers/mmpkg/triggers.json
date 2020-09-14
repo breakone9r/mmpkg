@@ -765,7 +765,7 @@
             "type": "regex"
           }
         ],
-        "script": "mmpkg.Cap(\"Form\",matches[1])"
+        "script": "selectString(matches[1],1) if isAnsiFgColor(3) then mmpkg.Cap(\"Form\",matches[1]) end"
       },
       {
         "name": "Tells",
@@ -779,7 +779,7 @@
             "type": "regex"
           }
         ],
-        "script": "if not string.starts(matches[2],\"the formation\") then mmpkg.Cap(\"Tells\",matches[1]) end"
+        "script": "selectString(matches[1],1) if isAnsiFgColor(3) then mmpkg.Cap(\"Tells\",matches[1]) end"
       },
       {
         "name": "Paging",
