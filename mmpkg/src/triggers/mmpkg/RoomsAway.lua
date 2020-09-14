@@ -16,6 +16,9 @@ elseif matches[3] == "a brief walk away" then
   --cecho(" <blue>[<gray>4<blue>]")
 elseif matches[3] == "rather far off" then
   selectString(matches[3], 1)
-  replace("five or more rooms")
+  replace("five rooms")
   --cecho(" <blue>[<gray>5+<blue>]")
+elseif matches[3] == "in the distance" then
+  selectString(matches[3], 1)
+  replace("six or more rooms")
 end
