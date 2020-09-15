@@ -1,17 +1,21 @@
 function mmpkg.config.doWindow()
   mmpkg.config = mmpkg.config or {}
-  mmpkg.confwin = Geyser.UserWindow:new(
-    {
-      name = "mmpkg.confwin",
-      titleText = "mmpkg Configuration",
-      x = "10%",
-      y = "20%",
-      width = 600,
-      height = 400,
-      color = "gray",
-    }
-  )
-  mmpkg.confwin:disableAutoDock()
+  if mmpkg.confwin then
+    mmpkg:confwin:show()
+  else
+    mmpkg.confwin = Geyser.UserWindow:new(
+      {
+        name = "mmpkg.confwin",
+        titleText = "mmpkg Configuration",
+        x = "10%",
+        y = "20%",
+        width = 600,
+        height = 400,
+        color = "gray",
+      }
+    )
+    mmpkg.confwin:disableAutoDock()
+  end
   mmpkg.config.genoptions = 
   Geyser.Label:new(
     {
