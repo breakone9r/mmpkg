@@ -1,7 +1,7 @@
 function mmpkg.config.doWindow()
   mmpkg.config = mmpkg.config or {}
   if mmpkg.confwin then
-    mmpkg:confwin:show()
+    mmpkg.confwin:show()
   else
     mmpkg.confwin = Geyser.UserWindow:new(
       {
