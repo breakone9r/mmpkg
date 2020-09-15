@@ -15,15 +15,24 @@ function mmpkg.doTitle(strng)
 end
 
 function mmpkg.doAffect(aff, ison, quiet)
-  if not mmpkg.myAffects then
-    mmpkg.myAffects = {}
-    mmpkg.myAffects.affects = {}
-  end
-  if (ison == "on") then
-    table.insert(mmpkg.myAffects.affects, aff)
+  mmpkg.myAffects = mmpkg.myAffects or {}
+  mmpkg.myAffects.affects = mmpkg.myAffects.affects or {}
+  mmpkg.myAffects.missing = mmpkg.myAffects.missing or {}
+  if ison then
+    if table.contains(mmpkg.myAffects.missing, aff) then
+      table.remove(mmpkg.myAffects.missing, table.index_of(mmpkg.myAffects.missing, aff))
+    end
+    if not table.contains(mmpkg.myAffects.affects, aff) then
+      table.insert(mmpkg.myAffects.affects, aff)
+    end
     color = "\n<blue:green>"
   else
-    table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
+    if not table.contains(mmpkg.myAffects.missing, aff) then
+      table.insert(mmpkg.myAffects.missing, aff)
+    end
+    if table.contains(mmpkg.myAffects.missing, aff) then
+      table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
+    end
     color = "\n<white:red>"
   end
   if not quiet then
@@ -135,42 +144,42 @@ end
 
 function mmpkg.doImap()
   if (gmcp.room.info.zone == "Alyria") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.mapimg,
     (GUI.vmapper:get_width() / 2300),
     (GUI.vmapper:get_height() / 1500),
     0,
     0
   elseif (gmcp.room.info.zone == "Alyrian Underworld") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.ugimg,
     (GUI.vmapper:get_width() / 2300),
     (GUI.vmapper:get_height() / 1500),
     0,
     0
   elseif (gmcp.room.info.zone == "Faerie Plane Wilderness") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.fpimg,
     (GUI.vmapper:get_width() / (610)),
     (GUI.vmapper:get_height() / 400),
     57 + 18,
     0
   elseif (gmcp.room.info.zone == "Sigil Underground") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.sugimg,
     (GUI.vmapper:get_width() / 889),
     (GUI.vmapper:get_height() / 580),
     -183,
     (922 + (34 / 2))
   elseif (gmcp.room.info.zone == "Lasler Valley") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.laslerimg,
     (GUI.vmapper:get_width() / 155),
     (GUI.vmapper:get_height() / 101),
     (GUI.vmapper:get_width() / 7),
     0
   elseif (gmcp.room.info.zone == "Chat Rooms Wilderness") then
-    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
+    mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty =
     mmpkg.socialimg,
     (GUI.vmapper:get_width() / 144),
     (GUI.vmapper:get_height() / 94),
@@ -277,7 +286,7 @@ function mmpkg.nextSpeedStep()
       table.remove(speedWalkDir, 1)
       table.remove(speedWalkPath, 1)
       if speedWalkDir[1] then
-        mmpkg.speedstep = 
+        mmpkg.speedstep =
         tempTimer(
           1.7,
           function()
