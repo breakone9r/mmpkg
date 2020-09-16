@@ -1,3 +1,11 @@
+function mmpkg.onLogin()
+  mmpkg.checkupdate(false)
+  send("protocol gmcp sendchar", false)
+  send("time", false) send("affects", false)
+  raiseEvent("mmpkg.onNewRoom")
+  raiseEvent("mmpkg.onNewZone")
+end
+
 function mmpkg.doHighLightPath()
   for i, v in pairs(speedWalkPath) do
     local r, g, b = unpack(color_table.red)
@@ -19,9 +27,6 @@ function mmpkg.doAffect(aff, ison, quiet)
   mmpkg.myAffects.affects = mmpkg.myAffects.affects or {}
   mmpkg.myAffects.missing = mmpkg.myAffects.missing or {}
   if ison then
-    if table.contains(mmpkg.myAffects.missing, aff) then
-      table.remove(mmpkg.myAffects.missing, table.index_of(mmpkg.myAffects.missing, aff))
-    end
     if not table.contains(mmpkg.myAffects.affects, aff) then
       table.insert(mmpkg.myAffects.affects, aff)
       if not quiet then
@@ -29,9 +34,6 @@ function mmpkg.doAffect(aff, ison, quiet)
       end
     end
   else
-    if not table.contains(mmpkg.myAffects.missing, aff) then
-      table.insert(mmpkg.myAffects.missing, aff)
-    end
     if table.contains(mmpkg.myAffects.affects, aff) then
       table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
       if not quiet then

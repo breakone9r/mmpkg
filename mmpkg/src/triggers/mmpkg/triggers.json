@@ -902,7 +902,7 @@
             "type": "exactMatch"
           }
         ],
-        "script": "mmpkg.checkupdate(false) send(\"protocol gmcp sendchar\",false) send(\"time\",false) send(\"affects\",false) raiseEvent(\"mmpkg.onNewRoom\") raiseEvent(\"mmpkg.onNewZone\")"
+        "script": "raiseEvent(\"mmpkg.OnLogin\")"
       },
       {
         "name": "YouDied",
