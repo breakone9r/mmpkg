@@ -43,6 +43,18 @@ function mmpkg.doAffect(aff, ison, quiet)
   end
 end
 
+function mmpkg.getMissingBuffs(wanted, have)
+  local missing = {}
+  local shortmissing = {}
+  for _, buffsIwant in pairs(wanted) do
+    if not table.contains(have, buffsIwant) then
+      table.insert(missing, buffsIwant)
+      table.insert(shortmissing, shortspell[buffsIwant])
+    end
+  end
+  return missing, shortmissing
+end
+
 function mmpkg.mapSwap()
   if mmpkg.isOutside(gmcp.room.info.zone) then
     GUI.vmapper:show()
