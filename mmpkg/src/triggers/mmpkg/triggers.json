@@ -53,12 +53,32 @@
             "script": "mmpkg.doAffect(\"whirlwind\",false)"
           },
           {
-            "name": "combat.blink.on",
+            "name": "whirlwind.on",
             "patterns": [{
               "pattern": "^You begin moving rapidly, as though caught in a sympathetic whirlwind.$",
               "type": "regex"
               }],
             "script": "mmpkg.doAffect(\"whirlwind\",true)"
+          }]
+      },
+      {
+        "name": "Fireshield",
+        "isFolder": "yes",
+        "children": [{
+            "name": "fireshield.off",
+            "patterns": [{
+              "pattern": "^Your fireshield sputters and goes out.$",
+              "type": "regex"
+              }],
+            "script": "mmpkg.doAffect(\"fireshield\",false)"
+          },
+          {
+            "name": "fireshield.on",
+            "patterns": [{
+              "pattern": "^Flames explode around your body, yet you feel no heat or pain.$",
+              "type": "regex"
+              }],
+            "script": "mmpkg.doAffect(\"fireshield\",true)"
           }]
       },
       {
@@ -70,7 +90,7 @@
               "pattern": "^You feel the magic enabling you to breathe underwater diminish.$",
               "type": "regex"
               }],
-            "script": "mmpkg.doAffect(\"uwbreathing\",false)"
+            "script": "mmpkg.doAffect(\"underwater breathing\",false)"
           },
           {
             "name": "uwbreathing.on",
@@ -78,7 +98,7 @@
               "pattern": "^You choke as your lungs adjust to underwater breathing.$",
               "type": "regex"
               }],
-            "script": "mmpkg.doAffect(\"uwbreathing\",true)"
+            "script": "mmpkg.doAffect(\"underwater breathing\",true)"
           }]
       },
       {
@@ -201,7 +221,7 @@
         ]
       },
       {
-        "name": "Protection from Good",
+        "name": "Protection from GoodEvil",
         "isFolder": "yes",
         "children": [
           {
@@ -215,14 +235,23 @@
             "script": "mmpkg.doAffect(\"protection from good\",false)"
           },
           {
-            "name": "protection.from.good.on",
+            "name": "protection.from.evil.off",
+            "patterns": [
+              {
+                "pattern": "^You feel vulnerable to evil forces again.$",
+                "type": "regex"
+              }
+            ],
+            "script": "mmpkg.doAffect(\"protection from evil\",false)"
+          },
+          {
+            "name": "protection.from.goodevil.on",
             "patterns": [
               {
                 "pattern": "^You feel safer, as if there were forces watching over you.$",
                 "type": "regex"
               }
-            ],
-            "script": "mmpkg.doAffect(\"protection from good\",true)"
+            ]
           }
         ]
       },
