@@ -25,7 +25,6 @@ end
 function mmpkg.doAffect(aff, ison, quiet)
   mmpkg.myAffects = mmpkg.myAffects or {}
   mmpkg.myAffects.affects = mmpkg.myAffects.affects or {}
-  mmpkg.myAffects.missing = mmpkg.myAffects.missing or {}
   if ison then
     if not table.contains(mmpkg.myAffects.affects, aff) then
       table.insert(mmpkg.myAffects.affects, aff)
