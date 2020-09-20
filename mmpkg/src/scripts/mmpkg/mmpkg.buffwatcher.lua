@@ -1,11 +1,23 @@
 local shortspell = {
-  ["detect illusion"] = "Det Ill",
+  ["detect illusion"] = "DetIll",
   ["levitation"] = "Lev",
   ["whirlwind"] = "WhrlWnd",
-  ["detect magic"] = "Det Mag",
+  ["detect magic"] = "DetMag",
   ["haste"] = "Hst",
   ["sanctuary"] = "Sanc",
-  ["enhanced strength"] = "Enh Str"
+  ["enhanced strength"] = "EnhStr",
+  ["armor"] = "Arm",
+  ["pentacle"] = "Pent",
+  ["combat blink"] = "ComBlnk",
+  ["endurance of the rhinoceros"] = "EndRhi",
+  ["physical reinforcement"] = "PhysRe",
+  ["fireshield"] = "Fire",
+  ["shield"] = "Shld",
+  ["improved invisibility"] = "ImpInv",
+  ["detect invisibility"] = "DetInv",
+  ["shadow armor"] = "ShadArm"
+  ["protection from good"] = "ProtGood",
+  ["protection from evil"] = "ProtEvil"
 }
 
 mmpkg.buffwatcher = mmpkg.buffwatcher or {}

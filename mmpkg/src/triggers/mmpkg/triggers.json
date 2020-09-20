@@ -62,6 +62,26 @@
           }]
       },
       {
+        "name": "Physical Enhancement",
+        "isFolder": "yes",
+        "children": [{
+            "name": "physenh.off",
+            "patterns": [{
+              "pattern": "^Your fireshield sputters and goes out.$",
+              "type": "regex"
+              }],
+            "script": "mmpkg.doAffect(\"physical enhancement\",false)"
+          },
+          {
+            "name": "physenh.on",
+            "patterns": [{
+              "pattern": "^Your body starts to twitch violently as you are filled with tremendous energy.$",
+              "type": "regex"
+              }],
+            "script": "mmpkg.doAffect(\"fireshield\",true)"
+          }]
+      },
+      {
         "name": "Fireshield",
         "isFolder": "yes",
         "children": [{
