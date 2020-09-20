@@ -987,5 +987,16 @@
           "type": "regex"
         }]
     }]
+  },
+  {
+    "name": "Smart Prompt & Buffwatcher",
+    "isFolder": "yes",
+    "children": [{
+      "name": "SmartPrompt",
+      "patterns": [{
+        "pattern": "(\\[Mail\\])?(\\[News\\])?.*?(<\\d+hp \\d+sp \\d+st>)",
+        "type": "regex"
+        }]
+    }]
   }
 ]

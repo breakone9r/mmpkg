@@ -72,5 +72,9 @@
   {
     "name": "mmpkg.updateCharName",
     "isActive": "yes"
+  },
+  {
+    "name": "mmpkg.buffwatcher",
+    "isActive": "yes"
   }
 ]
