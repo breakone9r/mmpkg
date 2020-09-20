@@ -15,7 +15,7 @@ local shortspell = {
   ["shield"] = "Shld",
   ["improved invisibility"] = "ImpInv",
   ["detect invisibility"] = "DetInv",
-  ["shadow armor"] = "ShadArm"
+  ["shadow armor"] = "ShadArm",
   ["protection from good"] = "ProtGood",
   ["protection from evil"] = "ProtEvil"
 }
