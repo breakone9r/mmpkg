@@ -180,6 +180,94 @@ function mmpkg.config.doWindow()
   end
   mmpkg.config.linkifybox:setClickCallback("mmpkg.config.linkifybox_click")
 
+  mmpkg.config.smartpromptbox = 
+  Geyser.Label:new(
+    {name = "mmpkg.config.smartpromptbox", x = 10, y = 150, width = 21, height = 19}, mmpkg.confwin
+  )
+  mmpkg.config.smartboxlabel = 
+  Geyser.Label:new(
+    {
+      name = "mmpkg.config.smartpromptlabel",
+      x = 32,
+      y = 152,
+      fgColor = "black",
+      color = "gray",
+      width = 220,
+      height = 20,
+      message = [[Enable Smart Prompt? (shows invis,]],
+      },
+      mmpkg.confwin
+    )
+    mmpkg.config.smartboxlabel2 = 
+    Geyser.Label:new(
+      {
+        name = "mmpkg.config.smartpromptlabel2",
+        x = 10,
+        y = 172,
+        fgColor = "black",
+        color = "gray",
+        width = 250,
+        height = 20,
+      message = [[sanc,shops,pk,and more in the prompt)]],
+    },
+    mmpkg.confwin
+  )
+  mmpkg.config.smartpromptbox:setStyleSheet([[
+  background-color: rgba(0,0,0,0%);
+  ]])
+  if mmpkg.conf.smartprompt == true then
+    mmpkg.config.smartprompt = true
+    mmpkg.config.smartpromptbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  else
+    mmpkg.config.smartprompt = false
+    mmpkg.config.smartpromptbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  end
+  mmpkg.config.smartpromptbox:setClickCallback("mmpkg.config.smartpromptbox_click")
+
+  mmpkg.config.buffwatcherbox = 
+  Geyser.Label:new(
+    {name = "mmpkg.config.buffwatcherbox", x = 10, y = 190, width = 21, height = 19}, mmpkg.confwin
+  )
+  mmpkg.config.buffwatcherlabel = 
+  Geyser.Label:new(
+    {
+      name = "mmpkg.config.buffwatcherlabel",
+      x = 32,
+      y = 192,
+      fgColor = "black",
+      color = "gray",
+      width = 220,
+      height = 20,
+      message = [[Enable Buffwatcher? (command: bw)]],
+    },
+    mmpkg.confwin
+  )
+  mmpkg.config.buffwatcherlabel2 = 
+  Geyser.Label:new(
+    {
+      name = "mmpkg.config.buffwatcherlabel2",
+      x = 10,
+      y = 212,
+      fgColor = "black",
+      color = "gray",
+      width = 250,
+      height = 20,
+      message = [[(requires enabling SmartPrompt above to work)]],
+    },
+    mmpkg.confwin
+  )
+  mmpkg.config.buffwatcherbox:setStyleSheet([[
+  background-color: rgba(0,0,0,0%);
+  ]])
+  if mmpkg.conf.buffwatcher == true then
+    mmpkg.config.buffwatcher = true
+    mmpkg.config.buffwatcherbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  else
+    mmpkg.config.buffwatcher = false
+    mmpkg.config.buffwatcherbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  end
+  mmpkg.config.buffwatcherbox:setClickCallback("mmpkg.config.buffwatcherbox_click")
+
   mmpkg.config.maintabs = 
   Geyser.Label:new(
     {

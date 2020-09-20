@@ -45,5 +45,9 @@
     "name": "sigqm",
     "regex": "^sigqm$",
     "script": "mmpkg.gotoID(28450)"
+  },
+  {
+    "name": "bw",
+    "regex": "^bw ?(\\w+)? ?(.*)?$"
   }
 ]

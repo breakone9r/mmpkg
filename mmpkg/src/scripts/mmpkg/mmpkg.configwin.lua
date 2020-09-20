@@ -51,6 +51,26 @@ function mmpkg.config.areaonlybox_click()
   end
 end
 
+function mmpkg.config.smartpromptbox_click()
+  if mmpkg.config.smartprompt == true then
+    mmpkg.config.smartprompt = false
+    mmpkg.config.smartpromptbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  else
+    mmpkg.config.smartprompt = true
+    mmpkg.config.smartpromptbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  end
+end
+
+function mmpkg.config.buffwatcherbox_click()
+  if mmpkg.config.buffwatcher == true then
+    mmpkg.config.buffwatcher = false
+    mmpkg.config.buffwatcherbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_unticked.png]])
+  else
+    mmpkg.config.buffwatcher = true
+    mmpkg.config.buffwatcherbox:setBackgroundImage(mmpkg.resources .. [[/checkbox_ticked.png]])
+  end
+end
+
 function mmpkg.config.savebtn_click()
   mmpkg.config.applysettings()
   table.save(getMudletHomeDir() .. "/mmpkg.conf", mmpkg.conf)
@@ -186,6 +206,16 @@ function mmpkg.config.applysettings()
     mmpkg.conf.areaonly = true
   else
     mmpkg.conf.areaonly = false
+  end
+  if (mmpkg.config.smartprompt == true) then
+    mmpkg.conf.smartprompt = true
+  else
+    mmpkg.conf.smartprompt = false
+  end
+  if (mmpkg.config.buffwatcher == true) then
+    mmpkg.conf.buffwatcher = true
+  else
+    mmpkg.conf.buffwatcher = false
   end
   if (mmpkg.config.scanhelper == true) then
     enableTrigger("Scan Helper")
