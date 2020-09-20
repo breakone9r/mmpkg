@@ -13,6 +13,7 @@ local shortspell = {
   ["physical reinforcement"] = "PhysRe",
   ["fireshield"] = "Fire",
   ["shield"] = "Shld",
+  ["stone skin"] = "StonSkn"
   ["improved invisibility"] = "ImpInv",
   ["detect invisibility"] = "DetInv",
   ["shadow armor"] = "ShadArm",
