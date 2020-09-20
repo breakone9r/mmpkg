@@ -1,5 +1,5 @@
 function mmpkg.updateMaxStats()
-  mmpkg.updateCharname()
+  mmpkg.updateCharName()
   if (gmcp.char.maxstats) then
     mmpkg.mymaxhp, mmpkg.mymaxsp, mmpkg.mymaxst = 
     tonumber(gmcp.char.maxstats.maxhp),
