@@ -6,7 +6,6 @@ end
 local prompt = copy2decho(matches[4])
 -- Gag the prompt
 deleteLine()
---local hp,sp,st = matches[4],matches[5],matches[6]
 local mailnews = ""
 if matches[2] == "[Mail]" then
   mailnews = mailnews.."<red>[Mail]"
@@ -63,7 +62,6 @@ if mmpkg.conf.buffwatcher then
     missingprompt = string.format(" <red>M: <white>'%s'", spells)
   end
 end
---local prompt = "<blue><<gray>"..hp.."<blue>hp <gray>"..sp.."<blue>sp <gray>"..st.."<blue>st>"
 cecho("\n" .. effects .. mailnews .. roomflag)
 decho(prompt)
 cecho(missingprompt)
