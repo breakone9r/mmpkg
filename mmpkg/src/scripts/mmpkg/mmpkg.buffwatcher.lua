@@ -20,7 +20,9 @@ local shortspell = {
   ["protection from evil"] = "ProtEvil"
 }
 
+mmpkg = mmpkg or {}
 mmpkg.buffwatcher = mmpkg.buffwatcher or {}
+mmpkg.conf = mmpkg.conf or {}
 mmpkg.conf.wantedbuffs = mmpkg.conf.wantedbuffs or {}
 
 function mmpkg.buffwatcher:add(spellname)
