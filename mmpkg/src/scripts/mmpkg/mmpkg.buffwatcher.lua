@@ -28,10 +28,14 @@ mmpkg.conf.wantedbuffs = mmpkg.conf.wantedbuffs or {}
 
 function mmpkg.buffwatcher:add(spellname)
   if table.contains(shortspell, spellname) then
-    table.insert(mmpkg.conf.wantedbuffs, matches[3])
+    if not table.contains(mmpkg.conf.wantedbuffs, spellname) then
+      table.insert(mmpkg.conf.wantedbuffs, matches[3])
+    else
+      cecho("\n<white:red>BuffWatcher ERROR<white:black>: Already watching: "..spellname.."\n")
+    end
     mmpkg.buffwatcher:show()
   else
-    cecho("\n<white:red>BuffWatcher ERROR<white:black>:Unknown buff: "..spellname.."\n")
+    cecho("\n<white:red>BuffWatcher ERROR<white:black>: Unknown buff: "..spellname.."\n")
   end
 end
 
