@@ -2,7 +2,6 @@
 if not mmpkg.conf.smartprompt then
   return
 end
-
 --Copy2decho the hp/sp/st part of the prompt.
 local prompt = copy2decho(matches[4])
 -- Gag the prompt
@@ -18,17 +17,28 @@ end
 local effects = ""
 local missingprompt = ""
 local roomflag = roomflag or ""
-if mmpkg.myAffects.affects and not table.is_empty(mmpkg.myAffects.affects) then
+if mmpkg.myAffects.affects then
+  local sanc, fireshield, invis = false, false, false
   for _, v in pairs(mmpkg.myAffects.affects) do
     if v == "sanctuary" then
-      effects = effects .. "<cyan>*"
+      sanc = true
     end
     if v == "improved invisibility" or v == "invisibility" then
-      effects = effects .. "<blue>*"
+      invis = true
     end
     if v == "fireshield" then
-      effects = effects .. "<red>*"
+      fireshield = true
     end
+  end
+  -- keep effects in a standard order.
+  if sanc then
+    effects = effects .. "<cyan>*"
+  end
+  if invis then
+    effects = effects .. "<blue>*"
+  end
+  if fireshield then
+    effects = effects .. "<red>*"
   end
   wanted = mmpkg.conf.wantedbuffs
   have = mmpkg.myAffects.affects
