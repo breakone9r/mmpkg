@@ -44,4 +44,5 @@ else
   cecho("<yellow>mmpkg pages  :<white>Shows the Pages window.\n")
   cecho("<yellow>mmpkg config :<white>Shows/Sets Various configuration options.\n")
   cecho("<yellow>mmpkg update :<white>Check for, download and install updated mmpkg.\n")
+  cecho("<yellow>mmpkg sounds :<white>Download and install official MateriaMagica soundpack.\n")
 end
