@@ -38,15 +38,16 @@ if mmpkg.myAffects.affects then
 
   end
   -- keep effects in a standard order.
+  if passdoor then
+    effects = effects .. "<cyan>*"
+  end
   if sanc then
     effects = effects .. "<white>*"
   end
   if fireshield then
     effects = effects .. "<red>*"
   end
-  if passdoor then
-    effects = effects .. "<cyan>*"
-  end
+
   if shroud then
     effects = effects .. "<blue>*"
   end
