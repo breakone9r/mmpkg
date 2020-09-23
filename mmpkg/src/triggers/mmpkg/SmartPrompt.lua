@@ -1,5 +1,5 @@
---Do nothing if smart-prompt is disabled.
-if not mmpkg.conf.smartprompt then
+--Do nothing if smart-prompt is disabled, or variables not initialized
+if not mmpkg.conf.smartprompt or not mmpkg.myAffects then
   return
 end
 --Copy2decho the hp/sp/st part of the prompt.
