@@ -807,7 +807,7 @@
           "pattern": "^You have completed a part of quest \\#(\\d+), '.*'\\!",
           "type": "regex"
         }],
-        "script": "send(\"quest status \" .. matches[2],false)"
+        "script": "send(\"quest status \" .. matches[2],false) mmpkg.currentquest = matches[2]"
       }
     ]
   },
