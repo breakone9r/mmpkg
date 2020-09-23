@@ -1,3 +1,5 @@
+-- Yes, I know the regex wont return a matches[3] for the second pattern
+-- it's 100% intentional due to how doors are scanned.
 if matches[3] == "right here" then
   selectString(matches[3], 1)
   replace("one room")

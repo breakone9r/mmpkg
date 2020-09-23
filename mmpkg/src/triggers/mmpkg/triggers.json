@@ -881,6 +881,15 @@
         "patterns": [{
           "pattern": "^(.*) is (right here|close by|not far off|a brief walk away|rather far off|in the distance) (upwards|downwards|to the north|to the south|to the west|to the east|to the northwest|to the northeast|to the southwest|to the southeast).$",
           "type": "regex"
+        }, {
+          "pattern": "^\\* A closed door (right here|close by|not far off|a brief walk away|rather far off|in the distance) (upwards|downwards|to the north|to the south|to the west|to the east|to the northwest|to the northeast|to the southwest|to the southeast).$",
+          "type": "regex"
+          }]
+      },
+      {
+        "name": "ScanDone",
+        "patterns": [{
+          "type": "prompt"
         }]
       }
     ]
