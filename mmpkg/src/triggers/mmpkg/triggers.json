@@ -429,6 +429,31 @@
             "script": "mmpkg.doAffect(\"improved invisibility\",true)"
           }
         ]
+      }, {
+        "name": "Invisibility",
+        "isFolder": "yes",
+        "children": [
+          {
+            "name": "invis.off",
+            "patterns": [
+              {
+                "pattern": "^You shimmer and reappear.$",
+                "type": "regex"
+              }
+            ],
+            "script": "mmpkg.doAffect(\"invisibility\",false)"
+          },
+          {
+            "name": "invis.on",
+            "patterns": [
+              {
+                "pattern": "^You fade out of existence.$",
+                "type": "regex"
+              }
+            ],
+            "script": "mmpkg.doAffect(\"invisibility\",true)"
+          }
+        ]
       },
       {
         "name": "Shield",
