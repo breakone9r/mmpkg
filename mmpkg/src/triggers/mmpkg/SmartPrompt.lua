@@ -18,8 +18,14 @@ local effects = ""
 local missingprompt = ""
 local roomflag = roomflag or ""
 if mmpkg.myAffects.affects then
-  local sanc, fireshield, invis = false, false, false
+  local passdoor, sanc, fireshield, invis, shroud = false, false, false, false, false
   for _, v in pairs(mmpkg.myAffects.affects) do
+    if v == "pass door" or v == "wind walk" then
+      passdoor = true
+    end
+    if v == "lightning shroud" then
+      shroud = true
+    end
     if v == "sanctuary" then
       sanc = true
     end
@@ -29,16 +35,23 @@ if mmpkg.myAffects.affects then
     if v == "fireshield" then
       fireshield = true
     end
+
   end
   -- keep effects in a standard order.
   if sanc then
-    effects = effects .. "<cyan>*"
-  end
-  if invis then
-    effects = effects .. "<blue>*"
+    effects = effects .. "<white>*"
   end
   if fireshield then
     effects = effects .. "<red>*"
+  end
+  if passdoor then
+    effects = effects .. "<cyan>*"
+  end
+  if shroud then
+    effects = effects .. "<blue>*"
+  end
+  if invis then
+    effects = effects .. "<green>*"
   end
   wanted = mmpkg.conf.wantedbuffs
   have = mmpkg.myAffects.affects
