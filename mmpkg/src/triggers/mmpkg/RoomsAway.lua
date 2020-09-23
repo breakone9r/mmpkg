@@ -1,5 +1,4 @@
--- Yes, I know the regex wont return a matches[3] for the second pattern
--- it's 100% intentional due to how doors are scanned.
+enableTrigger("ScanDone", 1)
 if matches[3] == "right here" then
   selectString(matches[3], 1)
   replace("one room")
@@ -19,3 +18,4 @@ elseif matches[3] == "in the distance" then
   selectString(matches[3], 1)
   replace("six or more rooms")
 end
+mmpkg.found = true

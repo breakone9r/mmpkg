@@ -888,8 +888,10 @@
       },
       {
         "name": "ScanDone",
+        "isActive": "no",
         "patterns": [{
-          "type": "prompt"
+          "pattern": "^\n$",
+          "type": "regex"
         }]
       }
     ]
