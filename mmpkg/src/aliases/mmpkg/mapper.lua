@@ -40,8 +40,8 @@ elseif (matches[2] == "shop") then
     clearRoomUserDataItem(gmcp.room.info.num, "_empty")
   end
 elseif (matches[2] == "clear") then
-  for i, v in pairs(getAreaRooms(getRoomArea(getPlayerRoom()))) do
-    unHighlightRoom(v)
+  for i, _ in pairs(getRooms()) do
+    unHighlightRoom(i)
   end
 else
   cecho("\n<red>mapper " .. matches[2] .. " is not a valid mapper command.")
