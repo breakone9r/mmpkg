@@ -1,7 +1,8 @@
 function mmpkg.onLogin()
   mmpkg.checkupdate(false)
   send("protocol gmcp sendchar", false)
-  send("time", false) send("affects", false)
+  send("time", false)
+  send("affects", false)
   raiseEvent("mmpkg.onNewRoom")
   raiseEvent("mmpkg.onNewZone")
 end
@@ -251,8 +252,8 @@ function mmpkg.playlog(chan)
   for line in io.lines(filename) do
     lines = lines + 1
   end
-  if lines > 10 then
-    startline = lines - 10
+  if lines > 40 then
+    startline = lines - 40
   end
   lines = 0
   mmpkg.Captures:cecho(chan, "<brown>Begin playback of old logs (last <10 lines)\n", true)
