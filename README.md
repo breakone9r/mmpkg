@@ -38,11 +38,14 @@ How it looks outside:
 ### In addition to the mapper command, there is also mmpkg, which shows/controls configurations. This will (hopefully) be converted into an actual configuration window at some point.
 **mmpkg** by itself will give you a help screen.
 
-**mmpkg update** will install (if not installed) the updater package, and then check for, and install the latest version.
+**mmpkg update** will check for, and install the latest version.
 
 **mmpkg pages** will show the pages window if you've closed it.
 
 **mmpkg config** brings up a configuration screen.
+
+**mmpkg sounds** Download and install official Materia Magica soundpack.
+
 
 ### There are also the following aliases set up:
 **runeqm** speedwalk to Lord Agrippa in Runic Castle.
@@ -61,6 +64,14 @@ How it looks outside:
 
 **These speedwalk aliases will work from virtually anywhere in the game world as long as you can reach the room via roads**
 
+**bw** show - shows spells on your buffwatcher watch list
+
+**bw** add spellname - add spellname to your buffwatcher watch list
+
+**bw** remove spellname - removes spellname on your buffwatcher watch list
+
+**Please note: Do not use quotes when adding 2 or 3 word spell names. Just type them normally.**
+
 ### Finally, there's a special alias:
 **repos** This alias can be used to reposition, visually, rooms in your map. repos n will find the room to the north of your current location, and move it directly north of your room. same for all the other directions. Keep in mind that this can seriously mangle visual maps in areas where rooms arent necessarily where they appear to be: Example, the lake on Irda Isle, where some rooms are just randomly linked to rooms and even back to themselves.
 
@@ -76,5 +87,11 @@ How it looks outside:
 **Linkify** Will turn almost any web address mentions into a clickable website.
 
 **Scan Helper** Hides all empty scan returns, as well as turning it from "A brief walk" etc into an actual number of rooms away.
+
+**Smart Prompt** Adds some useful info to your prompt: LPK/NPK/CPK, Safe, Shop, Trainer, High and Low regen, plus buffs such as invisibility (green asterisk), pass door or equivalent (cyan asterisk), fire shield (red asterisk), sanctuary (white asterisk) and lightning shroud (blue asterisk)
+
+**BuffWatcher** Adds M: <missing buffs> to your SmartPrompt (requires SmartPrompt to be enabled)
+
+If you are missing any of these options, then you're running an outdated package and should update ASAP.
 
 Enjoy!
