@@ -16,6 +16,9 @@ elseif matches[3] == "rather far off" then
   replace("five rooms")
 elseif matches[3] == "in the distance" then
   selectString(matches[3], 1)
-  replace("six or more rooms")
+  replace("six rooms")
+elseif matches[3] == "almost out of sight" then
+  selectString(matches[3], 1)
+  replace("seven or more rooms")
 end
 mmpkg.found = true
