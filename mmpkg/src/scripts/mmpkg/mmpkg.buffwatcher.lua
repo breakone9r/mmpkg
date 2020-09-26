@@ -19,7 +19,10 @@ local shortspell = {
   ["shadow armor"] = "ShadArm",
   ["protection from good"] = "ProtGood",
   ["protection from evil"] = "ProtEvil",
-  ["bless"] = "Bles"
+  ["bless"] = "Bles",
+  ["force field"] = "ForcFld",
+  ["phalanx"] = "Phlx",
+  ["spell shield"] = "SpelShld"
 }
 
 mmpkg = mmpkg or {}

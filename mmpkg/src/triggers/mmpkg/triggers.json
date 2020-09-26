@@ -427,6 +427,69 @@
         ]
       },
       {
+        "name": "Force Field",
+        "isFolder": "yes",
+        "children": [{
+            "name": "forcefield.off",
+            "patterns": [{
+              "pattern": "^The air particles around you return to normal density.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"force field\",false)"
+          },
+          {
+            "name": "forcefield.on",
+            "patterns": [{
+              "pattern": "^You hear a high-pitched shriek as the air around you becomes more dense.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"force field\",true)"
+          }
+        ]
+      },
+      {
+        "name": "Phalanx",
+        "isFolder": "yes",
+        "children": [{
+            "name": "phalanx.off",
+            "patterns": [{
+              "pattern": "^You stand down from your phalanx position.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"phalanx\",false)"
+          },
+          {
+            "name": "phalanx.on",
+            "patterns": [{
+              "pattern": "^You adopt a defensive stance, huddling into a self-contained phalanx.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"phalanx\",true)"
+          }
+        ]
+      },
+      {
+        "name": "Spell Shield",
+        "isFolder": "yes",
+        "children": [{
+            "name": "spellshield.off",
+            "patterns": [{
+              "pattern": "^The shimmering bands of light surrounding you fade and vanish.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"spellshield\",false)"
+          },
+          {
+            "name": "spellshield.on",
+            "patterns": [{
+              "pattern": "^There is a faint electrical discharge as your form is surrounded by bands of multicolored light.$",
+              "type": "regex"
+            }],
+            "script": "mmpkg.doAffect(\"spellshield\",true)"
+          }
+        ]
+      },
+      {
         "name": "Pass Door",
         "isFolder": "yes",
         "children": [{
