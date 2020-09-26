@@ -33,9 +33,10 @@ function mmpkg.checkversion(auto)
 end
 
 function mmpkg.getsounds()
+  cecho("\n<blue:white>Downloading sound packs...")
   local saveto1 = getMudletHomeDir() .. "/tmp/mm_sound_pack1.zip"
   local url1 = "http://www.materiamagica.com/downloads/soundpacks/mm_sound_pack1.zip"
-  local saveto2 = getMudletHomeDir() .. "/tmp/mm_sound_pack1.zip"
+  local saveto2 = getMudletHomeDir() .. "/tmp/mm_sound_pack2.zip"
   local url2 = "http://www.materiamagica.com/downloads/soundpacks/mm_sound_pack2.zip"
   if mmpkg.events.downloadOK then
     killAnonymousEventHandler(mmpkg.events.downloadOK)
@@ -77,12 +78,12 @@ function mmpkg.unzipmap(event, ...)
   local unzipLocation = args[2]
   if event == "sysUnzipDone" then
     if zipName:find("mm_sound_pack1.zip") then
-      soundpacks = soundpacks + 1
-      cecho(string.format("<white>MP3 Sound Pack %s/2 installed.", soundpacks))
+      mmpkg.soundpacks = mmpkg.soundpacks + 1
+      cecho(string.format("<white>MP3 Sound Pack %s/2 installed.", mmpkg.soundpacks))
       os.remove(zipName)
     elseif zipName:find("mm_sound_pack2.zip") then
-      soundpacks = soundpacks + 1
-      cecho(string.format("<white>MP3 Sound Pack %s/2 installed.", soundpacks))
+      mmpkg.soundpacks = mmpkg.soundpacks + 1
+      cecho(string.format("<white>MP3 Sound Pack %s/2 installed.", mmpkg.soundpacks))
       os.remove(zipName)
     elseif zipName:find("mm_map.zip") then
       local unzippedMap = unzipLocation .. "/mm_map.dat"
@@ -123,7 +124,7 @@ function mmpkg.filedownload(event, filename)
     mmpkg.events.unzipOK = registerAnonymousEventHandler("sysUnzipDone", mmpkg.unzipmap)
     mmpkg.events.unzipFail = registerAnonymousEventHandler("sysUnzipFail", mmpkg.unzipmap)
     unzipAsync(filename, getMudletHomeDir() .. "/tmp")
-  elseif filename:find("mm_soundpack", 1, true) then
+  elseif filename:find("mm_sound_pack", 1, true) then
     cecho("\n\n<green>Download done. Unzipping & installing " .. filename .. ".\n\n")
     if mmpkg.events.unzipOK then
       killAnonymousEventHandler(mmpkg.events.unzipOK)
