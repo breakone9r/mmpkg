@@ -10,7 +10,7 @@ local mailnews = ""
 if matches[2] == "[Mail]" then
   mailnews = mailnews.."<red>[Mail]"
 end
-if matches[3] == "[News]" then
+if matches[3] == "[NEWS]" then
   mailnews = mailnews.."<yellow>[News]"
 end
 -- Create our own prompt based on affects, roomflags, and any missing buffs from watchlist
