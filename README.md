@@ -90,7 +90,7 @@ How it looks outside:
 
 **Smart Prompt** Adds some useful info to your prompt: LPK/NPK/CPK, Safe, Shop, Trainer, High and Low regen, plus buffs such as invisibility (green asterisk), pass door or equivalent (cyan asterisk), fire shield (red asterisk), sanctuary (white asterisk) and lightning shroud (blue asterisk)
 
-**BuffWatcher** Adds M: <missing buffs> to your SmartPrompt (requires SmartPrompt to be enabled)
+**BuffWatcher** Adds M: (missing buff) to your SmartPrompt (requires SmartPrompt to be enabled)
 
 If you are missing any of these options, then you're running an outdated package and should update ASAP.
 
