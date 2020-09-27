@@ -1,6 +1,9 @@
 function mmpkg.checkupdate(auto)
+  if not io.exists(getMudletHomeDir().."/tmp") then
+    lfs.mkdir(getMudletHomeDir().."/tmp")
+  end
   mmpkg.conf.autodl = auto
-  local saveto = getMudletHomeDir() .. "/mmpkg.currentversion"
+  local saveto = getMudletHomeDir() .. "/tmp/mmpkg.currentversion"
   local url = "https://github.com/breakone9r/mmpkg/raw/master/mmpkg.currentversion"
   if mmpkg.events.downloadOK then
     killAnonymousEventHandler(mmpkg.events.downloadOK)
@@ -33,6 +36,9 @@ function mmpkg.checkversion(auto)
 end
 
 function mmpkg.getsounds()
+  if not io.exists(getMudletHomeDir().."/tmp") then
+    lfs.mkdir(getMudletHomeDir().."/tmp")
+  end
   cecho("\n<blue:white>Downloading sound packs...")
   local saveto1 = getMudletHomeDir() .. "/tmp/mm_sound_pack1.zip"
   local url1 = "http://www.materiamagica.com/downloads/soundpacks/mm_sound_pack1.zip"
@@ -53,7 +59,10 @@ function mmpkg.getsounds()
 end
 
 function mmpkg.downloadupdate(filename)
-  local saveto = getMudletHomeDir() .. "/" .. mmpkg.currentversion .. ".mpackage"
+  if not io.exists(getMudletHomeDir().."/tmp") then
+    lfs.mkdir(getMudletHomeDir().."/tmp")
+  end
+  local saveto = getMudletHomeDir() .. "/tmp/" .. mmpkg.currentversion .. ".mpackage"
   local url = 
   "https://github.com/breakone9r/mmpkg/releases/download/" ..
   utf8.remove(mmpkg.currentversion, 1, 6) ..
@@ -158,6 +167,9 @@ function mmpkg.updateMap()
     cecho(
       "\n<white>Downloading the latest map: <gray>https://github.com/breakone9r/mmpkg/raw/master/mm_map.zip\n"
     )
+    if not io.exists(getMudletHomeDir().."/tmp") then
+      lfs.mkdir(getMudletHomeDir().."/tmp")
+    end
     local saveto = getMudletHomeDir() .. "/tmp/mm_map.zip"
     local url = "https://github.com/breakone9r/mmpkg/raw/master/mm_map.zip"
     if mmpkg.events.downloadOK then
