@@ -91,6 +91,7 @@ function mmpkg.setup()
   end
   -- Apply defaults if no settings
   mmpkg.conf.fontsize = getFontSize()
+  mmpkg.conf.font = getFont()
   if not mmpkg.conf.areaonly then mmpkg.conf.areaonly = false end
   if not mmpkg.conf.logging then mmpkg.conf.logging = false end
   if not mmpkg.conf.timestamps then mmpkg.conf.timestamps = false end
@@ -334,6 +335,7 @@ function mmpkg.setup()
     blink = true,
     consoleColor = "black",
     fontSize = mmpkg.conf.fontsize,
+    font = mmpkg.conf.font,
     consoles = mmpkg.conf.tabs,
     customTimestampColor = true,
     timestampBGColor = "black",
