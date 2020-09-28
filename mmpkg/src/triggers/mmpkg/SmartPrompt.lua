@@ -3,14 +3,18 @@ if not mmpkg.conf.smartprompt or not mmpkg.myAffects then
   return
 end
 --Copy2decho the hp/sp/st part of the prompt.
-local prompt = copy2decho(matches[4])
+local prompt = copy2decho(matches[5])
+-- Show the tank if in combat
+if matches[2] ~= "" then
+  prompt = copy2decho(matches[2])..prompt
+end
 -- Gag the prompt
 deleteLine()
 local mailnews = ""
-if matches[2] == "[Mail]" then
+if matches[3] == "[Mail]" then
   mailnews = mailnews.."<red>[Mail]"
 end
-if matches[3] == "[NEWS]" then
+if matches[4] == "[NEWS]" then
   mailnews = mailnews.."<yellow>[News]"
 end
 -- Create our own prompt based on affects, roomflags, and any missing buffs from watchlist

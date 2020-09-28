@@ -965,7 +965,7 @@
     "children": [{
       "name": "SmartPrompt",
       "patterns": [{
-        "pattern": "(\\[Mail\\])?(\\[NEWS\\])?.*?(<\\d+hp \\d+sp \\d+st>)",
+        "pattern": "^(\\(\\[\\d+\\%\\]\\w+\\))?(\\[Mail\\])?(\\[NEWS\\])?.*?(<\\d+hp \\d+sp \\d+st>)",
         "type": "regex"
       }]
     }]
