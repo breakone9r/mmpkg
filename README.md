@@ -35,7 +35,8 @@ How it looks outside:
 
 **Please note that rooms can be set to both shop and trainer, and the room color will be whichever was set last. Also, PK and Safe room colors will always override shop and trainer colors.**
 
-### In addition to the mapper command, there is also mmpkg, which shows/controls configurations. This will (hopefully) be converted into an actual configuration window at some point.
+### In addition to the mapper command, there is also mmpkg, which shows/controls configurations. 
+
 **mmpkg** by itself will give you a help screen.
 
 **mmpkg update** will check for, and install the latest version.
