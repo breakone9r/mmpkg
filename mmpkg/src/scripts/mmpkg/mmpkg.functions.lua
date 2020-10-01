@@ -18,6 +18,7 @@ function mmpkg.onLogin()
   send("protocol gmcp sendchar", false)
   send("time", false)
   send("affects", false)
+  send("set show-affect-spoilers on", false)
   raiseEvent("mmpkg.onNewRoom")
   raiseEvent("mmpkg.onNewZone")
 end

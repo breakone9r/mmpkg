@@ -11,7 +11,7 @@ end
 function mmpkg_Uninstalled(_, name)
   if string.starts(name, "mmpkg") then
     if not string.find(name, "update") then
-      cecho("<white>\nThanks for using mmpkg. Please close mudlet to finish the uninstall, or you will not be able to access the map.")
+      cecho("<white>\nThanks for using mmpkg.\n")
     end
   end
 end
@@ -19,6 +19,7 @@ end
 function mmpkg_PostSetup()
   send("protocol gmcp sendchar", false)
   send("affects", false)
+  send("set show-affect-spoilers on")
   cecho("<cyan>DONE!\nPlease Open your preferences, and go to the 'mapper colors' tab. Then set your link color to black.\n")
   cecho(
     "<cyan>Also set your mapper background color to cyan. These cannot be set via script, and this package expects.\n"
@@ -37,6 +38,9 @@ function mmpkg_PostSetup()
   )
   cecho(
     "<white> If you need an updated map of known areas, you can run 'mapper update' and download the latest map.\n\n"
+  )
+  cecho(
+    "<white> Please close mudlet and restart, if you are not able to access the map."
   )
   local signrooms = {
     3534660,
