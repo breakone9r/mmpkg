@@ -9,6 +9,30 @@
           }]
       },
       {
+        "name": "AffectSpoilersForce",
+        "isFolder": "yes",
+        "children": [{
+          "name": "spoilersgag",
+          "patterns": [{
+            "pattern": "^SHOW-AFFECT-SPOILERS is now ON.$",
+            "type": "regex"
+            }],
+          "script": "deleteLine()"
+        }]
+      },
+      {
+        "name": "AffectSpoilersForce",
+        "isFolder": "yes",
+        "children": [{
+          "name": "spoilersforced",
+          "patterns": [{
+            "pattern": "^SHOW-AFFECT-SPOILERS is now OFF.$",
+            "type": "regex"
+            }],
+          "script": "deleteLine() cecho(\"\\n<red:white>ERROR: Unable to disable SHOW-AFFECT-SPOILERS as they are necessary for many script functions!\") send(\"set SHOW-AFFECT-SPOILERS on\",false)"
+        }]
+      },
+      {
         "name": "affects.list",
         "fireLength": "99",
         "patterns": [{
