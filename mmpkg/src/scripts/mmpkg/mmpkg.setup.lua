@@ -65,7 +65,7 @@ function mmpkg.setup()
   mmpkg.events.updxp = registerAnonymousEventHandler("gmcp.char.status", "mmpkg.updateXP")
   mmpkg.events.charname = registerAnonymousEventHandler("gmcp.char.base.name", "mmpkg.updateCharName")
   mmpkg.events.uninstall = registerAnonymousEventHandler("sysUninstallPackage", "mmpkg_Uninstalled")
-
+  mmpkg.events.affects = registerAnonymousEventHandler("gmcp.char.affect_application_msg", "mmpkg.getAffect")
   -- Begin setting up the GUI, beginning with default stylesheets
   -- CSSMan by Vadi. Public domain.
   -- Add in EMCO.lua from demonnic - https://github.com/demonnic

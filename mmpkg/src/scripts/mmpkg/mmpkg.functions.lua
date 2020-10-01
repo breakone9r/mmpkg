@@ -1,3 +1,18 @@
+local debuffs = {
+  "blindness",
+  "disrupt sight",
+  "curse",
+  "charm",
+  "faerie fire",
+  "frost",
+  "paralyze",
+  "sleep",
+  "tinnitus",
+  "web",
+  "mesmerize",
+  "strike death",
+  "snare",
+}
 function mmpkg.onLogin()
   mmpkg.checkupdate(false)
   send("protocol gmcp sendchar", false)
@@ -26,21 +41,31 @@ end
 function mmpkg.doAffect(aff, ison, quiet)
   mmpkg.myAffects = mmpkg.myAffects or {}
   mmpkg.myAffects.affects = mmpkg.myAffects.affects or {}
+  local buffcolor
+  if (not table.contains(debuffs, aff) and ison) or (table.contains(debuffs, aff) and not ison) then
+    buffcolor = "<blue:green>"
+  else
+    buffcolor = "<white:red>"
+  end
   if ison then
     if not table.contains(mmpkg.myAffects.affects, aff) then
       table.insert(mmpkg.myAffects.affects, aff)
       if not quiet then
-        cecho(string.format("\n<blue:green>%s: ON", mmpkg.doTitle(aff)))
+        cecho(string.format("\n%s%s: ON", buffcolor, mmpkg.doTitle(aff)))
       end
     end
   else
     if table.contains(mmpkg.myAffects.affects, aff) then
       table.remove(mmpkg.myAffects.affects, table.index_of(mmpkg.myAffects.affects, aff))
       if not quiet then
-        cecho(string.format("\n<white:red>%s: OFF", mmpkg.doTitle(aff)))
+        cecho(string.format("\n%s%s: OFF", buffcolor, mmpkg.doTitle(aff)))
       end
     end
   end
+end
+
+function mmpkg.getAffect()
+  mmpkg.doAffect(gmcp.char.affect_application_msg.skill, true)
 end
 
 function mmpkg.mapSwap()

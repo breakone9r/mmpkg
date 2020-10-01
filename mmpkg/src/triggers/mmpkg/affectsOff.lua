@@ -1,0 +1,5 @@
+local aff = string.trim(matches[2])
+aff = aff:lower()
+selectString(matches[1], 1)
+replace("")
+mmpkg.doAffect(aff, false)
