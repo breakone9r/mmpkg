@@ -28,7 +28,6 @@ local debuffs = {
   "deafen",
   "irritation",
   "bleakness",
-  "disrupt sight",
   "irk",
   "occult eyes",
   "life evocation",
@@ -39,9 +38,10 @@ local debuffs = {
   "fatigue",
   "weaken",
   "smoke evocation",
-  "mesmermize",
   "earth evocation",
-  
+  "condemn",
+  "induce aggression",
+  "lightning pursuit",
 }
 function mmpkg.onLogin()
   mmpkg.checkupdate(false)
