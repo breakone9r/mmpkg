@@ -69,6 +69,10 @@ function mmpkg.getAffect()
   mmpkg.doAffect(gmcp.char.affect_application_msg.skill, true)
 end
 
+function mmpkg.getAffectOff()
+  mmpkg.doAffect(gmcp.char.affect_removal_msg.skill, false)
+end
+
 function mmpkg.mapSwap()
   if mmpkg.isOutside(gmcp.room.info.zone) then
     GUI.vmapper:show()
