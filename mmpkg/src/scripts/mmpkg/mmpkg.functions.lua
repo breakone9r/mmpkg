@@ -12,6 +12,25 @@ local debuffs = {
   "mesmerize",
   "strike death",
   "snare",
+  "malediction",
+  "malignancy",
+  "energy orb",
+  "curse",
+  "disjunction",
+  "evil eye",
+  "hex",
+  "silence",
+  "plague",
+  "poison",
+  "leech conduit",
+  "sleep"
+  "slow"
+  "deafen"
+  "irritation"
+  "bleakness"
+  "disrupt sight"
+  "irk"
+  
 }
 function mmpkg.onLogin()
   mmpkg.checkupdate(false)
