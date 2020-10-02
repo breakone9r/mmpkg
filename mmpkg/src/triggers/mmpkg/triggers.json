@@ -363,7 +363,7 @@
     "children": [{
       "name": "SmartPrompt",
       "patterns": [{
-        "pattern": "^(\\(\\[\\d+\\%\\]\\w+\\))?(\\[Mail\\])?(\\[NEWS\\])?.*?(<\\d+hp \\d+sp \\d+st>)",
+        "pattern": "^(\\[(?:Search|Dig)\\])?(\\(\\[\\d+\\%\\]\\w+\\))?(\\[Mail\\])?(\\[NEWS\\])?(\\[SAFE\\])?(<\\d+hp \\d+sp \\d+st>)",
         "type": "regex"
       }]
     }]
