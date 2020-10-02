@@ -22,7 +22,8 @@ local shortspell = {
   ["bless"] = "Bles",
   ["force field"] = "ForcFld",
   ["phalanx"] = "Phlx",
-  ["spell shield"] = "SpelShld"
+  ["spell shield"] = "SpelShld",
+  ["wind walk"] = "WndWalk"
 }
 
 mmpkg = mmpkg or {}
