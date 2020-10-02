@@ -10,6 +10,7 @@ end
 
 function mmpkg_Uninstalled(_, name)
   if string.starts(name, "mmpkg") then
+    mmpkg.onClose()
     if not string.find(name, "update") then
       cecho("<white>\nThanks for using mmpkg.\n")
     end
