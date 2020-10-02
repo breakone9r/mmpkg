@@ -23,13 +23,24 @@ local debuffs = {
   "plague",
   "poison",
   "leech conduit",
-  "sleep"
-  "slow"
-  "deafen"
-  "irritation"
-  "bleakness"
-  "disrupt sight"
-  "irk"
+  "sleep",
+  "slow",
+  "deafen",
+  "irritation",
+  "bleakness",
+  "disrupt sight",
+  "irk",
+  "occult eyes",
+  "life evocation",
+  "confusion",
+  "impede movement",
+  "immobilize",
+  "charm",
+  "fatigue",
+  "weaken",
+  "smoke evocation",
+  "mesmermize",
+  "earth evocation",
   
 }
 function mmpkg.onLogin()
