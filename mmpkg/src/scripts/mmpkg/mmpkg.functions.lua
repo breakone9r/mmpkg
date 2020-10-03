@@ -681,3 +681,23 @@ function findAreaID(areaname)
   end
   return returnid, fullareaname
 end
+
+function table.count(tbl, sep)
+  local resultTbl = {}
+  sep = sep or ", "
+  for _, value in ipairs(tbl) do
+    if resultTbl[value] then
+      resultTbl[value] = resultTbl[value] + 1
+    else
+      resultTbl[value] = 1
+    end
+  end
+  local resultStr = ""
+  for item, quantity in pairs(resultTbl) do
+    local leader = ""
+    if resultStr ~= "" then leader = sep end
+    if quantity > 1 then item = "<magenta>(" .. quantity .. ") <reset>" .. item end
+    resultStr = resultStr .. leader .. item
+  end
+  return resultStr
+end
