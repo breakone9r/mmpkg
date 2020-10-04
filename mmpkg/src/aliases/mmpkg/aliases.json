@@ -25,7 +25,7 @@
   },
   {
     "name": "mapper",
-    "regex": "^mapper (\\w+)( .*)?$"
+    "regex": "^mapper ?(\\w+)?( .*)?$"
   },
   {
     "name": "mmpkg",
