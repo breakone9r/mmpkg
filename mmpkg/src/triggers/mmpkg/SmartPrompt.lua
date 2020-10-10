@@ -3,22 +3,26 @@ if not mmpkg.conf.smartprompt or not mmpkg.myAffects then
   return
 end
 --Copy2decho the hp/sp/st part of the prompt.
-local prompt = copy2decho(matches[7])
+local prompt = copy2decho(matches[8])
 local search = ""
+local away = ""
 -- Show the tank if in combat
 if matches[2] ~= "" then
   search = "<yellow>"..matches[2]
 end
 if matches[3] ~= "" then
+  away = "<magenta>[Afk]"
+end
+if matches[4] ~= "" then
   prompt = copy2decho(matches[3])..prompt
 end
 -- Gag the prompt
 deleteLine()
 local mailnews = ""
-if matches[4] == "[Mail]" then
+if matches[5] == "[Mail]" then
   mailnews = mailnews.."<red>[Mail]"
 end
-if matches[5] == "[NEWS]" then
+if matches[6] == "[NEWS]" then
   mailnews = mailnews.."<yellow>[News]"
 end
 -- Create our own prompt based on affects, roomflags, and any missing buffs from watchlist
@@ -73,7 +77,7 @@ if mmpkg.myAffects.affects then
   end
 end
 local roomflags = getRoomUserDataKeys(gmcp.room.info.num)
-if matches[6] == "[SAFE]" then
+if matches[7] == "[SAFE]" then
   roomflag = roomflag.."<white>[Safe]"
 end
 if table.contains(roomflags, "shop") then
@@ -97,6 +101,6 @@ end
 if table.contains(roomflags, "player-kill-chaotic") then
   roomflag = "<red>[CPK]"
 end
-cecho("\n" .. effects .. search .. mailnews .. roomflag)
+cecho("\n" .. effects .. away ..search .. mailnews .. roomflag)
 decho(prompt)
 cecho(missingprompt)
