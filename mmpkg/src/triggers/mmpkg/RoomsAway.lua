@@ -1,4 +1,4 @@
-enableTrigger("ScanDone", 1)
+enableTrigger("ScanDone")
 if matches[3] == "right here" then
   selectString(matches[3], 1)
   replace("one room")
