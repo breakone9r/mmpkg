@@ -11,7 +11,7 @@
   },
   {
     "name": "repos",
-    "regex": "^repos (n|s|e|w|nw|ne|sw|se|u|d)$"
+    "regex": "^repos ?(me)? ?(n|s|e|w|nw|ne|sw|se|u|d)? ?(\\d+)?$"
   },
   {
     "name": "xavqm",
