@@ -34,7 +34,7 @@ if not roomExists(baseroom) or not roomExists(moveroom) then
 end
 
 local x, y, z = getRoomCoordinates(baseroom)
-local diradd = 
+local diradd =
 {
   u = {x, y, z + 1},
   d = {x, y, z - 1},
@@ -49,5 +49,5 @@ local diradd =
 }
 local repos_str = string.format("\n<white>Repositioning Room# <magenta>%s <white>to the <magenta>%s <white>of Room# <magenta>%s<white>.<reset>\n", moveroom, matches[3], baseroom)
 cecho(repos_str)
---setRoomCoordinates(moveroom,unpack(diradd[matches[3]]))
+setRoomCoordinates(moveroom,unpack(diradd[matches[3]]))
 updateMap()
