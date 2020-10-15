@@ -6,15 +6,16 @@ end
 local prompt = copy2decho(matches[8])
 local search = ""
 local away = ""
--- Show the tank if in combat
+local tank = ""
 if matches[2] ~= "" then
   search = "<yellow>"..matches[2]
 end
-if matches[3] ~= "" then
+if matches[4] ~= "" then
   away = "<magenta>[Afk]"
 end
-if matches[4] ~= "" then
-  prompt = copy2decho(matches[3])..prompt
+if matches[3] ~= "" then
+  -- Show the tank if in combat
+  tank = copy2decho(matches[3])
 end
 -- Gag the prompt
 deleteLine()
@@ -102,5 +103,6 @@ if table.contains(roomflags, "player-kill-chaotic") then
   roomflag = "<red>[CPK]"
 end
 cecho("\n" .. effects .. away ..search .. mailnews .. roomflag)
-decho(prompt)
+decho(tank..prompt)
 cecho(missingprompt)
+echo("\n")
