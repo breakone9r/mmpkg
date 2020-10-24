@@ -324,6 +324,13 @@
             "type": "regex"
           }
         ]
+      },
+      {
+        "name": "CondensedReagents",
+        "patterns": [{
+          "pattern": "^A (.*) flares? brightly and vanish(?:es)?\\!$",
+          "type": "regex"
+          }]
       }
     ]
   },
@@ -363,7 +370,7 @@
     "children": [{
       "name": "SmartPrompt",
       "patterns": [{
-        "pattern": "^(\\(\\[\\d+\\%\\]\\w+\\))?(\\[Mail\\])?(\\[NEWS\\])?.*?(<\\d+hp \\d+sp \\d+st>)",
+        "pattern": "^(\\[(?:Search|Dig)\\])?(\\(\\[\\d+\\%\\]\\w+\\))?(\\[AWAY\\])?(?:\\[\\*\\])?(\\[Mail\\])?(\\[NEWS\\])?(\\[SAFE\\])?(<\\d+hp \\d+sp \\d+st>)",
         "type": "regex"
       }]
     }]

@@ -1,2 +1,2 @@
 deleteLine()
-enableTrigger("ScanDone", 1)
+enableTrigger("ScanDone")
