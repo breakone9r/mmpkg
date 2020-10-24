@@ -103,7 +103,14 @@ function mmpkg.setup()
       "Talk"
     }
   end
-
+  -- Ensure Capture triggers are in sync with shown tabs.
+  for _, tab in pairs({"Alliance", "Clan", "Novice", "Tells", "Form", "Relays", "Talk"}) do
+    if table.contains(mmpkg.conf.tabs, tab) then
+      enableTrigger(tab)
+    else
+      disableTrigger(tab)
+    end
+  end
   -- Now for the meat and potatoes of the GUI.
   -- iGauges by demonnic : https://forums.mudlet.org/viewtopic.php?f=6&t=22779
   -- GUI Template by Akaya : https://forums.mudlet.org/viewtopic.php?f=6&t=4098
