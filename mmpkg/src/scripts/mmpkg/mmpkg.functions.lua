@@ -41,7 +41,6 @@ local debuffs = {
   "rabid mount",
   "silence",
   "slit armor",
-  "slit tendon",
   "slow",
   "smoke evocation",
   "strike death",
