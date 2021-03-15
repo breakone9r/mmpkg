@@ -93,6 +93,11 @@ end
 if table.contains(roomflags, "low-regen") then
   roomflag = roomflag.."<firebrick>[LoRgn]"
 end
+if table.contains(roomflags, "no-regen") then
+  roomflag = roomflag.."<red>[NoRgn]"
+end
+if table.contains(roomflags, "no-trap") then
+  roomflag = roomflag.."<red>[NoTrap]"
 if table.contains(roomflags, "player-kill-neutral") then
   roomflag = roomflag.."<red>[NPK]"
 end
