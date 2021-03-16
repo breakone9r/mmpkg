@@ -98,6 +98,7 @@ if table.contains(roomflags, "no-regen") then
 end
 if table.contains(roomflags, "no-trap") then
   roomflag = roomflag.."<red>[NoTrap]"
+end
 if table.contains(roomflags, "player-kill-neutral") then
   roomflag = roomflag.."<red>[NPK]"
 end
