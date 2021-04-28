@@ -370,7 +370,7 @@
     "children": [{
       "name": "SmartPrompt",
       "patterns": [{
-        "pattern": "^(\\[(?:Search|Dig)\\])?(\\(\\[\\d+\\%\\]\\w+\\))?(\\[AWAY\\])?(?:\\[\\*\\])?(\\[Mail\\])?(\\[NEWS\\])?(\\[SAFE\\])?(<\\d+hp \\d+sp \\d+st>)",
+        "pattern": "^(\\[(?:Search|Dig)\\])?(\\(\\[\\d+\\%\\]\\w+\\))?(\\[AWAY\\])?(?:\\[\\*\\])?(\\[Mail\\])?(\\[NEWS\\])?(\\[Library\\])?(\\[SAFE\\])?(<\\d+hp \\d+sp \\d+st>)",
         "type": "regex"
       }]
     }]
