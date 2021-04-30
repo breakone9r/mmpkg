@@ -102,13 +102,13 @@ end
 if table.contains(roomflags, "no-trap") then
   roomflag = roomflag.."<red>[NoTrap]"
 end
-if table.contains(roomflags, "player-kill-neutral") then
+if table.contains(roomflags, "player-kill-neutral") table.contains(roomflags, "NPK") then
   roomflag = roomflag.."<red>[NPK]"
 end
-if table.contains(roomflags, "player-kill-lawful") then
+if table.contains(roomflags, "player-kill-lawful") table.contains(roomflags, "LPK") then
   roomflag = roomflag.."<red>[LPK]"
 end
-if table.contains(roomflags, "player-kill-chaotic") then
+if table.contains(roomflags, "player-kill-chaotic") or table.contains(roomflags, "CPK") then
   roomflag = roomflag.."<red>[CPK]"
 end
 cecho("\n" .. effects .. away ..search .. mailnews .. roomflag)
