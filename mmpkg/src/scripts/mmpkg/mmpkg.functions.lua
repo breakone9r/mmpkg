@@ -1,5 +1,5 @@
 local debuffs = {
-  "alignment reversal ",
+  "alignment reversal",
   "air blast",
   "anaphylaxis",
   "amnesia",
