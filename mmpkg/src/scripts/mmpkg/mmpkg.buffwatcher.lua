@@ -107,7 +107,11 @@ local shortspell = {
   ["beast of burden"] = "BstofBur",
   ["consecrate armor"] = "ConsArm",
   ["consecrate weapon"] = "ConsWea",
-  ["aegis"] = "Aegis"
+  ["aegis"] = "Aegis",
+  ["air halo"] = "AirHalo",
+  ["magnetic field"] ="MagFie",
+  ["lunar independence"] = "Lunar",
+  ["lava walk"] = "LvaWlk"
   }
 
 mmpkg = mmpkg or {}
