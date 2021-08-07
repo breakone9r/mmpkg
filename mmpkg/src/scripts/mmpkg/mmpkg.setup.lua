@@ -1,7 +1,7 @@
 -- Initialize variables/tables
 mmpkg = mmpkg or {}
 mmpkg.packagename = "@PKGNAME@"
-mmpkg.resources = getMudletHomeDir() .. "@PKGNAME@"
+mmpkg.resources = getMudletHomeDir() .. "/@PKGNAME@"
 CSSMan = {}
 CSSMan.__index = CSSMan
 demonnic = demonnic or {}
