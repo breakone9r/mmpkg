@@ -103,6 +103,7 @@ local debuffs = {
   "mantalar disease",
   "mass sleep",
   "menchal disease",
+  "memory drain",
   "mental disruption",
   "mesmerize",
   "molten armor",
@@ -153,6 +154,7 @@ local debuffs = {
   "subdue",
   "tarnele disease",
   "tempus rigor",
+  "tentacles from the abyss",
   "thonnys disease",
   "tinnitus",
   "transcendent gaze",
@@ -339,7 +341,7 @@ function mmpkg.doImap()
     (GUI.vmapper:get_height() / 1500),
     0,
     0
-  elseif (gmcp.room.info.zone == "Alyrian Underworld") then
+  elseif (gmcp.room.info.zone == "Great Alyrian Underground") then
     mmpkg.vmapimg, mmpkg.imapx, mmpkg.imapy, mmpkg.startx, mmpkg.starty = 
     mmpkg.ugimg,
     (GUI.vmapper:get_width() / 2300),
@@ -827,3 +829,4 @@ function table.count(tbl, sep)
   end
   return resultStr
 end
+
